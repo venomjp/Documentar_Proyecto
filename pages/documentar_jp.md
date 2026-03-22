@@ -1,5 +1,5 @@
 ---
-title: Portada del proyecto X
+title: Portada del proyecto Documentar JP
 description: Es la página HOME del proyecto
 layout: libdoc_page.liquid
 permalink: index.html
