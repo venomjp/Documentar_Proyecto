@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+    <title>Título de mi Proyecto</title>
+    <subtitle>Descripción breve de mi proyecto=subtitulo</subtitle>
+    <link href="feed.xml" rel="self" />
+    <link href="#/feed.xml" />
+    <updated>2026-03-20T00:00:00Z</updated>
+    <id>#/feed.xml</id>
+    <author>
+        <name>11ty LibDoc</name>
+    </author>
+        <entry>
+            <title>Entrada Bitacora 2</title>
+            <link href="#/posts/entrada2/" />
+            <updated>2026-03-20T00:00:00Z</updated>
+            <id>#/posts/entrada2/</id>
+            <author>
+                <name>Juan Pedro Perianes</name>
+            </author>
+            <content type="html">
+                &lt;p&gt;&lt;picture class=&quot;eleventy-image&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;/#/posts/entrada2/skills-3270306-1280-psWFXUi8id-__730__.avif 730w, /#/posts/entrada2/skills-3270306-1280-psWFXUi8id-__1280__.avif 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;/#/posts/entrada2/skills-3270306-1280-psWFXUi8id-__730__.webp&quot; alt=&quot;Imagen de ejemplo&quot; width=&quot;1280&quot; height=&quot;962&quot; srcset=&quot;/#/posts/entrada2/skills-3270306-1280-psWFXUi8id-__730__.webp 730w, /#/posts/entrada2/skills-3270306-1280-psWFXUi8id-__1280__.webp 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;/picture&gt;&lt;/p&gt;
+&lt;h2&gt;Utilidad:&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Puedo utilizar el BLOG como una cuaderno de BITÁCORA, un blog técnico o un diario de trabajo.&lt;/em&gt;&lt;/p&gt;
+&lt;h2&gt;Contenido:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Avances&lt;/li&gt;
+&lt;li&gt;Cambios importantes&lt;/li&gt;
+&lt;li&gt;Problemas encontrados&lt;/li&gt;
+&lt;li&gt;Soluciones aplicadas&lt;/li&gt;
+&lt;li&gt;Distintas Versiones de firmware o software&lt;/li&gt;
+&lt;li&gt;Notas técnicas&lt;/li&gt;
+&lt;li&gt;Decisiones de diseño&lt;/li&gt;
+&lt;li&gt;Cosas aprendidas&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        </entry>
+        <entry>
+            <title>Entrada Bitacora 1</title>
+            <link href="#/posts/entrada1/" />
+            <updated>2026-03-20T00:00:00Z</updated>
+            <id>#/posts/entrada1/</id>
+            <author>
+                <name>Juan Pedro Perianes</name>
+            </author>
+            <content type="html">
+                &lt;p&gt;&lt;picture class=&quot;eleventy-image&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;/#/posts/entrada1/skills-3270306-1280-psWFXUi8id-__730__.avif 730w, /#/posts/entrada1/skills-3270306-1280-psWFXUi8id-__1280__.avif 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;/#/posts/entrada1/skills-3270306-1280-psWFXUi8id-__730__.webp&quot; alt=&quot;Imagen de ejemplo&quot; width=&quot;1280&quot; height=&quot;962&quot; srcset=&quot;/#/posts/entrada1/skills-3270306-1280-psWFXUi8id-__730__.webp 730w, /#/posts/entrada1/skills-3270306-1280-psWFXUi8id-__1280__.webp 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;/picture&gt;
+Me gusta insertar una imagen principal, aquí puede venir una descripción más detallada del contenido del post.&lt;/p&gt;
+&lt;h1&gt;Utilidad&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Puedo utilizar el BLOG como una cuaderno de BITÁCORA, un blog técnico o un diario de trabajo.&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;Contenido&lt;/h1&gt;
+&lt;p&gt;Las cabeceras (#h1 a #h6) sirven para generar la tabla de contenido. Solo cambia el tamaño de la letra, no genera subcontenidos, los distingue independientes, pero si pones el contenido principal como H1 y luego H4 y H6 puedes ver distintos tamaños de los títulos. Pero esto no tiene ninguna utilidad real, debería ceñirme dividir el contenido en bloques de igual importancia, para eso lo suyo sería utilizar páginas (Nivel1 -&amp;gt; Nivel 2 -&amp;gt; Nivel 3)&lt;/p&gt;
+&lt;h3&gt;Uno&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Avances&lt;/li&gt;
+&lt;li&gt;Cambios importantes&lt;/li&gt;
+&lt;li&gt;Problemas encontrados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6&gt;Uno.Uno&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Soluciones aplicadas&lt;/li&gt;
+&lt;li&gt;Distintas Versiones de firmware o software&lt;/li&gt;
+&lt;li&gt;Notas técnicas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Decisiones de diseño&lt;/li&gt;
+&lt;li&gt;Cosas aprendidas&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        </entry>
+</feed>
