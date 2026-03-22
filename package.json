@@ -1,0 +1,20 @@
+{
+  "name": "proyectox-11ty-libdoc",
+  "version": "0.1",
+  "description": "Eleventy starter para hacer documentacion responsiva",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no se han especificado tests\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Juan Pedro Perianes",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.5",
+    "@11ty/eleventy-img": "^6.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "sharp": "^0.33.5"
+  }
+}
