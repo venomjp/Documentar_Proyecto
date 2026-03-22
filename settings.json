@@ -6,7 +6,6 @@
     "blogTitle": "Bitácora",
     "blogDescription": "El blog va a servir como un cuaderno de Bitácora",
     "productionUrl": "#",
-    "pathPrefix": "/Documentar_JP/",
     "customLinks": [
         {
             "url": "https://trello.com/u/juanpedroperianes/boards",
