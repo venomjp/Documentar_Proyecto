@@ -16,7 +16,7 @@ export default function(eleventyConfig) {
     
     // DIRECTORIOS
     // Directorio de salida
-    eleventyConfig.setOutputDirectory("docs");
+    //eleventyConfig.setOutputDirectory("docs");
     // FIN DIRECTORIOS
 
     // START PLUGINS
