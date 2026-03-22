@@ -38,20 +38,5 @@
             "url": "/tags/",
             "title": "./core/libdoc_tags.liquid",
             "description": " "
-        },
-        {
-            "url": "/3dDesign/readme/",
-            "title": "./3dDesign/readme.md",
-            "description": " "
-        },
-        {
-            "url": "/archivos/readme/",
-            "title": "./archivos/readme.md",
-            "description": " "
-        },
-        {
-            "url": "/sourceCode/readme/",
-            "title": "./sourceCode/readme.md",
-            "description": " "
         }
 ]

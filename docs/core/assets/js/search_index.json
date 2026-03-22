@@ -78,20 +78,5 @@
             "url": "/tags/",
             "title": "./core/libdoc_tags.liquid",
             "content": "  contenido 2 páginas nivel 1 1 página etiqueta 2 1 página etiqueta1 1 página etiqueta2 1 página nivel 2 1 página blockquote 1 página nivel 3 1 página"
-        },
-        {
-            "url": "/3dDesign/readme/",
-            "title": "./3dDesign/readme.md",
-            "content": "  ContenidoEn esta carpeta se guardarán los DISEÑOS 3D en 3 carpetasstl - diseños 3D3mf - archivos del laminadorgcode - archivos para imprimir"
-        },
-        {
-            "url": "/archivos/readme/",
-            "title": "./archivos/readme.md",
-            "content": "  ContenidoEn esta carpeta se guardarán ARCHIVOS VARIOS en 4 carpetasaudio - archivos de audioimagen - imágenestexto - documentos de texto, docs, pdf...video - archivos de video"
-        },
-        {
-            "url": "/sourceCode/readme/",
-            "title": "./sourceCode/readme.md",
-            "content": "  ContenidoEn esta carpeta se guardarán los CODIGOS FUENTE DE PROGRAMASPodemos encontrarnos con un proyecto que tiene varios códigos fuente:Emisor y receptor.Firmware Impresora y Firmware de Pantallasoftware 1 - código fuente SW 1software 2 - código fuente SW 2"
         }
 ]
