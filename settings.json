@@ -29,6 +29,7 @@
         }
     ],
     "lang": "es",
+    "htmlBasePathPrefix": "/Documentar_JP/",
     "hljsLanguages": [
         "xml",
         "javascript",
