@@ -16,7 +16,7 @@ A continuación una cita:
 > 
 > ― **Child**
 
-Vamos hacia atrás [página de nivel 1]({{'/pages/n1-primera/'|url}} "Hacia atrás") o hacia adelante [página de nivel 3](./n3-primera/index.html "Vamos hacia adelante = hija").
+Vamos hacia atrás [página de nivel 1]({{'pages/n1-primera/'|url}} "Hacia atrás") o hacia adelante [página de nivel 3](./n3-primera/ "Vamos hacia adelante = hija").
 
 A continuación un texto en Markdown:
 
@@ -25,5 +25,12 @@ A continuación un texto en Markdown:
 > 
 > ― **Cita**
 
-Esto es texto normal en markdown
+Ir hacia atrás con rutas relativas (..):
+[página de nivel 1](../n1-primera/ "Hacia atrás")
+Ir hacia atrás con rutas absolutas y pathPrefix:
+[página de nivel 1]({{ 'pages/n1-primera/' | url }} "Hacia atrás")
+Sin poner / delante y usará pathPrefix 2 veces
+
+Ir hacia adelante con ruta relativa:
+./pagina-siguiente/
 ```
