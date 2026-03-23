@@ -16,7 +16,7 @@ A continuación una cita:
 > 
 > ― **Child**
 
-Vamos hacia atrás [página de nivel 1](pages/n1-primera/index.html "Vamos hacia atrás = padre") o hacia adelante [página de nivel 3](pages/n1-primera/n2-primera/n3-primera.html "Vamos hacia adelante = hija").
+Vamos hacia atrás [página de nivel 1](./pages/n1-primera/index.html "Vamos hacia atrás = padre") o hacia adelante [página de nivel 3](./pages/n1-primera/n2-primera/n3-primera.html "Vamos hacia adelante = hija").
 
 A continuación un texto en Markdown:
 
