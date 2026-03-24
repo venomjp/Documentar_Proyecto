@@ -16,7 +16,8 @@ A continuación una cita:
 > 
 > ― **Child**
 
-Vamos hacia atrás [página de nivel 1](../ "Hacia atrás") o hacia adelante [página de nivel 3](./n3-primera/ "Vamos hacia adelante = hija").
+<!---Vamos hacia atrás [página de nivel 1](../ "Hacia atrás") o hacia adelante [página de nivel 3](./n3-primera/ "Vamos hacia adelante = hija").--->
+Vamos hacia atrás [Nivel 1]( ./n1-primera.md "Hacia atrás =  padre") o hacia adelante [Nivel 3]( ./n3-primera.md "Hacia adelante = hija")
 
 A continuación un texto en Markdown:
 
@@ -26,6 +27,7 @@ A continuación un texto en Markdown:
 > ― **Cita**
 
 Ir hacia atrás con rutas relativas (..):
+
 [página de nivel 1](../ "Hacia atrás")
 
 Ir hacia adelante con ruta relativa:

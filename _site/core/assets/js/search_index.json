@@ -77,7 +77,7 @@
         {
             "url": "/Documentar_Proyecto/pages/n1-primera/n2-primera/",
             "title": "Primera página de nivel 2",
-            "content": "Soy una página de nivel 2 nivel 2 blockquote A continuación una cita:Hola! soy una página de nivel 2, hija de una de nivel 1― ChildVamos hacia atrás página de nivel 1 o hacia adelante página de nivel 3.A continuación un texto en Markdown:&amp;gt; Así se escriben las citas en Markdown.&amp;gt; &amp;gt; ― **Cita**Esto es texto normal en markdown"
+            "content": "Soy una página de nivel 2 nivel 2 blockquote A continuación una cita:Hola! soy una página de nivel 2, hija de una de nivel 1― ChildVamos hacia atrás Nivel 1 o hacia adelante Nivel 3A continuación un texto en Markdown:&amp;gt; Así se escriben las citas en Markdown.&amp;gt; &amp;gt; ― **Cita**Ir hacia atrás con rutas relativas (..):[página de nivel 1](../ &amp;quot;Hacia atrás&amp;quot;)Ir hacia adelante con ruta relativa:[página de nivel 3](./pagina-siguiente/ &amp;quot;Hacia adelante&amp;quot;)"
         },
         {
             "url": "/Documentar_Proyecto/pages/n1-primera/n2-primera/n3-primera/",

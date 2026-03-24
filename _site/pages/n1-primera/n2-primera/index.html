@@ -440,13 +440,19 @@
 <p>Hola! soy una página de nivel 2, hija de una de nivel 1</p>
 <p>― <strong>Child</strong></p>
 </blockquote>
-<p>Vamos hacia atrás <a href="pages/n1-primera/index.html" title="Vamos hacia atrás = padre">página de nivel 1</a> o hacia adelante <a href="pages/n1-primera/n2-primera/n3-primera.html" title="Vamos hacia adelante = hija">página de nivel 3</a>.</p>
+<!---Vamos hacia atrás [página de nivel 1](../ "Hacia atrás") o hacia adelante [página de nivel 3](./n3-primera/ "Vamos hacia adelante = hija").--->
+<p>Vamos hacia atrás <a href="/Documentar_Proyecto/pages/n1-primera/" title="Hacia atrás =  padre">Nivel 1</a> o hacia adelante <a href="/Documentar_Proyecto/pages/n1-primera/n2-primera/n3-primera/" title="Hacia adelante = hija">Nivel 3</a></p>
 <p>A continuación un texto en Markdown:</p>
 <pre><code class="language-markdown">&gt; Así se escriben las citas en Markdown.
 &gt; 
 &gt; ― **Cita**
 
-Esto es texto normal en markdown
+Ir hacia atrás con rutas relativas (..):
+
+[página de nivel 1](../ &quot;Hacia atrás&quot;)
+
+Ir hacia adelante con ruta relativa:
+[página de nivel 3](./pagina-siguiente/ &quot;Hacia adelante&quot;)
 </code></pre>
 
             <footer class="minh-100vh">
