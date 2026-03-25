@@ -16,14 +16,6 @@
             "text": "OneNote"
         },
         {
-            "url": "https://drive.google.com/drive/folders/1LzRuUlFFFk5JhYCQ9tD-rdzyxhQtSX2Y?usp=drive_link",
-            "text": "Nube"
-        },
-        {
-            "url": "https://mypa65.autodesk360.com/g/projects/20240826795409376/data/dXJuOmFkc2sud2lwcHJvZDpmcy5mb2xkZXI6Y28uM1pCSG81MkZRTC1OLXN4em1PVjUtQQ==",
-            "text": "Fusion"
-        },
-        {
             "url": "https://github.com/venomjp",
             "text": "GitHub"
         }
@@ -45,5 +37,6 @@
         "cpp",
         "c",
         "gcode"
-    ]
+    ],
+    "tocEnabled": true
 }

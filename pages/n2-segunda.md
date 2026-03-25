@@ -6,6 +6,7 @@ permalink: /pages/n1-primera/n2-segunda/index.html
 eleventyNavigation:
     key: Nivel 2. Segunda
     parent: Nivel 1. Primera
+    order: 22
 tags:
     - nivel 2
     - segunda

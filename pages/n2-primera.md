@@ -6,6 +6,7 @@ permalink: /pages/n1-primera/n2-primera/index.html
 eleventyNavigation:
     key: Nivel 2. Primera
     parent: Nivel 1. Primera
+    order: 21
 tags:
     - nivel 2
     - blockquote

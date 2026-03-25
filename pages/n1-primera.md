@@ -5,6 +5,7 @@ layout: libdoc_page.liquid
 permalink: /pages/n1-primera/index.html
 eleventyNavigation:
     key: Nivel 1. Primera
+    order: 20
 tags:
     - nivel 1
     - etiqueta 2

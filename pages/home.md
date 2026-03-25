@@ -4,27 +4,53 @@ description: Página HOME del proyecto
 layout: libdoc_page.liquid
 permalink: /index.html
 tags:
-    - etiqueta1
-    - etiqueta2
+    - home
 ---
 
+# Introducción
 
-{% alert 'Este parece que va a ser el comienzo de una gran historia de documentación!', 'success', 'Hola!' %}
+La **documentación** de un proyecto es una parte fundamental, permite entender el proyecto, su estructura, su funcionamiento, las decisiones tomadas y como reutilizarlo en otros proyectos.
 
-## Comencemos!
+Este proyecto es una guía de uso de mi plantilla de documentación para proyectos que está basada en el generador de sitios estáticos [Eleventy](https://www.11ty.dev/) y en el starter project [LibDoc](https://eleventy-libdoc.netlify.app/), adaptado para satisfacer mis necesidades y gustos. 
 
-1. {% iconCard 'Configurar', 'Empieza introduciendo tus propias configuraciones en `settings.json` en la raiz del proyecto. <br>[Documentación de Configuración](https://eleventy-libdoc.netlify.app/configuration/).', 'faders' %}
-2. {% iconCard 'Escribe', 'Facilmente puedes escribir tu documentación con <abbr title="Hyper Text Markup Language"> Markdown y HTML </abbr>. <br>[Crear Contenido](https://eleventy-libdoc.netlify.app/creating-content/).', 'pen' %}
+Mi idea es **integrar el proyecto y la documentación en un mismo repositorio**, de esta forma se puede versionar tanto la documentación como el código del proyecto y se puede integrar también más documentación, diseños 3D, electrónicos, etc.
 
-## Consigue Ayuda
+* Una documentación con formato web me permite más flexibilidad que la documentación tradicional. 
+* Las funcionalidades de búsqueda y navegación me permiten acceder fácilmente a la información que necesito. 
+* He creado una estructura de ficheros propia que quiero estandarizar en todos mis proyectos. 
+* Esta integración permite desarrollar el proyecto y generar una documentación elegante y adaptable, también incluye un cuaderno de bitácora en formato blog para poder registrar progresos, problemas, decisiones...
+* Puedo acceder a la documentación desde cualquier dispositivo, lo que facilita su consulta en cualquier momento y lugar.
+* Al estar alojada en GitHub Pages, las páginas tienen que ser públicas y estáticas, es fácil de actualizar, mantener y no necesito un servidor propio.
 
-LibDoc’s website contains a comprehensive documentation about how to install, configure and :
+# Instalaciones necesarias
 
-* [LibDoc’s homepage](https://eleventy-libdoc.netlify.app) <br>The website containing LibDocs’s presentation and comprehensive documentation.
-    * [Front matter](https://eleventy-libdoc.netlify.app/front-matter/) <br>Documentation of all front matter settings related to a LibDoc page.
-    * [Primary navigation](https://eleventy-libdoc.netlify.app/primary-navigation/) <br>Detailed features of LibDoc’s primary navigation.
-    * [SEO](https://eleventy-libdoc.netlify.app/configuration/seo/) <br>How LibDoc’s configuration and pages parameters are applied for Search Engine Optimization.
-    * [Credits](https://eleventy-libdoc.netlify.app/configuration/credits/) LibDoc could not work without these resources.
-## Licencia
-<a href="https://ejemplo.com">Proyecto X</a> © 2026 by <a href="https://miPerfil_github.com">Juan Pedro Perianes</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
+{% iconCard 'Instalaciones Previas y Pasos Iniciales', 'Lo que se necesita para que funcione.<br>[Instalaciones necesarias](./n1-instalaciones.md/).', 'plus-circle' %}
+
+# Configuración
+{% iconCard 'Haciendo que funcione', '¿Qué hay que cambiar y en qué archivos se cambia?<br>[Configuración](./n1-configuracion.md/).', 'faders' %}
+
+# Crear contenido
+{% iconCard 'Escribe como quieras', 'Cómo escribir mi documentación con <abbr title="Hyper Text Markup Language"> Markdown y HTML </abbr> y añadirle widgets. <br>[Crear Contenido](./n1-crear-contenido.md/).', 'pen' %}
+
+# Navegación
+{% iconCard 'Recorre el proyecto', 'Tabla de contenidos, navegación inteligente, búsqueda difusa y estándar. Además aprende a cómo crear items en el menú.<br>[Navegación](./n1-navegacion.md/).', 'list' %}
+
+# Estructura de ficheros
+{% iconCard 'FileTree', 'Como es la estructura de ficheros y dónde se guarda cada cosa.<br>[Estructura de Ficheros](./n1-estructura-ficheros.md/).', 'list-dashes' %}
+
+# Cuaderno de bitácora
+{% iconCard 'Blog', 'Es un diario de trabajo y un blog técnico.<br>[Cuaderno de Bitácora](./posts/).', 'sidebar' %}
+
+
+# Créditos y referencias
+
+Este proyecto no sería posible sin el trabajo de otras personas, aquí dejo una lista de las herramientas y recursos que he utilizado:
+
+* [Node.js](https://nodejs.org/) <br>Es un entorno de ejecución de JavaScript, necesario para ejecutar Eleventy.
+* [Eleventy](https://www.11ty.dev/) <br>Es un generador de sitios estáticos, es decir, la herramienta que permite generar el sitio web a partir de plantillas fuente.
+* [LibDoc](https://eleventy-libdoc.netlify.app) <br>Es un starter project de 11ty (Eleventy) que me permite crear documentación elegante y adaptable.
+
+
+# Licencia
+<a href="https://venomjp.github.io/Documentar_Proyecto/">Documentar un Proyecto</a> © 2026 by <a href="https://github.com/venomjp/venomjp">Juan Pedro Perianes</a> is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International</a><img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;"><img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style="max-width: 1em;max-height:1em;margin-left: .2em;">
 
