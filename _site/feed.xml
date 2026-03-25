@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">
+    <title>Documentar un Proyecto</title>
+    <subtitle>Guía para documentar un proyecto de forma efectiva y organizada</subtitle>
+    <link href="feed.xml" rel="self" />
+    <link href="#/feed.xml" />
+    <updated>2026-03-25T00:00:00Z</updated>
+    <id>#/feed.xml</id>
+    <author>
+        <name>11ty LibDoc</name>
+    </author>
+        <entry>
+            <title>Modificaciones respecto a &quot;LibDoc Starter Project&quot;</title>
+            <link href="#/posts/modificaciones-respecto-a-libdoc-starter-project/" />
+            <updated>2026-03-25T00:00:00Z</updated>
+            <id>#/posts/modificaciones-respecto-a-libdoc-starter-project/</id>
+            <author>
+                <name>Juan Pedro Perianes</name>
+            </author>
+            <content type="html">
+                &lt;h1&gt;libdocMessages.js&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene los mensajes personalizados del proyecto.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Incluí el lenguaje español &lt;strong&gt;&amp;quot;es&amp;quot;&lt;/strong&gt; (LibDoc no tiene soporte para español), con las traducciones necesarias.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;libdocConfig.js&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la configuración personalizada del &lt;strong&gt;proyecto LibDoc&lt;/strong&gt; por defecto.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lenguaje- &lt;strong&gt;lang&lt;/strong&gt;: &lt;em&gt;&lt;strong&gt;&amp;quot;es&amp;quot;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Lenguajes de resaltado de código- &lt;strong&gt;hljsLanguages&lt;/strong&gt;: incluyendo lenguajes como arduino, python, c y gcode que son relevantes para el tipo de documentación que estoy creando.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;libdoc_page.liquid&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene el layout para las páginas de documentación, es común para las páginas y los posts del blog.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Elimine la parte del pie de página (Footer) que mostraba la versión de libdoc en la que se basa el proyecto o el botón de editar está página.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;libdocSystem.json&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la configuración del sistema de navegación y diseño del proyecto.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cambié el ancho de la barra lateral a 250px y el ancho del contenido a 750px para darle un diseño más compacto y enfocado en el contenido.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;myfavicon.png&lt;/h1&gt;
+&lt;p&gt;Este archivo es el favicon personalizado del proyecto, se muestra en la pestaña del navegador.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cambie el favicos por el tipico &amp;quot;under construction&amp;quot; para darle un toque divertido al proyecto, ya que es una documentación en construcción.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;build.yml&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la configuración para el workflow de GitHub Actions que genera la documentación automáticamente al hacer push a la rama main.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tuve que crear la carpeta &lt;strong&gt;.github/workflows&lt;/strong&gt; y el archivo &lt;strong&gt;build.yml&lt;/strong&gt; para configurar el workflow de GitHub Actions, ya que el proyecto base no incluía esta configuración. El workflow se ejecuta cada vez que se hace push a la rama main, generando la documentación y publicándola en GitHub Pages automáticamente.&lt;/li&gt;
+&lt;li&gt;Está basado en las instrucciones de &lt;strong&gt;11ty&lt;/strong&gt; &lt;a href=&quot;https://www.11ty.dev/docs/deployment/&quot;&gt;Deploy an Eleventy project to GitHub pages &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Modifiqué la versión de cada acción por las actuales a 25/03/2026.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Carpetas para las plantillas&lt;/h1&gt;
+&lt;p&gt;11ty utiliza las llamadas plantillas para generar las páginas web. LibDoc no tiene una estructura de carpetas para las plantillas y las almacenaba en la raíz del proyecto. Comprobé que daba igual que estuvieran en la raíz del proyecto o en una carpeta.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cree una carpeta llamada &lt;strong&gt;pages&lt;/strong&gt; para almacenar las páginas de la documentación (home y niveles 1, 2 y 3).
+&lt;ul&gt;
+&lt;li&gt;Cree una subcarpeta dentro de &lt;strong&gt;pages&lt;/strong&gt; llamada &lt;strong&gt;bitacora&lt;/strong&gt; para almacenar las entradas del cuaderno de bitácora.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;La página HOME se llama &lt;strong&gt;home.md&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Las páginas de nivel 1 se llaman &lt;strong&gt;n1-nombreN1.md&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Las páginas de nivel 2 se llaman &lt;strong&gt;n2-nombreN2.md&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Las páginas de nivel 3 se llaman &lt;strong&gt;n3-nombreN3.md&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Las entradas del cuaderno de bitácora se llaman &lt;strong&gt;bit-nombreEntrada.md&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Carpetas para los proyectos&lt;/h1&gt;
+&lt;p&gt;La estructura de ficheros que he creado para almacenar los proyectos es la siguiente:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;3dDesign&lt;/strong&gt; - para almacenar los proyectos relacionados con el diseño 3D.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;files&lt;/strong&gt; - para almacenar los archivos relacionados con el proyecto, como imágenes, archivos varios, etc.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sourceCode&lt;/strong&gt; - para almacenar el código fuente de los proyectos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;LICENSE&lt;/h1&gt;
+&lt;p&gt;Cambie el archivo LICENSE original por uno nuevo con la licencia &lt;strong&gt;Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)&lt;/strong&gt; para proteger el contenido de la documentación y permitir su uso bajo ciertas condiciones, como atribución, uso no comercial y compartir bajo la misma licencia. Esta licencia es adecuada para proyectos de documentación que se quieren compartir pero no se quieren usar con fines comerciales sin permiso.&lt;/p&gt;
+&lt;h1&gt;README.md&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la presentación del proyecto, con información general y enlaces a la documentación.&lt;/p&gt;
+&lt;h1&gt;.eleventyignore&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la configuración de archivos y carpetas que Eleventy debe ignorar al generar el sitio web.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;README.md&lt;/strong&gt; - para evitar que se genere una página web a partir del README, ya que es un archivo de presentación para el repositorio y no forma parte de la documentación en sí.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sandboxes/&lt;/strong&gt; - para evitar que se generen páginas web a partir de los proyectos de prueba.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;3dDesign/&lt;/strong&gt; - para evitar que se generen páginas web a partir de los proyectos de diseño 3D.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;archivos/&lt;/strong&gt; - para evitar que se generen páginas web a partir de los archivos relacionados con los proyectos.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;sourceCode/&lt;/strong&gt; - para evitar que se generen páginas web a partir del código fuente de los proyectos.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;.gitignore&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la configuración de archivos y carpetas que Git debe ignorar al hacer commits en el repositorio.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ignorar la carpeta &lt;strong&gt;node_modules&lt;/strong&gt; necesaria para generar el sitio web local, ya que GitHub Actions instala automáticamente lo necesario para generar el sitio web en GitHub Pages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;.eleventy.js&lt;/h1&gt;
+&lt;p&gt;En principio cambié el directorio de salida a &lt;strong&gt;docs&lt;/strong&gt; para que GitHub Pages lo detectara automáticamente, pero muchas de los elementos dejarón de funcionar pues no tiene en cuenta el pathPrefix. Dejé el directorio de salida por defeto &lt;strong&gt;_site&lt;/strong&gt;, añadí el pathPrefix con el nombre del repositorio para que funcione correctamente en GitHub Pages y utilice GitHub Actions para la generación del sitio web en GitHub Pages. Así que este archivo es identico al original.&lt;/p&gt;
+&lt;h1&gt;package.json&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la configuración de NodeJS, con los scripts para generar la documentación.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Cambié la licencia a &lt;strong&gt;CC BY-NC-SA 4.0&lt;/strong&gt; para que coincida con la licencia del proyecto.&lt;/li&gt;
+&lt;li&gt;Eliminé el script de &lt;code&gt;test&lt;/code&gt;, ya que no se han especificado tests para este proyecto y no es necesario tener un script de test que no se utiliza.&lt;/li&gt;
+&lt;li&gt;Creé varios scripts:
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;start&lt;/code&gt; para iniciar el servidor local y comprobar que se visualiza la documentación en localhost.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;build-ghpages&lt;/code&gt; para generar la carpeta de salida con el pathPrefix correcto para GitHub Pages.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;clean&lt;/code&gt; para limpiar la carpeta de salida antes de subir los cambios a GitHub Pages, ya que GitHub Pages no borra los archivos antiguos automáticamente y pueden quedar archivos obsoletos si no se limpia la carpeta de salida antes de generar la nueva versión del sitio web.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;settings.json&lt;/h1&gt;
+&lt;p&gt;Este archivo contiene la configuración del home y general del sitio web, sobreescribe los valores por defecto de LibDoc.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Lenguaje - &lt;strong&gt;lang:&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;&amp;quot;es&amp;quot;&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Habilitar la tabla de contenidos - &lt;strong&gt;tocEnabled:&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;true&lt;/strong&gt;&lt;/em&gt; para mostrar una tabla de contenidos en cada página de la documentación (en el blog no aparecía).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;hljsLanguages:&lt;/strong&gt; incluyendo lenguajes como arduino, python, c y gcode que son relevantes para el tipo de documentación que estoy creando.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;htmlBasePathPrefix:&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;&amp;quot;/Documentar_Proyecto/&amp;quot;&lt;/strong&gt;&lt;/em&gt; para que los enlaces a los archivos y recursos funcionen correctamente en GitHub Pages, ya que el sitio web se alojará en una subcarpeta con el nombre del repositorio.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;blogTitle:&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;&amp;quot;Bitácora de Modificaciones&amp;quot;&lt;/strong&gt;&lt;/em&gt; para darle un título personalizado a la sección del blog, que en este caso es el cuaderno de bitácora donde se registran los cambios realizados en el proyecto.&lt;/li&gt;
+&lt;li&gt;Autor - &lt;strong&gt;author:&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;&amp;quot;Juan Pedro Perianes&amp;quot;&lt;/strong&gt;&lt;/em&gt; para mostrar el nombre del autor en las entradas del blog (bitácora).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;faviconUrl:&lt;/strong&gt; &lt;em&gt;&lt;strong&gt;&amp;quot;/myfavicon.png&amp;quot;&lt;/strong&gt;&lt;/em&gt; para mostrar el favicon personalizado en la pestaña del navegador.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;customLinks:&lt;/strong&gt; para agregar enlaces personalizados en la barra de navegación, como el enlace a mi perfil de GitHub.&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        </entry>
+        <entry>
+            <title>Bitácora 1</title>
+            <link href="#/posts/bitacora-1/" />
+            <updated>2026-03-20T00:00:00Z</updated>
+            <id>#/posts/bitacora-1/</id>
+            <author>
+                <name>Juan Pedro Perianes</name>
+            </author>
+            <content type="html">
+                &lt;p&gt;&lt;picture class=&quot;eleventy-image&quot;&gt;&lt;source type=&quot;image/avif&quot; srcset=&quot;/#/posts/bitacora-1/skills-3270306-1280-psWFXUi8id-__730__.avif 730w, /#/posts/bitacora-1/skills-3270306-1280-psWFXUi8id-__1280__.avif 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;img loading=&quot;lazy&quot; decoding=&quot;async&quot; src=&quot;/#/posts/bitacora-1/skills-3270306-1280-psWFXUi8id-__730__.webp&quot; alt=&quot;Imagen de ejemplo&quot; width=&quot;1280&quot; height=&quot;962&quot; srcset=&quot;/#/posts/bitacora-1/skills-3270306-1280-psWFXUi8id-__730__.webp 730w, /#/posts/bitacora-1/skills-3270306-1280-psWFXUi8id-__1280__.webp 1280w&quot; sizes=&quot;auto&quot;&gt;&lt;/picture&gt;
+Me gusta insertar una imagen principal, aquí puede venir una descripción más detallada del contenido del post.&lt;/p&gt;
+&lt;h1&gt;Utilidad&lt;/h1&gt;
+&lt;p&gt;&lt;em&gt;Puedo utilizar el BLOG como una cuaderno de BITÁCORA, un blog técnico o un diario de trabajo.&lt;/em&gt;&lt;/p&gt;
+&lt;h1&gt;Contenido&lt;/h1&gt;
+&lt;p&gt;Las cabeceras (#h1 a #h6) sirven para generar la tabla de contenido. Solo cambia el tamaño de la letra, no genera subcontenidos, los distingue independientes, pero si pones el contenido principal como H1 y luego H4 y H6 puedes ver distintos tamaños de los títulos. Pero esto no tiene ninguna utilidad real, debería ceñirme dividir el contenido en bloques de igual importancia, para eso lo suyo sería utilizar páginas (Nivel1 -&amp;gt; Nivel 2 -&amp;gt; Nivel 3)&lt;/p&gt;
+&lt;h3&gt;Uno&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Avances&lt;/li&gt;
+&lt;li&gt;Cambios importantes&lt;/li&gt;
+&lt;li&gt;Problemas encontrados&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h6&gt;Uno.Uno&lt;/h6&gt;
+&lt;ul&gt;
+&lt;li&gt;Soluciones aplicadas&lt;/li&gt;
+&lt;li&gt;Distintas Versiones de firmware o software&lt;/li&gt;
+&lt;li&gt;Notas técnicas&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Dos&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Decisiones de diseño&lt;/li&gt;
+&lt;li&gt;Cosas aprendidas&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        </entry>
+</feed>

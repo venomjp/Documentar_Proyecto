@@ -7,7 +7,7 @@ eleventyNavigation:
     key: Instalaciones necesarias
     order: 1
 tags:
-    - instalaciones
+    - instalación
     - nodejs
     - github pages
 date: 2026-03-24
@@ -45,3 +45,4 @@ Partimos de la base de que el ordenador que se utilice deberá tener instalado p
 5. Activar **GitHub Pages** en el repositorio nuevo y comprobar que se visualiza la documentación.
     * Settings > Pages > Build & Deploy: GitHub Actions > Save - genera la página web automáticamente cada vez que se suben cambios al repositorio.
     * Hacer algún cambio, generar un **commit** y subirlo con **push** para comprobar que se actualiza la página web.
+    * Recuerda que el repositorio tiene que ser público para que se visualice la página web.

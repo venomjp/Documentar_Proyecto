@@ -8,10 +8,26 @@ eleventyNavigation:
     order: 2
 tags:
     - configuración
+    - iniciar proyecto
+    - package.json
+    - settings.json
+    - README.md
+    - favicon
+    - niveles de páginas
+    - bitácora
 date: 2026-03-24
 ---
+# Qué cosas cambiar al iniciar un nuevo proyecto
 
-# Archivos de configuración
+Una vez que se ha clonado la plantilla para crear un nuevo proyecto, hay que realizar algunos cambios en los archivos de configuración para adaptarlos al nuevo proyecto:
+* Nombre del proyecto y descripción.
+* Icono del sitio web (favicon).
+* Custom links en la barra de navegación.
+* PathPrefix para GitHub Pages (repositorio).
+* Resaltado de sintaxis para los lenguajes de programación relevantes para el proyecto.
+
+
+# Cuáles son los archivos de configuración y qué se configura en cada uno de ellos
 
 * `package.json` - archivo de **configuración de NodeJS** con los scripts para generar la documentación.
   * **Nombre del proyecto** - debe coincidir con el nombre del repositorio en GitHub.
@@ -35,13 +51,13 @@ date: 2026-03-24
   * **htmlBasePathPrefix** para que los enlaces a los archivos y recursos funcionen correctamente en GitHub Pages, ya que el sitio web se alojará en una subcarpeta con el nombre del repositorio.
   * **hljsLanguages** para incluir lenguajes de programación relevantes para el tipo de documentación que estoy creando, como arduino, python, c y gcode.
   * **tocEnabled** para mostrar una tabla de contenidos en cada página de la documentación (en el blog no aparecía).
-* `README.md` - archivo de presentación del proyecto con información general y enlaces a la documentación.
+* `README.md` - archivo de presentación del proyecto con información general y enlaces a la documentación. ***Recuerda cambiarlo en cada proyecto.***
 * `myfavicon.png` - archivo de imagen para el favicon del sitio web. Recomendado usar una imagen PNG de 512x512 pixeles. [./assets/myfavicon.png]
 
-# Niveles de Páginas
+# Cómo gestiono e identifico los Niveles de Páginas
 * `n1-nombreN1.md` - Este es el formato de las páginas de nivel 1, secciones principales.
 * `n2-nombreN2.md` - Este es el formato de las páginas de nivel 2, subsecciones dentro de las secciones principales.
 * `n3-nombreN3.md` - Este es el formato de las páginas de nivel 3, subsecciones dentro de las subsecciones de nivel 2.
 
-# Entradas del cuaderno de Bitácora
+# Cuál es el formato de las Entradas del cuaderno de Bitácora
 * `bit-nombreEntrada.md` - Este es el formato de las entradas de la bitácora, con información sobre los cambios realizados en el proyecto, problemas encontrados, soluciones implementadas, etc. 

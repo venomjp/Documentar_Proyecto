@@ -1,0 +1,232 @@
+[
+            {
+                "url": "/Documentar_Proyecto/tags/nivel 2",
+                "title": "Tag nivel 2",
+                "content": " nivel 2 "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/configuración",
+                "title": "Tag configuración",
+                "content": " configuración "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/iniciar proyecto",
+                "title": "Tag iniciar proyecto",
+                "content": " iniciar proyecto "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/package.json",
+                "title": "Tag package.json",
+                "content": " package.json "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/settings.json",
+                "title": "Tag settings.json",
+                "content": " settings.json "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/README.md",
+                "title": "Tag README.md",
+                "content": " README.md "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/favicon",
+                "title": "Tag favicon",
+                "content": " favicon "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/niveles de páginas",
+                "title": "Tag niveles de páginas",
+                "content": " niveles de páginas "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/bitácora",
+                "title": "Tag bitácora",
+                "content": " bitácora "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/crear  contenido",
+                "title": "Tag crear  contenido",
+                "content": " crear  contenido "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/estructura de ficheros",
+                "title": "Tag estructura de ficheros",
+                "content": " estructura de ficheros "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/file tree",
+                "title": "Tag file tree",
+                "content": " file tree "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/instalación",
+                "title": "Tag instalación",
+                "content": " instalación "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/nodejs",
+                "title": "Tag nodejs",
+                "content": " nodejs "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/github pages",
+                "title": "Tag github pages",
+                "content": " github pages "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/licencia",
+                "title": "Tag licencia",
+                "content": " licencia "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/navegación",
+                "title": "Tag navegación",
+                "content": " navegación "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/nivel 1",
+                "title": "Tag nivel 1",
+                "content": " nivel 1 "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/etiqueta 2",
+                "title": "Tag etiqueta 2",
+                "content": " etiqueta 2 "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/contenido",
+                "title": "Tag contenido",
+                "content": " contenido "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/modificaciones",
+                "title": "Tag modificaciones",
+                "content": " modificaciones "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/libdoc",
+                "title": "Tag libdoc",
+                "content": " libdoc "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/toc",
+                "title": "Tag toc",
+                "content": " toc "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/tabla de contenidos",
+                "title": "Tag tabla de contenidos",
+                "content": " tabla de contenidos "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/home",
+                "title": "Tag home",
+                "content": " home "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/blockquote",
+                "title": "Tag blockquote",
+                "content": " blockquote "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/segunda",
+                "title": "Tag segunda",
+                "content": " segunda "
+            },
+            {
+                "url": "/Documentar_Proyecto/tags/nivel 3",
+                "title": "Tag nivel 3",
+                "content": " nivel 3 "
+            },
+        {
+            "url": "/Documentar_Proyecto/posts/bitacora-1/",
+            "title": "Bitácora 1",
+            "content": "Descripción de la entrada.- aquí escribir algo post contenido Me gusta insertar una imagen principal, aquí puede venir una descripción más detallada del contenido del post.UtilidadPuedo utilizar el BLOG como una cuaderno de BITÁCORA, un blog técnico o un diario de trabajo.ContenidoLas cabeceras (#h1 a #h6) sirven para generar la tabla de contenido. Solo cambia el tamaño de la letra, no genera subcontenidos, los distingue independientes, pero si pones el contenido principal como H1 y luego H4 y H6 puedes ver distintos tamaños de los títulos. Pero esto no tiene ninguna utilidad real, debería ceñirme dividir el contenido en bloques de igual importancia, para eso lo suyo sería utilizar páginas (Nivel1 -&amp;gt; Nivel 2 -&amp;gt; Nivel 3)UnoAvancesCambios importantesProblemas encontradosUno.UnoSoluciones aplicadasDistintas Versiones de firmware o softwareNotas técnicasDosDecisiones de diseñoCosas aprendidas"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/",
+            "title": "Nivel 1",
+            "content": "Nivel 1 de navegación entre páginas nivel 1 etiqueta 2 Hola soy una página de nivel 1.Vamos a una página hijo con referencia a la plantilla de origen Nivel 2.Este otro enlace se hace con referencia a la ruta relativa (que ya lleva pathPrefix) Nivel 2.Para bajar un nivel, se puede hacer referenciando la plantilla de origen[página nivel 2](n2-segunda.md &amp;quot;También cambia a nivel inferior&amp;quot;)."
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/licencia/",
+            "title": "./pages/licencia.md",
+            "content": "  Puedes generar el pie de la licencia en la página de Creative Commons https://creativecommons.org/chooser/Indicando:El nombre del proyecto y su webEl autor y su webEl tipo de licencia (incorpora el enlace a la web que lo explica y sus logos)Proyecto X © 2026 by Juan Pedro Perianes is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+        },
+        {
+            "url": "/Documentar_Proyecto/files/readme/",
+            "title": "./files/readme.md",
+            "content": "  ContenidoEn esta carpeta se guardarán ARCHIVOS VARIOS en 4 carpetasaudio - archivos de audioimagen - imágenestexto - documentos de texto, docs, pdf...video - archivos de video"
+        },
+        {
+            "url": "/Documentar_Proyecto/posts/",
+            "title": "./core/libdoc_blog.liquid",
+            "content": "  2026-03-25 Juan Pedro Perianes Modificaciones respecto a &#34;LibDoc Starter Project&#34; Cambios realizados en el proyecto base para adaptarlo a mis necesidades. 2026-03-20 Juan Pedro Perianes Bitácora 1 Descripción de la entrada.- aquí escribir algo 1"
+        },
+        {
+            "url": "/Documentar_Proyecto/tags/",
+            "title": "./core/libdoc_tags.liquid",
+            "content": "  nivel 2 2 páginas configuración 1 página iniciar proyecto 1 página package.json 1 página settings.json 1 página README.md 1 página favicon 1 página niveles de páginas 1 página bitácora 1 página crear contenido 1 página estructura de ficheros 1 página file tree 1 página instalación 1 página nodejs 1 página github pages 1 página licencia 1 página navegación 1 página nivel 1 1 página etiqueta 2 1 página contenido 1 página modificaciones 1 página libdoc 1 página toc 1 página tabla de contenidos 1 página home 1 página blockquote 1 página segunda 1 página nivel 3 1 página"
+        },
+        {
+            "url": "/Documentar_Proyecto/",
+            "title": "Documentar un Proyecto",
+            "content": "Página HOME del proyecto home IntroducciónLa documentación de un proyecto es una parte fundamental, permite entender el proyecto, su estructura, su funcionamiento, las decisiones tomadas y como reutilizarlo en otros proyectos.Este proyecto es una guía de uso de mi plantilla de documentación para proyectos que está basada en el generador de sitios estáticos Eleventy y en el starter project LibDoc, adaptado para satisfacer mis necesidades y gustos.Mi idea es integrar el proyecto y la documentación en un mismo repositorio, de esta forma se puede versionar tanto la documentación como el código del proyecto y se puede integrar también más documentación, diseños 3D, electrónicos, etc.Una documentación con formato web me permite más flexibilidad que la documentación tradicional.Las funcionalidades de búsqueda y navegación me permiten acceder fácilmente a la información que necesito.He creado una estructura de ficheros propia que quiero estandarizar en todos mis proyectos.Esta integración permite desarrollar el proyecto y generar una documentación elegante y adaptable, también incluye un cuaderno de bitácora en formato blog para poder registrar progresos, problemas, decisiones...Puedo acceder a la documentación desde cualquier dispositivo, lo que facilita su consulta en cualquier momento y lugar.Al estar alojada en GitHub Pages, las páginas tienen que ser públicas y estáticas, es fácil de actualizar, mantener y no necesito un servidor propio.Instalaciones necesariasInstalaciones Previas y Pasos InicialesLo que se necesita para que funcione.Instalaciones necesarias.ConfiguraciónHaciendo que funcione¿Qué hay que cambiar y en qué archivos se cambia?Configuración.Crear contenidoEscribe como quierasCómo escribir mi documentación con Markdown y HTML y añadirle widgets. Crear Contenido.NavegaciónRecorre el proyectoTabla de contenidos, navegación inteligente, búsqueda difusa y estándar. Además aprende a cómo crear items en el menú.Navegación.Estructura de ficherosFileTreeComo es la estructura de ficheros y dónde se guarda cada cosa.Estructura de Ficheros.Cuaderno de bitácoraBlogEs un diario de trabajo y un blog técnico.Cuaderno de Bitácora.Créditos y referenciasEste proyecto no sería posible sin el trabajo de otras personas, aquí dejo una lista de las herramientas y recursos que he utilizado:Node.js Es un entorno de ejecución de JavaScript, necesario para ejecutar Eleventy.Eleventy Es un generador de sitios estáticos, es decir, la herramienta que permite generar el sitio web a partir de plantillas fuente.LibDoc Es un starter project de 11ty (Eleventy) que me permite crear documentación elegante y adaptable.LicenciaAquí encontrarás información sobre la licencia del proyecto y de la documentación: LicenciaDocumentar un Proyecto © 2026 by Juan Pedro Perianes is licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/n2-primera/",
+            "title": "Primera página de nivel 2",
+            "content": "Soy una página de nivel 2 nivel 2 blockquote A continuación una cita:Hola! soy una página de nivel 2, hija de una de nivel 1― ChildVamos hacia atrás Nivel 1 o hacia adelante Nivel 3A continuación un texto en Markdown:&amp;gt; Así se escriben las citas en Markdown.&amp;gt; &amp;gt; ― **Cita**Ir hacia atrás con rutas relativas (..):[página de nivel 1](../ &amp;quot;Hacia atrás&amp;quot;)[Nivel 1]( ./n1-primera.md &amp;quot;Hacia atrás = padre&amp;quot;)Ir hacia adelante con ruta relativa:[página de nivel 3](./pagina-siguiente/ &amp;quot;Hacia adelante&amp;quot;)[Nivel 3]( ./n3-primera.md &amp;quot;Hacia adelante = hija&amp;quot;)"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/n2-primera/n3-primera/",
+            "title": "Página de nivel 3",
+            "content": "Soy una página de nivel 3 nivel 3 &amp;lt;! comentario &amp;gt;Hola! Soy la página hija del nivel 2, estoy en el nivel 3― GrandchildVamos a subir al nivel 2.Los enlaces se referencian al nombre de la página. En ella tiene que haber un permalink con la dirección real."
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/n2-segunda/",
+            "title": "Segunda página de nivel 2",
+            "content": "Soy una página de nivel 2 nivel 2 segunda A continuación una cita:Hola! soy una SEGUNDA página de nivel 2, hija de una de nivel 1― ChildVamos hacia atrás página de nivel 1 o hacia adelante página de nivel 3.A continuación un texto en Markdown:&amp;gt; Así se escriben las citas en Markdown.&amp;gt; &amp;gt; ― **Cita**Esto es texto normal en markdown"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-configuracion/",
+            "title": "Configuraciones",
+            "content": "Pasos previos para que funcione cualquier proyecto. configuración iniciar proyecto package.json settings.json README.md favicon niveles de páginas bitácora Qué cosas cambiar al iniciar un nuevo proyectoUna vez que se ha clonado la plantilla para crear un nuevo proyecto, hay que realizar algunos cambios en los archivos de configuración para adaptarlos al nuevo proyecto:Nombre del proyecto y descripción.Icono del sitio web (favicon).Custom links en la barra de navegación.PathPrefix para GitHub Pages (repositorio).Resaltado de sintaxis para los lenguajes de programación relevantes para el proyecto.Cuáles son los archivos de configuración y qué se configura en cada uno de ellospackage.json - archivo de configuración de NodeJS con los scripts para generar la documentación.Nombre del proyecto - debe coincidir con el nombre del repositorio en GitHub.Versión - para indicar la versión inicial del proyecto.Descripción - para proporcionar una breve descripción del proyecto, es como un subtítulo.main: &amp;quot;index.js&amp;quot; aunque no se utiliza un archivo index.js en este proyecto, es necesario mantener esta propiedad para que NodeJS no genere errores al ejecutar los scripts.Licencia - CC BY-NC-SA 4.0 para que coincida con la licencia del proyecto.Scripts:start para iniciar el servidor local y comprobar que se visualiza la documentación en localhost.build-ghpages para generar la carpeta de salida con el pathPrefix correcto para GitHub Pages.clean para limpiar la carpeta de salida antes de generar la documentación.settings.json - este archivo contiene la configuración del home y general del sitio web, sobreescribe los valores por defecto de LibDoc.Título del sitio web - para darle un título personalizado al sitio web.Descripción del sitio web - para proporcionar una breve descripción del sitio web, es como un subtítulo.Autor - para mostrar el nombre del autor en las entradas del blog (bitácora).Ubicación del favicon - para mostrar un favicon personalizado en la pestaña del navegador.Título del blog - para darle un título personalizado a la sección del blog, que en este caso es el cuaderno de bitácora donde se registran los cambios realizados en el proyecto.Descripción del blog - para proporcionar una breve descripción de la sección del blog (bitácora).customLinks para agregar enlaces personalizados en la barra de navegación, como el enlace a mi perfil de GitHub.Lenguaje - para establecer el idioma del sitio web, en este caso español (&amp;quot;es&amp;quot;).htmlBasePathPrefix para que los enlaces a los archivos y recursos funcionen correctamente en GitHub Pages, ya que el sitio web se alojará en una subcarpeta con el nombre del repositorio.hljsLanguages para incluir lenguajes de programación relevantes para el tipo de documentación que estoy creando, como arduino, python, c y gcode.tocEnabled para mostrar una tabla de contenidos en cada página de la documentación (en el blog no aparecía).README.md - archivo de presentación del proyecto con información general y enlaces a la documentación. Recuerda cambiarlo en cada proyecto.myfavicon.png - archivo de imagen para el favicon del sitio web. Recomendado usar una imagen PNG de 512x512 pixeles. [./assets/myfavicon.png]Cómo gestiono e identifico los Niveles de Páginasn1-nombreN1.md - Este es el formato de las páginas de nivel 1, secciones principales.n2-nombreN2.md - Este es el formato de las páginas de nivel 2, subsecciones dentro de las secciones principales.n3-nombreN3.md - Este es el formato de las páginas de nivel 3, subsecciones dentro de las subsecciones de nivel 2.Cuál es el formato de las Entradas del cuaderno de Bitácorabit-nombreEntrada.md - Este es el formato de las entradas de la bitácora, con información sobre los cambios realizados en el proyecto, problemas encontrados, soluciones implementadas, etc."
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-crear-contenido/",
+            "title": "Crear contenido",
+            "content": "Como escribir mi documentación con Markdown y HTML y añadirle widgets. crear  contenido "
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-estructura-ficheros/",
+            "title": "Estructura de ficheros",
+            "content": "Como es la estructura de ficheros y dónde se guarda cada cosa. estructura de ficheros file tree En esta sección se muestra la estructura de ficheros y archivos más significativos de la plantilla de proyecto, con una breve descripción.RAIZ DEL PROYECTO¦ .eleventy.js -&amp;gt; Configuración de Eleventy¦ .eleventyignore -&amp;gt; Indica a Eleventy qué ignorar¦ .gitattributes -&amp;gt; Configurar atributos específicos para Git¦ .gitignore -&amp;gt; Indica a Git qué archivos o carpetas ignorar¦ LICENSE -&amp;gt; Licencia del proyecto¦ package-lock.json -&amp;gt; Versiones de las dependencias instaladas¦ package.json -&amp;gt; Configuración de NodeJS¦ README.md -&amp;gt; Resumen del proyecto¦ settings.json -&amp;gt; Configuración general del proyecto¦ +---.github¦ +---workflows¦ build.yml -&amp;gt; GHAction automatiza la construcción de la web¦ +---3dDesign -&amp;gt; Carpeta para almacenar diseños 3D¦ ¦ readme.md¦ ¦ ¦ +---3mf¦ +---gcode¦ +---stl+---assets -&amp;gt; Recursos estáticos como imágenes, íconos...¦ logo-11ty.png¦ myfavicon.png -&amp;gt; Favicon del proyecto¦ +---core -&amp;gt; Archivos del núcleo del proyecto¦ ¦ feed.njk¦ ¦ libdoc_blog.liquid¦ ¦ libdoc_fuzzy_index.liquid¦ ¦ libdoc_search.html¦ ¦ libdoc_search_index.liquid¦ ¦ libdoc_tag.liquid¦ ¦ libdoc_tags.liquid¦ ¦ ¦ +---assets -&amp;gt; Recursos específicos del núcleo¦ +---css¦ ¦ ¦ +---fonts¦ ¦ ¦ +---icons¦ ¦ ¦ +---js¦ +---files -&amp;gt; Carpeta para archivos del proyecto¦ ¦ readme.md¦ ¦ ¦ +---audio¦ +---images¦ +---text¦ +---video¦ +---node_modules -&amp;gt; Dependencias del proyecto¦ +---pages -&amp;gt; Páginas web del proyecto¦ ¦ home.md¦ ¦ n1-primera.md¦ ¦ n2-primera.md¦ ¦ n2-segunda.md¦ ¦ n3-primera.md¦ ¦ ¦ +---bitacora -&amp;gt; Páginas del Blog = bitácora del proyecto¦ bit-bitacora1.md¦ bit-ejemplo.md¦ +---sandboxes -&amp;gt; (No usado) Proyectos experimentales¦ +---sourceCode -&amp;gt; Carpeta para almacener el Código fuente¦ ¦ readme.md¦ ¦ ¦ +---proyectoX1¦ +---proyectoX2+---_data -&amp;gt; Datos globales para el proyecto¦ libdocConfig.js¦ libdocFunctions.js¦ libdocMessages.json¦ libdocSystem.json¦ libdocUtils.js¦ +---_includes -&amp;gt; Estructura de las páginas libdoc_before_html.liquid libdoc_breadcrumb.liquid libdoc_page.liquid sandbox.liquid"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-instalaciones/",
+            "title": "Instalaciones necesarias",
+            "content": "Pasos previos para que funcione cualquier proyecto. instalación nodejs github pages Partimos de la base de que el ordenador que se utilice deberá tener instalado previamente:GitGitHub DesktopVisual Studio Code. Extensiones:Markdown All in OneGitHub ActionsGitHub Copilot ChatGit HistoryLiquidNodeJSAdemás, para que funcione cualquier proyecto basado en la plantilla de proyectos con documentación en formato web alojada en GitHub Pages, se necesitan los siguientes pasos iniciales:Clonar el repositorio de la plantilla para proyectos y cambiarle el nombre.Borrar la carpte oculta .git para desvincularlo del repositorio original.Instalar Eleventy en el repositorio clonado:npm install @11ty/eleventy - instalar Eleventynpm audit fix - corregir vulnerabilidades de seguridadComprobar que el proyecto funciona en modo local:npm run clean - script para limpiar la carpeta de salidanpm run start - script para iniciar el servidor local y comprobar que se visualiza la documentación en localhostSubir el proyecto a un repositorio nuevo en GitHub:Crear un nuevo repositorio en GitHub con el mismo nombre que el proyecto.Subir el proyecto al nuevo repositorio utilizando GitHub Desktop.Modificar el pathPrefix (.eleventy.js) con el nombre del repositorio nuevo.npm run clean - script para limpiar la carpeta de salida antes de subir los cambios.npm run build-ghpages - script para generar la carpeta de salida con el pathPrefix correcto para GitHub Pages.Activar GitHub Pages en el repositorio nuevo y comprobar que se visualiza la documentación.Settings &amp;gt; Pages &amp;gt; Build &amp;amp; Deploy: GitHub Actions &amp;gt; Save - genera la página web automáticamente cada vez que se suben cambios al repositorio.Hacer algún cambio, generar un commit y subirlo con push para comprobar que se actualiza la página web.Recuerda que el repositorio tiene que ser público para que se visualice la página web."
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-navegacion/",
+            "title": "Navegación",
+            "content": "Tabla de contenidos, navegación inteligente, búsqueda difusa y estándar. Además aprende a cómo crear items en el menú. navegación "
+        },
+        {
+            "url": "/Documentar_Proyecto/posts/modificaciones-respecto-a-libdoc-starter-project/",
+            "title": "Modificaciones respecto a &#34;LibDoc Starter Project&#34;",
+            "content": "Cambios realizados en el proyecto base para adaptarlo a mis necesidades. post modificaciones libdoc toc tabla de contenidos libdocMessages.jsEste archivo contiene los mensajes personalizados del proyecto.Incluí el lenguaje español &amp;quot;es&amp;quot; (LibDoc no tiene soporte para español), con las traducciones necesarias.libdocConfig.jsEste archivo contiene la configuración personalizada del proyecto LibDoc por defecto.Lenguaje- lang: &amp;quot;es&amp;quot;Lenguajes de resaltado de código- hljsLanguages: incluyendo lenguajes como arduino, python, c y gcode que son relevantes para el tipo de documentación que estoy creando.libdoc_page.liquidEste archivo contiene el layout para las páginas de documentación, es común para las páginas y los posts del blog.Elimine la parte del pie de página (Footer) que mostraba la versión de libdoc en la que se basa el proyecto o el botón de editar está página.libdocSystem.jsonEste archivo contiene la configuración del sistema de navegación y diseño del proyecto.Cambié el ancho de la barra lateral a 250px y el ancho del contenido a 750px para darle un diseño más compacto y enfocado en el contenido.myfavicon.pngEste archivo es el favicon personalizado del proyecto, se muestra en la pestaña del navegador.Cambie el favicos por el tipico &amp;quot;under construction&amp;quot; para darle un toque divertido al proyecto, ya que es una documentación en construcción.build.ymlEste archivo contiene la configuración para el workflow de GitHub Actions que genera la documentación automáticamente al hacer push a la rama main.Tuve que crear la carpeta .github/workflows y el archivo build.yml para configurar el workflow de GitHub Actions, ya que el proyecto base no incluía esta configuración. El workflow se ejecuta cada vez que se hace push a la rama main, generando la documentación y publicándola en GitHub Pages automáticamente.Está basado en las instrucciones de 11ty Deploy an Eleventy project to GitHub pages Modifiqué la versión de cada acción por las actuales a 25/03/2026.Carpetas para las plantillas11ty utiliza las llamadas plantillas para generar las páginas web. LibDoc no tiene una estructura de carpetas para las plantillas y las almacenaba en la raíz del proyecto. Comprobé que daba igual que estuvieran en la raíz del proyecto o en una carpeta.Cree una carpeta llamada pages para almacenar las páginas de la documentación (home y niveles 1, 2 y 3).Cree una subcarpeta dentro de pages llamada bitacora para almacenar las entradas del cuaderno de bitácora.La página HOME se llama home.md.Las páginas de nivel 1 se llaman n1-nombreN1.md.Las páginas de nivel 2 se llaman n2-nombreN2.md.Las páginas de nivel 3 se llaman n3-nombreN3.md.Las entradas del cuaderno de bitácora se llaman bit-nombreEntrada.md.Carpetas para los proyectosLa estructura de ficheros que he creado para almacenar los proyectos es la siguiente:3dDesign - para almacenar los proyectos relacionados con el diseño 3D.files - para almacenar los archivos relacionados con el proyecto, como imágenes, archivos varios, etc.sourceCode - para almacenar el código fuente de los proyectos.LICENSECambie el archivo LICENSE original por uno nuevo con la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) para proteger el contenido de la documentación y permitir su uso bajo ciertas condiciones, como atribución, uso no comercial y compartir bajo la misma licencia. Esta licencia es adecuada para proyectos de documentación que se quieren compartir pero no se quieren usar con fines comerciales sin permiso.README.mdEste archivo contiene la presentación del proyecto, con información general y enlaces a la documentación..eleventyignoreEste archivo contiene la configuración de archivos y carpetas que Eleventy debe ignorar al generar el sitio web.README.md - para evitar que se genere una página web a partir del README, ya que es un archivo de presentación para el repositorio y no forma parte de la documentación en sí.sandboxes/ - para evitar que se generen páginas web a partir de los proyectos de prueba.3dDesign/ - para evitar que se generen páginas web a partir de los proyectos de diseño 3D.archivos/ - para evitar que se generen páginas web a partir de los archivos relacionados con los proyectos.sourceCode/ - para evitar que se generen páginas web a partir del código fuente de los proyectos..gitignoreEste archivo contiene la configuración de archivos y carpetas que Git debe ignorar al hacer commits en el repositorio.Ignorar la carpeta node_modules necesaria para generar el sitio web local, ya que GitHub Actions instala automáticamente lo necesario para generar el sitio web en GitHub Pages..eleventy.jsEn principio cambié el directorio de salida a docs para que GitHub Pages lo detectara automáticamente, pero muchas de los elementos dejarón de funcionar pues no tiene en cuenta el pathPrefix. Dejé el directorio de salida por defeto _site, añadí el pathPrefix con el nombre del repositorio para que funcione correctamente en GitHub Pages y utilice GitHub Actions para la generación del sitio web en GitHub Pages. Así que este archivo es identico al original.package.jsonEste archivo contiene la configuración de NodeJS, con los scripts para generar la documentación.Cambié la licencia a CC BY-NC-SA 4.0 para que coincida con la licencia del proyecto.Eliminé el script de test, ya que no se han especificado tests para este proyecto y no es necesario tener un script de test que no se utiliza.Creé varios scripts:start para iniciar el servidor local y comprobar que se visualiza la documentación en localhost.build-ghpages para generar la carpeta de salida con el pathPrefix correcto para GitHub Pages.clean para limpiar la carpeta de salida antes de subir los cambios a GitHub Pages, ya que GitHub Pages no borra los archivos antiguos automáticamente y pueden quedar archivos obsoletos si no se limpia la carpeta de salida antes de generar la nueva versión del sitio web.settings.jsonEste archivo contiene la configuración del home y general del sitio web, sobreescribe los valores por defecto de LibDoc.Lenguaje - lang: &amp;quot;es&amp;quot;Habilitar la tabla de contenidos - tocEnabled: true para mostrar una tabla de contenidos en cada página de la documentación (en el blog no aparecía).hljsLanguages: incluyendo lenguajes como arduino, python, c y gcode que son relevantes para el tipo de documentación que estoy creando.htmlBasePathPrefix: &amp;quot;/Documentar_Proyecto/&amp;quot; para que los enlaces a los archivos y recursos funcionen correctamente en GitHub Pages, ya que el sitio web se alojará en una subcarpeta con el nombre del repositorio.blogTitle: &amp;quot;Bitácora de Modificaciones&amp;quot; para darle un título personalizado a la sección del blog, que en este caso es el cuaderno de bitácora donde se registran los cambios realizados en el proyecto.Autor - author: &amp;quot;Juan Pedro Perianes&amp;quot; para mostrar el nombre del autor en las entradas del blog (bitácora).faviconUrl: &amp;quot;/myfavicon.png&amp;quot; para mostrar el favicon personalizado en la pestaña del navegador.customLinks: para agregar enlaces personalizados en la barra de navegación, como el enlace a mi perfil de GitHub."
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-licencia/",
+            "title": "Licencia",
+            "content": "Información sobre la licencia del proyecto. licencia Es importante definir la licencia de un proyecto para que los usuarios sepan cómo pueden usar, modificar y distribuir el proyecto. La licencia también protege los derechos del autor y establece las condiciones de uso del proyecto.Licencia del ProyectoWeb documentación = proyecto público Para disponer de la documentación del proyecto en una web estática a través de GitHub Pages, el proyecto debe ser público y debe incluir un archivo de licencia en la raíz del proyecto.Hay un archivo de texto llamado LICENSE que contiene el texto completo de la licencia del proyecto en castellano y en inglés.RecuerdaCambiar el nombre del proyecto.Licencia en la documentaciónWeb del proyecto La documentación del proyecto también incluye una referencia a la licencia del mismo. En el pie del HOME, al final, se encuentra la licencia.El texto de la licencia se puede generar en la página de Creative Commons con su generador, que permite personalizarlo indicando:El nombre del proyecto y su webEl autor y su webEl tipo de licencia (incorpora el enlace a la web que lo explica y sus logos) Recuerda Cambiar el nombre del proyecto y el enlace a su web."
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/fileTree/",
+            "title": "./pages/fileTree.md",
+            "content": "  File TreeListado de carpetas y archivos más significativos en la estructura de la plantilla de un proyecto.RAIZ DEL PROYECTO¦ .eleventy.js¦ .eleventyignore¦ .gitattributes¦ .gitignore¦ fileTree.txt¦ LICENSE¦ package-lock.json¦ package.json¦ README.md¦ settings.json¦+---.github¦ +---workflows¦ build.yml¦+---3dDesign¦ ¦ readme.md¦ ¦¦ +---3mf¦ +---gcode¦ +---stl+---assets¦ logo-11ty.png¦ myfavicon.png¦+---core¦ ¦ feed.njk¦ ¦ libdoc_blog.liquid¦ ¦ libdoc_fuzzy_index.liquid¦ ¦ libdoc_search.html¦ ¦ libdoc_search_index.liquid¦ ¦ libdoc_tag.liquid¦ ¦ libdoc_tags.liquid¦ ¦¦ +---assets¦ +---css¦ ¦¦ +---fonts¦ ¦¦ +---icons¦ ¦¦ +---js¦+---files¦ ¦ readme.md¦ ¦¦ +---audio¦ +---images¦ +---text¦ +---video+---node_modules¦+---pages¦ ¦ home.md¦ ¦ n1-primera.md¦ ¦ n2-primera.md¦ ¦ n2-segunda.md¦ ¦ n3-primera.md¦ ¦¦ +---bitacora¦ bit-bitacora1.md¦ bit-ejemplo.md¦+---sandboxes¦+---sourceCode¦ ¦ readme.md¦ ¦¦ +---proyectoX1¦ +---proyectoX2+---_data¦ libdocConfig.js¦ libdocFunctions.js¦ libdocMessages.json¦ libdocSystem.json¦ libdocUtils.js¦+---_includeslibdoc_before_html.liquidlibdoc_breadcrumb.liquidlibdoc_page.liquidsandbox.liquid"
+        }
+]

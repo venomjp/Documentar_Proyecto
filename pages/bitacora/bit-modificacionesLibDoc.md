@@ -7,6 +7,8 @@ tags:
     - post
     - modificaciones
     - libdoc
+    - toc
+    - tabla de contenidos
 date: 2026-03-25
 author: Juan Pedro Perianes
 ---

@@ -1,0 +1,92 @@
+[
+        {
+            "url": "/Documentar_Proyecto/posts/bitacora-1/",
+            "title": "Bitácora 1",
+            "description": "Descripción de la entrada.- aquí escribir algo post contenido"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/",
+            "title": "Nivel 1",
+            "description": "Nivel 1 de navegación entre páginas nivel 1 etiqueta 2"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/licencia/",
+            "title": "./pages/licencia.md",
+            "description": " "
+        },
+        {
+            "url": "/Documentar_Proyecto/files/readme/",
+            "title": "./files/readme.md",
+            "description": " "
+        },
+        {
+            "url": "/Documentar_Proyecto/posts/",
+            "title": "./core/libdoc_blog.liquid",
+            "description": " "
+        },
+        {
+            "url": "/Documentar_Proyecto/tags/",
+            "title": "./core/libdoc_tags.liquid",
+            "description": " "
+        },
+        {
+            "url": "/Documentar_Proyecto/",
+            "title": "Documentar un Proyecto",
+            "description": "Página HOME del proyecto home"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/n2-primera/",
+            "title": "Primera página de nivel 2",
+            "description": "Soy una página de nivel 2 nivel 2 blockquote"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/n2-primera/n3-primera/",
+            "title": "Página de nivel 3",
+            "description": "Soy una página de nivel 3 nivel 3"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-primera/n2-segunda/",
+            "title": "Segunda página de nivel 2",
+            "description": "Soy una página de nivel 2 nivel 2 segunda"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-configuracion/",
+            "title": "Configuraciones",
+            "description": "Pasos previos para que funcione cualquier proyecto. configuración iniciar proyecto package.json settings.json README.md favicon niveles de páginas bitácora"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-crear-contenido/",
+            "title": "Crear contenido",
+            "description": "Como escribir mi documentación con Markdown y HTML y añadirle widgets. crear  contenido"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-estructura-ficheros/",
+            "title": "Estructura de ficheros",
+            "description": "Como es la estructura de ficheros y dónde se guarda cada cosa. estructura de ficheros file tree"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-instalaciones/",
+            "title": "Instalaciones necesarias",
+            "description": "Pasos previos para que funcione cualquier proyecto. instalación nodejs github pages"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-navegacion/",
+            "title": "Navegación",
+            "description": "Tabla de contenidos, navegación inteligente, búsqueda difusa y estándar. Además aprende a cómo crear items en el menú. navegación"
+        },
+        {
+            "url": "/Documentar_Proyecto/posts/modificaciones-respecto-a-libdoc-starter-project/",
+            "title": "Modificaciones respecto a &#34;LibDoc Starter Project&#34;",
+            "description": "Cambios realizados en el proyecto base para adaptarlo a mis necesidades. post modificaciones libdoc toc tabla de contenidos"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/n1-licencia/",
+            "title": "Licencia",
+            "description": "Información sobre la licencia del proyecto. licencia"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/fileTree/",
+            "title": "./pages/fileTree.md",
+            "description": " "
+        }
+]
