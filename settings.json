@@ -24,9 +24,11 @@
     "htmlBasePathPrefix": "/Documentar_Proyecto/",
     "hljsLanguages": [
         "xml",
+        "html",
         "javascript",
         "json",
         "yml",
+        "yaml",
         "liquid",
         "markdown",
         "liquid",

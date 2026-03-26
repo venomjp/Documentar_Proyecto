@@ -28,7 +28,7 @@ Los links personalizados permiten mostrar enlaces en la barra de navegación. En
 
 <br>
 
-```html
+```json
 {
     "url": "https://ejemplo.com",
     "text": "Texto del enlace" 

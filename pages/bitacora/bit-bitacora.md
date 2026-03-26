@@ -47,7 +47,7 @@ Las plantillas de los posts se encuentran en la subcarpeta **pages/bitacora**.
 # Cabecera de los posts
 Lo más importante es que cada post contenga el tag **post** que sirve para identificarlo como una entrada del (blog) cuaderno de bitácora. Además, es recomendable incluir otros tags relacionados con el contenido del post para facilitar su organización y búsqueda.
 
-```yml
+``` yml
 ---
 title: Título del post
 description: Subtítulo del post o brevedescripción del post
@@ -60,6 +60,6 @@ date: 2026-03-26
 ---
 ![Imagen del post](/assets/cuadernoBitacora.jpg)
 
-Contenido del post...
+Aqui va el contenido del post...
 
 ```
