@@ -7,8 +7,6 @@ eleventyNavigation:
     key: Crear contenido
     order: 3
 tags:
-    - crear
-    - contenido
     - markdown
     - html
     - widgets

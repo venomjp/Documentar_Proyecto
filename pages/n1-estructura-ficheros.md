@@ -7,8 +7,7 @@ eleventyNavigation:
     key: Estructura de ficheros
     order: 5
 tags:
-    - estructura
-    - ficheros
+    - estructura ficheros
     - file tree
 date: 2026-03-24
 ---

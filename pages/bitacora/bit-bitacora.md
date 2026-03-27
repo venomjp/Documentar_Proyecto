@@ -6,7 +6,6 @@ permalink: "{{ libdocConfig.blogSlug }}/{{title | slugify}}/index.html"
 tags:
     - post
     - bitácora
-    - cuaderno
 date: 2026-03-24
 ---
 # Imagen principal del post

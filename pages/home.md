@@ -7,6 +7,11 @@ tags:
     - home
 ---
 
+<img src="/assets/myFavicon.png" 
+     alt="Documentar un Proyecto" 
+     style="width: 128px; height: 128px; display: block; margin: 0 auto;">
+
+
 # Introducción
 
 La **documentación** de un proyecto es una parte fundamental, permite entender el proyecto, su estructura, su funcionamiento, las decisiones tomadas y como reutilizarlo en otros proyectos.

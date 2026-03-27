@@ -10,8 +10,7 @@ eleventyNavigation:
 tags:
     - contenido
     - markdown
-    - modificadores
-    - texto
+    - modificadores de texto
     - parráfo
     - salto de línea
     - encabezados

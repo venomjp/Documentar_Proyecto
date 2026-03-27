@@ -5,9 +5,7 @@ layout: libdoc_page.liquid
 permalink: "{{ libdocConfig.blogSlug }}/{{title | slugify}}/index.html"
 tags:
     - post
-    - modificaciones
-    - botón
-    - atrás
+    - botón atrás
 date: 2026-03-27
 ---
 # libdocMessajes.json
@@ -32,7 +30,7 @@ Tiene en cuenta la estructura de ficheros que he decidido utilizar:
 
 Funciona en los 3 niveles de anidamiento de las páginas y en el blog (bitácora) y su índice.
 
-{% alertAlt 'info','Imporante' %}
+{% alertAlt 'info','Importante' %}
 No generar más niveles de anidamiento para las páginas.
 {% endalertAlt %}
 

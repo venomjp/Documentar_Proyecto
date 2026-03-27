@@ -8,7 +8,6 @@ eleventyNavigation:
     parent: Crear contenido
     order: 2
 tags:
-    - contenido
     - html
     - abreviatura
     - cita en línea
@@ -85,11 +84,9 @@ Aquí no se ha roto la línea aunque lo he escrito en otra línea.
 * **Dinámicos** (permalink).
 
 # Énfasis en texto
-* [Texto remarcado](./n3-remarcado.md) - Texto con fondo amarillo para destacar.
-* [Texto de salida](./n3-salida.md) - Texto que indica una acción de salida.
-* [Texto pequeño](./n3-pequeno.md) - Texto con tamaño reducido (small).
-* [Texto tachado](./n3-tachado.md) - Texto tachado en rojo.
-* [Subíndice](./n3-subindice.md) - Como hacer subíndices **H**<sub>2</sub>**O**<sub>2</sub>.
-* [Superíndice](./n3-superindice.md) - Como hacer super índices **E**=**mc**<sup>2</sup>.
+
+Hay cosas que Markdown no puede hacer, como el resaltado de texto en amarillo, texto de salida, texto de tamaño reducido, tachado, subíndices (**H**<sub>2</sub>**O**<sub>2</sub>) y superíndices (**E**=**mc**<sup>2</sup>). Para eso tenemos el HTML.
+
+[Modificadores de texto](./n3-enfasisTextoHtml.md)
 
 # Variables

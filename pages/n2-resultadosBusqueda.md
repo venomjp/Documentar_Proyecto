@@ -9,7 +9,6 @@ eleventyNavigation:
     order: 3
 tags:
     - navegación
-    - resultados
     - search
     - búsqueda
 date: 2026-03-26

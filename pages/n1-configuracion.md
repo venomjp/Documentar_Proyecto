@@ -8,7 +8,6 @@ eleventyNavigation:
     order: 2
 tags:
     - configuración
-    - iniciar proyecto
     - package.json
     - settings.json
     - README.md
@@ -17,7 +16,7 @@ tags:
     - bitácora
 date: 2026-03-24
 ---
-# Qué cosas cambiar al iniciar un nuevo proyecto
+# Qué cosas hay quecambiar al iniciar un nuevo proyecto
 
 Una vez que se ha clonado la plantilla para crear un nuevo proyecto, hay que realizar algunos cambios en los archivos de configuración para adaptarlos al nuevo proyecto:
 * Nombre del proyecto y descripción.
@@ -35,7 +34,7 @@ Una vez que se ha clonado la plantilla para crear un nuevo proyecto, hay que rea
   * **Descripción** - para proporcionar una breve descripción del proyecto, es como un subtítulo.
   * **main**: ***"index.js"*** aunque no se utiliza un archivo index.js en este proyecto, es necesario mantener esta propiedad para que NodeJS no genere errores al ejecutar los scripts.
   * **Licencia** - **CC BY-NC-SA 4.0** para que coincida con la licencia del proyecto.
-  * Scripts:
+  * **Scripts**:
     * `start` para iniciar el servidor local y comprobar que se visualiza la documentación en localhost.
     * `build-ghpages` para generar la carpeta de salida con el pathPrefix correcto para GitHub Pages.
     * `clean` para limpiar la carpeta de salida antes de generar la documentación.

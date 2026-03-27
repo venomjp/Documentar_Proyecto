@@ -5,10 +5,7 @@ layout: libdoc_page.liquid
 permalink: "{{ libdocConfig.blogSlug }}/{{title | slugify}}/index.html"
 tags:
     - post
-    - modificaciones
-    - libdoc
-    - toc
-    - tabla de contenidos
+    - modificaciones respecto a LibDic
 date: 2026-03-25
 ---
 

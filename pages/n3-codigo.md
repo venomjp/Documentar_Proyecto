@@ -10,7 +10,6 @@ eleventyNavigation:
 tags:
     - contenido
     - markdown
-    - código
     - resaltado de sintaxis
 date: 2026-03-27
 ---

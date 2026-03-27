@@ -48,10 +48,15 @@ Para insertar una imagen que también funcione como enlace, se coloca el código
 *Las imágenes rasterizadas más pequeñas que el ancho del contenido principal no se visualizan correctametne en pantallas de alta densidad como Retina.*
 <br><br> Se puede solucionar usando HTML: aplicando **style** con **width** y **height** en pixeles. 
 
-<img src="/assets/imagenPequena.png" alt="Imagen pequeña" style="width: 64px; height: 64px;">
+La imagen anterior tiene 256x256 pixeles y vamos a hacer que se vea como si tuviera 64x64 pixeles y la vamos a centrar. También se puede hacer al contrario y que una imagen pequeña se vea más grande.
 
-La imagen anterior tiene 256x256 pixeles y vamos a hacer que se vea como si tuviera 64x64 pixeles. También se puede hacer al contrario y que una imagen pequeña se vea más grande.
+<img src="/assets/imagenPequena.png" 
+     alt="Imagen pequeña" 
+     style="width: 64px; height: 64px; display: block; margin: 0 auto;">
+
 
 ``` html
-    <img src="/assets/imagenPequena.png" alt="Imagen pequeña" style="width: 64px; height: 64px;">
+    <img src="/assets/imagenPequena.png" 
+     alt="Imagen pequeña" 
+     style="width: 64px; height: 64px; display: block; margin: 0 auto;">
 ```

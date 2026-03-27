@@ -8,7 +8,6 @@ eleventyNavigation:
     parent: Crear contenido
     order: 1
 tags:
-    - contenido
     - markdown
 date: 2026-03-27
 ---
