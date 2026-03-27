@@ -153,7 +153,7 @@
             searchIndexUrl: `/Documentar_Proyecto/core/assets/js/search_index.json`,
             fuzzyIndexUrl: `/Documentar_Proyecto/core/assets/js/fuzzy_index.json`,
             productionUrl: `eleventy-libdoc.netlify.app`,
-            blogPostsCount: `2`
+            blogPostsCount: `3`
         }
     </script>
 </head>
@@ -445,8 +445,8 @@
                             </a>
                         </li>
                         <li class="d-flex">
-                            <a href="#cita-en-linea" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
-                                Cita en línea
+                            <a href="#cita-en-linea-para-citar-fuentes" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                Cita en línea (para citar fuentes)
                             </a>
                         </li>
                         <li class="d-flex">
@@ -494,24 +494,59 @@
                                 <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
                             </a>
                     Abreviatura</h1>
+<p>Con <abbr title="Eleventy">11ty</abbr> puedes usar <abbr title="Cascading Style Sheets">CSS</abbr> para dar estilo a tu <abbr title="HyperText Markup Language">HTML</abbr>. El atributo <code>title</code> es opcional pero si se establece, las etiquetas <code>&lt;abbr&gt;</code> son clicables y se expanden una vez hacen clic.</p>
+<aside>
+    <p class="alert alert-success">
+        En Eleventy LibDoc, los elementos de abreviatura con atributo de título son clicables como este: <abbr title="Exempli Gratia">E.G.</abbr>
+    </p>
+</aside>
+<pre><code class="language-markdown">&lt;abbr title=&quot;Eleventy&quot;&gt;11ty&lt;/abbr&gt;
+</code></pre>
 
-                        <h1 id="cita-en-linea" pl-9="xs,sm">
-                            <a href="#cita-en-linea" title="Cita en línea" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                        <h1 id="cita-en-linea-para-citar-fuentes" pl-9="xs,sm">
+                            <a href="#cita-en-linea-para-citar-fuentes" title="Cita en línea (para citar fuentes)" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
                                 <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
                             </a>
-                    Cita en línea</h1>
+                    Cita en línea (para citar fuentes)</h1>
+<p>Y entonces Albus dijo a Harry <q cite="https://www.harrypotter.com/fr/features/pearls-of-wisdom-from-professor-dumbledore">
+Son nuestras decisiones, Harry, las que muestran quiénes somos realmente, mucho más que nuestras habilidades.
+</q>.</p>
+<pre><code class="language-html">Y entonces Albus dijo a Harry &lt;q cite=&quot;https://www.harrypotter.com/fr/features/pearls-of-wisdom-from-professor-dumbledore&quot;&gt; 
+    Son nuestras decisiones, Harry, las que muestran quiénes somos realmente, mucho más que nuestras habilidades.
+&lt;/q&gt;.
+</code></pre>
+<p>Este tipo de citas se utiliza para marcar una referencia, título de una obra (libro, película, web...) y no la cita en sí misma. Se muestra el contenido de la cita entre comillas y en cursiva. El atributo <code>cite</code> se utiliza para proporcionar la URL de la fuente de la cita (aunque no se puede acceder a ella ni es un enlace).</p>
+<p>Este tipo de cita es diferente a la cita en bloque, sobre todo en el tamaño del texto, que es más pequeño. La cita en bloque se utiliza para citas más largas y se muestra en un bloque grande separado del texto principal.</p>
+<p>Lo puedo utilizar sin incluir una url en el atributo <code>cite</code> <q cite="."> y que me sirva como una cita en línea normal</q>.</p>
+<pre><code class="language-markdown">Lo puedo utilizar sin incluir una url en el atributo `cite` &lt;q cite=&quot;&quot;&gt;
+y que me sirva como una cita en línea normal&lt;/q&gt;.
+</code></pre>
 
                         <h1 id="entrada-de-teclado" pl-9="xs,sm">
                             <a href="#entrada-de-teclado" title="Entrada de teclado" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
                                 <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
                             </a>
                     Entrada de teclado</h1>
+<p>Puedes usar <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> para actualizar la página y vaciar la caché.</p>
+<pre><code class="language-html">Puedes usar &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Shift&lt;/kbd&gt; + &lt;kbd&gt;R&lt;/kbd&gt; para actualizar la página y vaciar la caché.
+</code></pre>
 
                         <h1 id="salto-de-linea" pl-9="xs,sm">
                             <a href="#salto-de-linea" title="Salto de línea" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
                                 <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
                             </a>
                     Salto de línea</h1>
+<ul>
+<li>Soy un punto importante.<br>
+A veces necesitamos romper la línea dentro del markdown.</li>
+<li>Soy otro punto importante.
+Aquí no se ha roto la línea.</li>
+</ul>
+<pre><code class="language-markdown">* Soy un punto importante.&lt;br&gt;
+    A veces necesitamos romper la línea dentro del markdown.
+* Soy otro punto importante.
+Aquí no se ha roto la línea aunque lo he escrito en otra línea.
+</code></pre>
 
                         <h1 id="enlaces-internos" pl-9="xs,sm">
                             <a href="#enlaces-internos" title="Enlaces internos" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
@@ -570,77 +605,83 @@
                     <a id="backBtn" class="btn btn-primary-light">
                         <span class="icon-arrow-square-out"></span>
                         Ir atrás
-                    </a>
+                    </a>                    
                     <script>
                     document.addEventListener("DOMContentLoaded", function() {
                         const backBtn = document.getElementById("backBtn");
 
                         let path = window.location.pathname;
 
-                        console.log("PATH:", path);
-
-                        // Normalizar quitando / final (menos si es "/")
+                        // Normalizar quitando / final (excepto si es solo "/")
                         if (path.length > 1 && path.endsWith("/")) {
                             path = path.slice(0, -1);
                         }
 
-                        console.log("NORMALIZADO:", path);
-
                         const segments = path.split("/").filter(Boolean);
-                        console.log("SEGMENTOS:", segments);
 
-                        // BASE siempre es el primer segmento → /NombreProyecto
-                        const base = "/" + segments[0];
-                        const pagesRoot = base + "/pages";
-
-                        console.log("BASE:", base);
-                        console.log("PAGES ROOT:", pagesRoot);
-
-                        // ========== HOME ==========
-                        if (path === base) {
-                            console.log("HOME -> desactivar");
+                        // Seguridad básica
+                        if (segments.length === 0) {
                             disableBtn();
                             return;
                         }
 
-                        // ========== DENTRO DE /pages/ ==========
-                        if (path.startsWith(pagesRoot)) {
+                        // Base automática: /NombreProyecto
+                        const base = "/" + segments[0];
+                        const pagesRoot = base + "/pages";
+                        const postsRoot = base + "/posts";
 
-                            // EJEMPLO:
-                            // /P/pages/n1/n2/n3 → ["P", "pages", "n1", "n2", "n3"]
+                        // ========== HOME ==========
+                        if (path === base) {
+                            disableBtn();
+                            return;
+                        }
+
+                        // ========== PÁGINAS /pages/ ==========
+                        if (path.startsWith(pagesRoot)) {
                             const depth = segments.length - 2; // quitamos [proyecto, pages]
 
-                            console.log("DEPTH:", depth);
-
                             if (depth === 1) {
-                                // Nivel 1 → volver a home
+                                // /Proyecto/pages/nivel1 -> home
                                 backBtn.href = base + "/";
-                                console.log("Nivel 1 → Home:", backBtn.href);
                             } else {
-                                // Subir un nivel real usando path original
+                                // /Proyecto/pages/n1/n2 -> /Proyecto/pages/n1/
                                 const parent = path.split("/").slice(0, -1).join("/") + "/";
                                 backBtn.href = parent;
-                                console.log("Subir nivel:", backBtn.href);
                             }
                             return;
                         }
 
-                        // ========== CUALQUIER OTRA COSA ==========
-                        console.log("Ruta desconocida → desactivar");
-                        disableBtn();
+                        // ========== BLOG /posts/ ==========
+                        if (path.startsWith(postsRoot)) {
+                            const depth = segments.length - 2; // quitamos [proyecto, posts]
 
+                            if (depth === 1) {
+                                // /Proyecto/posts/post-slug -> /Proyecto/posts/
+                                backBtn.href = postsRoot + "/";
+                            } else if (depth === 0) {
+                                // /Proyecto/posts -> home
+                                backBtn.href = base + "/";
+                            } else {
+                                // Por si en el futuro hubiera más profundidad dentro de posts
+                                const parent = path.split("/").slice(0, -1).join("/") + "/";
+                                backBtn.href = parent;
+                            }
+                            return;
+                        }
+
+                        // ========== CUALQUIER OTRA RUTA ==========
+                        disableBtn();
 
                         function disableBtn() {
                             backBtn.classList.add("disabled");
                             backBtn.style.pointerEvents = "none";
-                            backBtn.style.opacity = "0.30";
+                            backBtn.style.opacity = "0.40";
                             backBtn.style.cursor = "default";
-                            backBtn.style.filter = "grayscale(100%)";
+                            backBtn.style.filter = "grayscale(80%)";
                             backBtn.removeAttribute("href");
                         }
                     });
                     </script>
-
                 </nav>
             </footer>
             

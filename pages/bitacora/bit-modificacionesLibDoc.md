@@ -23,7 +23,7 @@ Este archivo contiene la configuración personalizada del **proyecto LibDoc** po
 
 # libdoc_page.liquid
 Este archivo contiene el layout para las páginas de documentación, es común para las páginas y los posts del blog. 
-* Elimine la parte del pie de página (Footer) que mostraba la versión de libdoc en la que se basa el proyecto o el botón de editar está página.
+* Elimine la parte del pie de página (Footer) que mostraba la versión de libdoc en la que se basa el proyecto o el botón de editar está página. [Incorporo botón "ir atrás"](./bit-botonIrAtras.md) para mejorar la navegación entre páginas.
 
 # libdocSystem.json
 Este archivo contiene la configuración del sistema de navegación y diseño del proyecto.

@@ -153,7 +153,7 @@
             searchIndexUrl: `/Documentar_Proyecto/core/assets/js/search_index.json`,
             fuzzyIndexUrl: `/Documentar_Proyecto/core/assets/js/fuzzy_index.json`,
             productionUrl: `eleventy-libdoc.netlify.app`,
-            blogPostsCount: `2`
+            blogPostsCount: `3`
         }
     </script>
 </head>
@@ -442,77 +442,83 @@
                     <a id="backBtn" class="btn btn-primary-light">
                         <span class="icon-arrow-square-out"></span>
                         Ir atrás
-                    </a>
+                    </a>                    
                     <script>
                     document.addEventListener("DOMContentLoaded", function() {
                         const backBtn = document.getElementById("backBtn");
 
                         let path = window.location.pathname;
 
-                        console.log("PATH:", path);
-
-                        // Normalizar quitando / final (menos si es "/")
+                        // Normalizar quitando / final (excepto si es solo "/")
                         if (path.length > 1 && path.endsWith("/")) {
                             path = path.slice(0, -1);
                         }
 
-                        console.log("NORMALIZADO:", path);
-
                         const segments = path.split("/").filter(Boolean);
-                        console.log("SEGMENTOS:", segments);
 
-                        // BASE siempre es el primer segmento → /NombreProyecto
-                        const base = "/" + segments[0];
-                        const pagesRoot = base + "/pages";
-
-                        console.log("BASE:", base);
-                        console.log("PAGES ROOT:", pagesRoot);
-
-                        // ========== HOME ==========
-                        if (path === base) {
-                            console.log("HOME -> desactivar");
+                        // Seguridad básica
+                        if (segments.length === 0) {
                             disableBtn();
                             return;
                         }
 
-                        // ========== DENTRO DE /pages/ ==========
-                        if (path.startsWith(pagesRoot)) {
+                        // Base automática: /NombreProyecto
+                        const base = "/" + segments[0];
+                        const pagesRoot = base + "/pages";
+                        const postsRoot = base + "/posts";
 
-                            // EJEMPLO:
-                            // /P/pages/n1/n2/n3 → ["P", "pages", "n1", "n2", "n3"]
+                        // ========== HOME ==========
+                        if (path === base) {
+                            disableBtn();
+                            return;
+                        }
+
+                        // ========== PÁGINAS /pages/ ==========
+                        if (path.startsWith(pagesRoot)) {
                             const depth = segments.length - 2; // quitamos [proyecto, pages]
 
-                            console.log("DEPTH:", depth);
-
                             if (depth === 1) {
-                                // Nivel 1 → volver a home
+                                // /Proyecto/pages/nivel1 -> home
                                 backBtn.href = base + "/";
-                                console.log("Nivel 1 → Home:", backBtn.href);
                             } else {
-                                // Subir un nivel real usando path original
+                                // /Proyecto/pages/n1/n2 -> /Proyecto/pages/n1/
                                 const parent = path.split("/").slice(0, -1).join("/") + "/";
                                 backBtn.href = parent;
-                                console.log("Subir nivel:", backBtn.href);
                             }
                             return;
                         }
 
-                        // ========== CUALQUIER OTRA COSA ==========
-                        console.log("Ruta desconocida → desactivar");
-                        disableBtn();
+                        // ========== BLOG /posts/ ==========
+                        if (path.startsWith(postsRoot)) {
+                            const depth = segments.length - 2; // quitamos [proyecto, posts]
 
+                            if (depth === 1) {
+                                // /Proyecto/posts/post-slug -> /Proyecto/posts/
+                                backBtn.href = postsRoot + "/";
+                            } else if (depth === 0) {
+                                // /Proyecto/posts -> home
+                                backBtn.href = base + "/";
+                            } else {
+                                // Por si en el futuro hubiera más profundidad dentro de posts
+                                const parent = path.split("/").slice(0, -1).join("/") + "/";
+                                backBtn.href = parent;
+                            }
+                            return;
+                        }
+
+                        // ========== CUALQUIER OTRA RUTA ==========
+                        disableBtn();
 
                         function disableBtn() {
                             backBtn.classList.add("disabled");
                             backBtn.style.pointerEvents = "none";
-                            backBtn.style.opacity = "0.30";
+                            backBtn.style.opacity = "0.40";
                             backBtn.style.cursor = "default";
-                            backBtn.style.filter = "grayscale(100%)";
+                            backBtn.style.filter = "grayscale(80%)";
                             backBtn.removeAttribute("href");
                         }
                     });
                     </script>
-
                 </nav>
             </footer>
             

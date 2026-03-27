@@ -100,6 +100,11 @@
             "description": "Puedes navegar por la tabla de contenido principal y la flotante. navegación tabla de contenidos encabezados"
         },
         {
+            "url": "/Documentar_Proyecto/posts/boton-ir-atras/",
+            "title": "Boton Ir Atrás",
+            "description": "Cambios realizados en el proyecto para incorporar un botón de &#34;ir atrás&#34; en el pie de página de las páginas de documentación. post modificaciones botón atrás"
+        },
+        {
             "url": "/Documentar_Proyecto/pages/n1-crear-contenido/",
             "title": "Crear contenido",
             "description": "Como escribir mi documentación con Markdown y HTML, además se puede mejorar la experiencia añadiendo widgets. crear contenido markdown html widgets"

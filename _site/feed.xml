@@ -4,11 +4,127 @@
     <subtitle>Guía para documentar un proyecto de forma efectiva y organizada</subtitle>
     <link href="feed.xml" rel="self" />
     <link href="#/feed.xml" />
-    <updated>2026-03-25T00:00:00Z</updated>
+    <updated>2026-03-27T00:00:00Z</updated>
     <id>#/feed.xml</id>
     <author>
         <name>11ty LibDoc</name>
     </author>
+        <entry>
+            <title>Boton Ir Atrás</title>
+            <link href="#/posts/boton-ir-atras/" />
+            <updated>2026-03-27T00:00:00Z</updated>
+            <id>#/posts/boton-ir-atras/</id>
+            <author>
+                <name>11ty LibDoc</name>
+            </author>
+            <content type="html">
+                &lt;h1&gt;libdocMessajes.json&lt;/h1&gt;
+&lt;p&gt;Para que el botón de &amp;quot;ir atrás&amp;quot; tenga un texto personalizado, añadí el mensaje &amp;quot;Ir atrás&amp;quot; al archivo &lt;strong&gt;libdocMessages.json&lt;/strong&gt; bajo la clave &lt;strong&gt;goBack&lt;/strong&gt;. Esto permite que el botón muestre el texto correcto en cualquiera de los idiomas soportados.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-json&quot;&gt;&amp;quot;goBack&amp;quot;: {
+	&amp;quot;en&amp;quot;: &amp;quot;Go back&amp;quot;,
+	&amp;quot;fr&amp;quot;: &amp;quot;Retour&amp;quot;,
+	&amp;quot;it&amp;quot;: &amp;quot;Indietro&amp;quot;,
+	&amp;quot;es&amp;quot;: &amp;quot;Ir atrás&amp;quot;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h1&gt;libdoc_page.liquid&lt;/h1&gt;
+&lt;p&gt;En la plantilla &lt;strong&gt;libdoc_page.liquid&lt;/strong&gt;, añadí un nuevo bloque de código HTML para el botón de &amp;quot;ir atrás&amp;quot; dentro del pie de página (Footer), en la parte derecha donde el LibDoc original muestra la versión. Este bloque utiliza el mensaje definido en &lt;strong&gt;libdocMessages.json&lt;/strong&gt; para mostrar el texto del botón.&lt;/p&gt;
+&lt;p&gt;Tiene en cuenta la estructura de ficheros que he decidido utilizar:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Plantillas de cualquier nivel en el directorio de salida &lt;code&gt;_site/pages&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Publicaciones del blog en el directorio de salida &lt;code&gt;_site/posts&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;La página de inicio (HOME) en el directorio de salida &lt;code&gt;_site/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Funciona en los 3 niveles de anidamiento de las páginas y en el blog (bitácora) y su índice.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;aside class=&quot;widget widget-alert&quot;&gt;
+&lt;div class=&quot;alert alert-info&quot; data-title=&quot;Imporante&quot;&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;No generar más niveles de anidamiento para las páginas.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;/div&gt;
+&lt;/aside&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;Funciona independientemente del nombre del proyecto, lo que facilita no tener que modificar el código en los archivos de configuración.&lt;/p&gt;
+&lt;p&gt;El bloque de código para el botón de &amp;quot;ir atrás&amp;quot; es el siguiente:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;a id=&amp;quot;backBtn&amp;quot; class=&amp;quot;btn btn-primary-light&amp;quot;&amp;gt;
+    &amp;lt;span class=&amp;quot;icon-arrow-square-out&amp;quot;&amp;gt;&amp;lt;/span&amp;gt;
+    Ir atrás
+&amp;lt;/a&amp;gt;                    
+&amp;lt;script&amp;gt;
+document.addEventListener(&amp;quot;DOMContentLoaded&amp;quot;, function() {
+    const backBtn = document.getElementById(&amp;quot;backBtn&amp;quot;);
+
+    let path = window.location.pathname;
+
+    // Normalizar quitando / final (excepto si es solo &amp;quot;/&amp;quot;)
+    if (path.length &amp;gt; 1 &amp;amp;&amp;amp; path.endsWith(&amp;quot;/&amp;quot;)) {
+        path = path.slice(0, -1);
+    }
+
+    const segments = path.split(&amp;quot;/&amp;quot;).filter(Boolean);
+
+    // Seguridad básica
+    if (segments.length === 0) {
+        disableBtn();
+        return;
+    }
+
+    // Base automática: /NombreProyecto
+    const base = &amp;quot;/&amp;quot; + segments[0];
+    const pagesRoot = base + &amp;quot;/pages&amp;quot;;
+    const postsRoot = base + &amp;quot;/posts&amp;quot;;
+
+    // ========== HOME ==========
+    if (path === base) {
+        disableBtn();
+        return;
+    }
+
+    // ========== PÁGINAS /pages/ ==========
+    if (path.startsWith(pagesRoot)) {
+        const depth = segments.length - 2; // quitamos [proyecto, pages]
+
+        if (depth === 1) {
+            // /Proyecto/pages/nivel1 -&amp;gt; home
+            backBtn.href = base + &amp;quot;/&amp;quot;;
+        } else {
+            // /Proyecto/pages/n1/n2 -&amp;gt; /Proyecto/pages/n1/
+            const parent = path.split(&amp;quot;/&amp;quot;).slice(0, -1).join(&amp;quot;/&amp;quot;) + &amp;quot;/&amp;quot;;
+            backBtn.href = parent;
+        }
+        return;
+    }
+
+    // ========== BLOG /posts/ ==========
+    if (path.startsWith(postsRoot)) {
+        const depth = segments.length - 2; // quitamos [proyecto, posts]
+
+        if (depth === 1) {
+            // /Proyecto/posts/post-slug -&amp;gt; /Proyecto/posts/
+            backBtn.href = postsRoot + &amp;quot;/&amp;quot;;
+        } else if (depth === 0) {
+            // /Proyecto/posts -&amp;gt; home
+            backBtn.href = base + &amp;quot;/&amp;quot;;
+        } else {
+            // Por si en el futuro hubiera más profundidad dentro de posts
+            const parent = path.split(&amp;quot;/&amp;quot;).slice(0, -1).join(&amp;quot;/&amp;quot;) + &amp;quot;/&amp;quot;;
+            backBtn.href = parent;
+        }
+        return;
+    }
+
+    // ========== CUALQUIER OTRA RUTA ==========
+    disableBtn();
+    function disableBtn() {
+        backBtn.classList.add(&amp;quot;disabled&amp;quot;);
+        backBtn.style.pointerEvents = &amp;quot;none&amp;quot;;
+        backBtn.style.opacity = &amp;quot;0.20&amp;quot;;
+        backBtn.style.cursor = &amp;quot;default&amp;quot;;
+        backBtn.style.filter = &amp;quot;grayscale(100%)&amp;quot;;
+        backBtn.removeAttribute(&amp;quot;href&amp;quot;);
+    }
+});
+&amp;lt;/script&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        </entry>
         <entry>
             <title>Modificaciones respecto a &quot;LibDoc Starter Project&quot;</title>
             <link href="#/posts/modificaciones-respecto-a-libdoc-starter-project/" />
@@ -32,7 +148,7 @@
 &lt;h1&gt;libdoc_page.liquid&lt;/h1&gt;
 &lt;p&gt;Este archivo contiene el layout para las páginas de documentación, es común para las páginas y los posts del blog.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Elimine la parte del pie de página (Footer) que mostraba la versión de libdoc en la que se basa el proyecto o el botón de editar está página.&lt;/li&gt;
+&lt;li&gt;Elimine la parte del pie de página (Footer) que mostraba la versión de libdoc en la que se basa el proyecto o el botón de editar está página. &lt;a href=&quot;/#/posts/boton-ir-atras/&quot;&gt;Incorporo botón &amp;quot;ir atrás&amp;quot;&lt;/a&gt; para mejorar la navegación entre páginas.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1&gt;libdocSystem.json&lt;/h1&gt;
 &lt;p&gt;Este archivo contiene la configuración del sistema de navegación y diseño del proyecto.&lt;/p&gt;
