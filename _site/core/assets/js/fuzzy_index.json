@@ -145,31 +145,6 @@
             "description": "Fragmentos HTML que mejoran la visualización del contenido. contenido widgets"
         },
         {
-            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_2-botones/",
-            "title": "Botones",
-            "description": "Código para crear botones y crear llamadas a la acción. contenido widgets botones"
-        },
-        {
-            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_3-definicion/",
-            "title": "Definición",
-            "description": "Código para crear términos y definiciones. contenido widgets definición"
-        },
-        {
-            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_4-acordeon/",
-            "title": "Acordeón",
-            "description": "Código para crear contenido colapsable. contenido widgets acordeón"
-        },
-        {
-            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_5-iconos/",
-            "title": "Iconos",
-            "description": "Código para crear iconos y mejorar la visualización del contenido. contenido widgets iconos"
-        },
-        {
-            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_6-embebido/",
-            "title": "Embebido",
-            "description": "Código para embeber contenido externo. contenido widgets embebido"
-        },
-        {
             "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_7-imagen/",
             "title": "Imagen",
             "description": "Código para insertar imágenes. contenido widgets imagen"
@@ -183,5 +158,30 @@
             "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_1-alertas/",
             "title": "Alertas",
             "description": "Código para crear alertas y resaltar información importante. contenido widgets alertas"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_2-botones/",
+            "title": "Botones",
+            "description": "Código para crear botones y crear llamadas a la acción. contenido widgets botones"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_3-definicion/",
+            "title": "Definición",
+            "description": "Código para crear términos y definiciones. contenido widgets definición"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_4-acordeon/",
+            "title": "Detalle y Acordeón",
+            "description": "Código para crear contenido colapsable. contenido widgets acordeón"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_5-iconos/",
+            "title": "Iconos",
+            "description": "Código para crear iconos y mejorar la visualización del contenido. contenido widgets iconos"
+        },
+        {
+            "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_6-embebido/",
+            "title": "Embebido",
+            "description": "Código para embeber contenido externo. contenido widgets embebido"
         }
 ]

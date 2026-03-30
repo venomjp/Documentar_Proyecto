@@ -431,7 +431,7 @@
                                     
                                     
                                         
-                                        2026-03-27
+                                        2026-03-30
                                     
                                 </time>
                             </p>
@@ -450,6 +450,29 @@
                     </div>
                 
                 
+                    <details id="toc_main" open="">
+                        <summary class="d-flex ai-center | pt-5 pb-5 | fvs-wght-500 fs-3 | bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0 cur-pointer">
+                            <span class="pl-5 | bbwidth-1 bbstyle-dashed bcolor-neutral-500"></span>
+                            <span class="d-flex ai-center gap-1 | lsp-2">
+                                <span class="icon-minus-circle | fs-6 | c-primary-500"></span>
+                                <span class="icon-plus-circle | fs-6 | c-primary-500"></span>
+                                Tabla de contenido
+                            </span>
+                        </summary>
+                        
+                    <ol class="cgap-3em | m-0 pl-0 pb-5 o-auto | lh-1 | ls-none bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0" d-flex="xs,sm" fd-column="xs,sm" fw-wrap="xs,sm" columns-3="md" columns-2="sm" maxh-300px="sm" maxh-200px="xs">
+                        <li class="d-flex">
+                            <a href="#filtro-embebido-simple" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                Filtro embebido simple
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#shortcode-embebido" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                Shortcode embebido
+                            </a>
+                        </li></ol>
+                    </details>
+                
             </header>
             <noscript>
                 
@@ -462,6 +485,54 @@
             
             </noscript>
             
+                        <h1 id="filtro-embebido-simple" pl-9="xs,sm">
+                            <a href="#filtro-embebido-simple" title="Filtro embebido simple" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    Filtro embebido simple</h1>
+<p>Convierte automáticamente URLs (youtube, mapa, documentos) en contenido embebido y visualizable directamente en nuestra página web.</p>
+<p>Formato:</p>
+<p><code>{{ '&lt;Dirección_URL_con_comillaInglesa&gt;' | embed }}</code></p>
+<p>Es importante que la URL esté entre comillas inglesas simples, de lo contrario el filtro no funcionará, también son importantes los espacios antes y después de la tubería <code>|</code> y el filtro <code>embed</code>, si no se respetan el filtro no funcionará y las llaves son dobles.</p>
+<p>He tenido problemas para incrustar un vídeo de Youtube directamente con su dirección URL. He encontrado 2 formas de hacerlo:</p>
+<ol>
+<li>Usando el código de embebido proporcionado por Youtube, selecciona <strong>compartir</strong> en el vídeo y aparece el código completo para embeberlo. <br><pre><code class="language-html">&lt;iframe width=&quot;560&quot; height=&quot;315&quot; 
+src=&quot;https://www.youtube.com/embed/tCk_4b6nM2o?si=4kmp_JS0IY4vSP57&quot; 
+title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; 
+clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; 
+referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen&gt;
+&lt;/iframe&gt;
+</code></pre>
+</li>
+<li>Añadiendo la palabra &quot;embed&quot; despues de <code>www.youtube.com/</code> y antes del código del vídeo. También puedes añadir <code>?controls=0</code> al final de la URL para ocultar los controles del vídeo.<br></li>
+</ol>
+<br>
+                    <aside class="widget widget-embed">
+                        <iframe src="https://www.youtube.com/embed/tCk_4b6nM2o" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" allowfullscreen=""></iframe>
+                    </aside>
+<pre><code class="language-liquid">{{ 'https://www.youtube.com/embed/tCk_4b6nM2o' | embed }}
+</code></pre>
+
+                        <h1 id="shortcode-embebido" pl-9="xs,sm">
+                            <a href="#shortcode-embebido" title="Shortcode embebido" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    Shortcode embebido</h1>
+<p>También se puede usar shortcode para embeber contenido, en principio la diferencia con el filtro anterior es que el shortcode genera HTML completo, mientras que el filtro solo transforma los datos de la URL en un formato que el navegador pueda interpretar como contenido embebido.</p>
+<p>Formato:</p>
+<p><code>{% embed &quot;Dirección_URL_entreComillas&quot; %}</code></p>
+<p>Como en el caso anterior, hay que añadir <code>/embed</code> después de la URL para que funcione correctamente.</p>
+<p>Se puede moficar la altura añadiendo un valor al final de la instrucción, en este caso el valor es <code>500</code>.</p>
+<aside class="widget widget-embed">
+<iframe src="https://sketchfab.com/3d-models/batman-v-superman-batmobile-abea4cdb296f4fafab03a404e515c109/embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" height="500" allowfullscreen=""></iframe>
+</aside>
+<pre><code class="language-liquid">{% embed &quot;https://sketchfab.com/3d-models/
+batman-v-superman-batmobile-abea4cdb296f4fafab03a404e515c109/embed&quot;, 500 %}
+</code></pre>
+<aside class="widget widget-embed">
+<iframe src="https://sketchfab.com/3d-models/the-batman-begin-tumbler-83b64fe11adc43dba84a3f27aa0e7ec1/embed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" loading="lazy" height="500" allowfullscreen=""></iframe>
+</aside>
+
             <footer class="minh-100vh">
                 <div class="pt-11 | blwidth-1 blstyle-dashed bcolor-neutral-500"></div>
                 <nav class="d-flex ai-center rgap-7 | blwidth-1 blstyle-dashed bcolor-neutral-500" fw-wrap="xs">

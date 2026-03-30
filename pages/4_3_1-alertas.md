@@ -17,7 +17,7 @@ Las alertas permiten resaltar información importante o advertencias en tu sitio
 
 # PARTES DE LAS ALERTAS
 
-* ```<CONTENIDO>``` - OBLIGATORIO. Es una cadena de texto con el contenido que deseas mostrar dentro, puede ser markdown o HTML.
+* ```<CONTENIDO>``` - *OBLIGATORIO*. Es una cadena de texto con el contenido que deseas mostrar dentro, puede ser markdown o HTML.
 * ```<TIPO>``` - *Opcional*. Es una cadena de texto que define el tipo de alerta:  
   * ```info``` - Color *azul* de información, valor por defecto si no se especifica el tipo.
   * ```success``` - Color *verde* de éxito.

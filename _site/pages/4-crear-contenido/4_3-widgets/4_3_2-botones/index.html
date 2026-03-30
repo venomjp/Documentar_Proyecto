@@ -431,7 +431,7 @@
                                     
                                     
                                         
-                                        2026-03-27
+                                        2026-03-30
                                     
                                 </time>
                             </p>
@@ -450,6 +450,29 @@
                     </div>
                 
                 
+                    <details id="toc_main" open="">
+                        <summary class="d-flex ai-center | pt-5 pb-5 | fvs-wght-500 fs-3 | bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0 cur-pointer">
+                            <span class="pl-5 | bbwidth-1 bbstyle-dashed bcolor-neutral-500"></span>
+                            <span class="d-flex ai-center gap-1 | lsp-2">
+                                <span class="icon-minus-circle | fs-6 | c-primary-500"></span>
+                                <span class="icon-plus-circle | fs-6 | c-primary-500"></span>
+                                Tabla de contenido
+                            </span>
+                        </summary>
+                        
+                    <ol class="cgap-3em | m-0 pl-0 pb-5 o-auto | lh-1 | ls-none bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0" d-flex="xs,sm" fd-column="xs,sm" fw-wrap="xs,sm" columns-3="md" columns-2="sm" maxh-300px="sm" maxh-200px="xs">
+                        <li class="d-flex">
+                            <a href="#clases-de-botones" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                Clases de botones
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#botones-con-iconos" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                Botones con iconos
+                            </a>
+                        </li></ol>
+                    </details>
+                
             </header>
             <noscript>
                 
@@ -461,7 +484,89 @@
                 </aside>
             
             </noscript>
-            
+            <p>Los botones son elementos interactivos que permiten a los usuarios realizar acciones específicas, como enviar un formulario o navegar a otra página.</p>
+<p>Se pueden crear botones como un <strong>enlace</strong> <code>&lt;a href=&quot;#&quot;&gt;</code> de una de las <em>clases de botones</em> o como un <strong>botón</strong> <code>&lt;button&gt;</code>.</p>
+
+                        <h1 id="clases-de-botones" pl-9="xs,sm">
+                            <a href="#clases-de-botones" title="Clases de botones" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    Clases de botones</h1>
+<p>Al igual que las alertas hay botones temáticos:</p>
+<ul>
+<li><code>btn</code>: Botón estándar <button type="button" class="btn">blanco y negro</button></li>
+<li><code>btn-primary</code>: Botón de información <button type="button" class="btn btn-primary">fondo azul</button></li>
+<li><code>btn-primary-light</code>: Botón de información <button type="button" class="btn btn-primary-light">borde azul</button></li>
+<li><code>btn-success</code>: Botón de acción exitosa <button type="button" class="btn btn-success">fondo verde</button></li>
+<li><code>btn-success-light</code>: Botón de acción exitosa <button type="button" class="btn btn-success-light">borde verde</button></li>
+<li><code>btn-warning</code>: Botón de acción de advertencia <button type="button" class="btn btn-warning">fondo amarillo</button></li>
+<li><code>btn-warning-light</code>: Botón de acción de advertencia <button type="button" class="btn btn-warning-light">borde amarillo</button></li>
+<li><code>btn-danger</code>: Botón de acción de peligro <button type="button" class="btn btn-danger">fondo rojo</button></li>
+<li><code>btn-danger-light</code>: Botón de acción de peligro <button type="button" class="btn btn-danger-light">borde rojo</button></li>
+</ul>
+<ol>
+<li>
+<p><strong>DEFINIDOS COMO ENLACES</strong></p>
+<p>Botón de información definido como
+<a href="#" class="btn btn-primary">
+Enlace
+</a></p>
+<pre><code class="language-html">Botón de información definido como 
+&lt;a href=&quot;#&quot; class=&quot;btn btn-primary&quot;&gt;
+    Enlace
+&lt;/a&gt;
+</code></pre>
+</li>
+<li>
+<p><strong>DEFINIDOS COMO BOTONES</strong></p>
+<p>Botón de advertencia definido como
+<button type="button" class="btn btn-warning">
+Botón
+</button></p>
+<pre><code class="language-html">Botón de advertencia definido como 
+&lt;button type=&quot;button&quot; class=&quot;btn btn-warning&quot;&gt;
+    Botón
+&lt;/button&gt;
+</code></pre>
+</li>
+</ol>
+
+                        <h1 id="botones-con-iconos" pl-9="xs,sm">
+                            <a href="#botones-con-iconos" title="Botones con iconos" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    Botones con iconos</h1>
+<ol>
+<li>
+<p><strong>DEFINIDOS COMO ENLACES</strong></p>
+<p>Soy un
+<a href="#" class="btn btn-danger">
+<span class="icon-play"></span>
+Enlace
+</a></p>
+<pre><code class="language-html">Soy un
+&lt;a href=&quot;#&quot; class=&quot;btn btn-danger&quot;&gt;
+     &lt;span class=&quot;icon-play&quot;&gt;&lt;/span&gt;
+    Enlace
+&lt;/a&gt;
+</code></pre>
+</li>
+<li>
+<p><strong>DEFINIDOS COMO BOTONES</strong></p>
+<p>Soy un
+<button type="button" class="btn btn-success">
+<span class="icon-faders"></span>
+Botón
+</button></p>
+<pre><code class="language-html">Soy un
+&lt;button type=&quot;button&quot; class=&quot;btn btn-success&quot;&gt;
+    &lt;span class=&quot;icon-faders&quot;&gt;&lt;/span&gt;
+    Botón
+&lt;/button&gt;
+</code></pre>
+</li>
+</ol>
+
             <footer class="minh-100vh">
                 <div class="pt-11 | blwidth-1 blstyle-dashed bcolor-neutral-500"></div>
                 <nav class="d-flex ai-center rgap-7 | blwidth-1 blstyle-dashed bcolor-neutral-500" fw-wrap="xs">
