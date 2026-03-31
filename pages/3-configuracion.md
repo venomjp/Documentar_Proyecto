@@ -27,6 +27,7 @@ Una vez que hemos realizado las instalaciones necesarias, nuestro proyecto ya fu
 
 
 # Archivos de configuración
+Estos son los principales archivos de configuración que hay que modificar para adaptar el proyecto a nuestras necesidades:
 
 * `package.json` - archivo de **configuración de NodeJS** con los scripts para generar la documentación.
   * **Nombre del proyecto** - debe coincidir con el nombre del repositorio en GitHub.
@@ -34,11 +35,11 @@ Una vez que hemos realizado las instalaciones necesarias, nuestro proyecto ya fu
   * **Descripción** - para proporcionar una breve descripción del proyecto, es como un subtítulo.
   * **main**: ***"index.js"*** aunque no se utiliza un archivo index.js en este proyecto, es necesario mantener esta propiedad para que NodeJS no genere errores al ejecutar los scripts.
   * **Licencia** - **CC BY-NC-SA 4.0** para que coincida con la licencia del proyecto.
-  * **Scripts**:
+  * **Scripts**: Ya están definidos, no es necesario cambiarlos, pero es importante conocer su función:
     * `start` para iniciar el servidor local y comprobar que se visualiza la documentación en localhost. **("npx @11ty/eleventy --serve")**
     * `build-ghpages` para generar la carpeta de salida con el pathPrefix correcto para GitHub Pages. **("npx @11ty/eleventy --pathprefix")**
     * `clean` para limpiar la carpeta de salida antes de generar la documentación. **("rimraf _site .cache")**
-* `settings.json` - este archivo contiene la configuración del home y general del sitio web, sobreescribe los valores por defecto de LibDoc.
+* `settings.json` - este archivo contiene la configuración general del sitio web y del home, sobreescribe los valores por defecto de LibDoc.
   * **Título del sitio web** - para darle un título personalizado al sitio web.
   * **Descripción del sitio web** - para proporcionar una breve descripción del sitio web, es como un subtítulo.
   * **Autor** - para mostrar el nombre del autor en las entradas del blog (bitácora).
@@ -49,7 +50,7 @@ Una vez que hemos realizado las instalaciones necesarias, nuestro proyecto ya fu
   * **Lenguaje** - para establecer el idioma del sitio web, en este caso español ("es").
   * **htmlBasePathPrefix** para que los enlaces a los archivos y recursos funcionen correctamente en GitHub Pages, ya que el sitio web se alojará en una subcarpeta con el nombre del repositorio.
   * **hljsLanguages** para incluir lenguajes de programación relevantes para el tipo de documentación que estoy creando, como arduino, python, c y gcode.
-  * **tocEnabled** para mostrar una tabla de contenidos en cada página de la documentación (en el blog no aparecía).
+  * **tocEnabled** para mostrar una tabla de contenidos en todas las páginas de la documentación (en el blog no aparecía antes).
 * `README.md` - archivo de presentación del proyecto con información general y enlaces a la documentación. ***Recuerda cambiarlo en cada proyecto.***
 * `myfavicon.png` - archivo de imagen para el favicon del sitio web. Recomendado usar una imagen PNG de 512x512 pixeles. [./assets/myfavicon.png]
 
@@ -57,9 +58,9 @@ Una vez que hemos realizado las instalaciones necesarias, nuestro proyecto ya fu
 En Eleventy las plantillas son los archivos con el contenido de las páginas. He decidido organizar las plantillas en 3 niveles.
 
 * `home.md` - Esta es la plantilla para la página de inicio del sitio web (nivel 0).
-* `x-nivel_1.md` - Este es el formato de las páginas de nivel 1, secciones principales.
-* `x_y-nivel_2.md` - Este es el formato de las páginas de nivel 2, subsecciones dentro de las secciones principales.
-* `x_y_z-nivel_3.md` - Este es el formato de las páginas de nivel 3, sub-subsecciones dentro de las subsecciones de nivel 2.
+* `x-<pagina_nivel_1>.md` - Este es el formato de las páginas de nivel 1, sección principal (x).
+* `x_y-<pagina_nivel_2>.md` - Este es el formato de las páginas de nivel 2, subsección (y) dentro de la sección principal (x).
+* `x_y_z-<pagina_nivel_3>.md` - Este es el formato de las páginas de nivel 3, sub-subsección (z) dentro de la subsección (y) y sección (x).
 
 # Cuaderno de Bitácora
 * `bit-nombreEntrada.md` - Este es el formato de las entradas del cuaderno de bitácora (blog), con información sobre los cambios realizados en el proyecto, problemas encontrados, soluciones implementadas, etc. 

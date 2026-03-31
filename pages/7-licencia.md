@@ -15,7 +15,7 @@ Es importante definir la licencia de un proyecto para que los usuarios sepan có
 
 # Licencia del Proyecto
 
-> **Web documentación = proyecto público** <br>Para disponer de la documentación del proyecto en una web estática a través de GitHub Pages, el proyecto debe ser **público** y debe incluir un archivo de licencia en la raíz del proyecto.
+> Para disponer de la documentación del proyecto en una web estática a través de GitHub Pages, el proyecto debe ser **público** y debe incluir un archivo de licencia en la raíz del proyecto.<br>**Web con documentación = proyecto público**
 
 Hay un archivo de texto llamado **LICENSE** que contiene el texto completo de la licencia del proyecto en castellano y en inglés. 
 
@@ -30,6 +30,6 @@ El texto de la licencia se puede generar en la página de Creative Commons con s
 
 * El nombre del proyecto y su web
 * El autor y su web
-* El tipo de licencia (incorpora el enlace a la web que lo explica y sus logos)
+* El tipo de licencia incorpora un enlace a la web de Creative Commons que explica la licencia y el significado de los distintos iconos.
 
 <br>{% iconCard 'Recuerda', 'Cambiar el nombre del proyecto y el enlace a su web.', 'shield-warning' %}

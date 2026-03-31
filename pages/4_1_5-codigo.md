@@ -11,6 +11,7 @@ tags:
     - contenido
     - markdown
     - resaltado de sintaxis
+    - código
 date: 2026-03-27
 ---
 
@@ -34,3 +35,10 @@ Por ejemplo, para resaltar código HTML:
 <h1>Hello World!</h1>
 <p>This is a <a href="/link/">link</a>.</p>
 ```
+A veces en el bloque de código no aparece el texto tal cual queremos que se vea, pues lo interpreta. Para evitar eso podemo incluir el código dentro de un bloque ` %raw% `
+``` html
+{ %raw% }
+{ ...código que queremos mostrar literalmente... }
+{ %endraw% }
+```
+

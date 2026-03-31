@@ -20,7 +20,7 @@ date: 2026-03-24
 Partimos de la base de que el ordenador que se utilice deberá tener instalado previamente:
 * [Git](https://git-scm.com/)
 * [GitHub Desktop](https://desktop.github.com/)
-* [Visual Studio Code](https://code.visualstudio.com/). Extensiones:
+* [Visual Studio Code](https://code.visualstudio.com/). Algunas Extensiones interesantes:
   * Markdown All in One
   * GitHub Actions
   * GitHub Copilot Chat
@@ -35,10 +35,10 @@ Partimos de la base de que el ordenador que se utilice deberá tener instalado p
 
 
 1. Crear un **nuevo repositorio en GitHub** con el nombre que le queramos dar.
-   * **Visibilidad: pública** para que se visualice la página web en GitHub Pages.
-   * **Add README: no**, personalizamos el README.md de la plantilla con la información del nuevo proyecto.
-   * **Add .gitignore: no**, la plantilla ya incluye un archivo .gitignore personalizado.
-   * **Add license: no**, la plantilla ya incluye una licencia personalizada (CC BY-NC-SA 4.0) que se puede mantener para todos los proyectos.
+   * **Visibilidad:** ***pública*** para que se visualice la página web en GitHub Pages.
+   * **Add README:** ***no***, personalizamos el README.md de la plantilla con la información del nuevo proyecto.
+   * **Add .gitignore:** ***no***, la plantilla ya incluye un archivo .gitignore personalizado.
+   * **Add license:** ***no***, la plantilla ya incluye una licencia personalizada (CC BY-NC-SA 4.0) que se puede mantener para todos los proyectos.
 2. **Clonar el repositorio nuevo utilizando GitHub Desktop**, para que descargue el proyecto vacío en el ordenador.
 3. **Descargar la** [plantilla para proyectos](https://github.com/venomjp/Plantilla_Proyecto) de mi cuenta de GitHub.
    * Borrar la carpeta oculta .git para desvincularlo del repositorio original.
@@ -82,4 +82,4 @@ Una vez que se ha creado el proyecto y realizado los pasos iniciales, el proceso
     3. `npm run build-ghpages` - script para generar la carpeta de salida con el pathPrefix correcto para GitHub Pages.
     4. Realizar un commit y subir los cambios al repositorio de GitHub utilizando GitHub Desktop o la terminal integrada de Visual Studio Code.
 
-Cada vez que se suben los cambios al repositorio de GitHub, gracias a GitHub Actions se genera automáticamente la página web. Los cambios en la página web de GitHub Pages no se generan al instante, según lo extensa y complicada que sea la documentación, tardará un tiempo en actualizarse *(generalmente pocos minutos)*.
+Cada vez que se suben los cambios al repositorio de GitHub, gracias a GitHub Actions se genera automáticamente la página web. Los cambios en la página web de GitHub Pages no se generan al instante, según lo extensa y complicada que sea la documentación, tardará un tiempo en actualizarse *(generalmente unos pocos minutos)*.

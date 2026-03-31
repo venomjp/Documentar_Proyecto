@@ -284,7 +284,7 @@
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_4-acordeon/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Detalle y Acordeón</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_5-iconos/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Iconos</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_6-embebido/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Embebido</a></li>
-<li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_7-imagen/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Imagen</a></li></ol></li></ol></li>
+<li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_7-imagen/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Imágenes</a></li></ol></li></ol></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/5-navegacion/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Navegación</a><ol class="d-flex fd-column fg-1 order-1 | m-0 pl-5 o-hidden | ls-none"><li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/5-navegacion/5_1-home/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Enlace a HOME</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/5-navegacion/5_2-busqueda/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Entrada de búsqueda</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/5-navegacion/5_3-resultadosBusqueda/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Resultados de búsqueda</a></li>
@@ -420,6 +420,17 @@
                                     </a>
                                 
                             
+                                
+                                    <a href="/Documentar_Proyecto/tags/código/" class="
+                                        d-flex ai-center gap-1
+                                        pl-2 pr-3 pt-1 pb-1
+                                        fs-2 lsp-2 td-none
+                                        bc-primary-200 bwidth-1 bstyle-solid bcolor-primary-400 brad-1 bradtl-3 bradbl-3">
+                                        <span class="icon-tag-simple"></span>
+                                        <span class="page_tag">código</span>
+                                    </a>
+                                
+                            
                         </nav>
                     
                     <div class="d-flex ai-center | m-0 | blwidth-1 blstyle-dashed bcolor-neutral-500">
@@ -509,6 +520,11 @@
 <p>Por ejemplo, para resaltar código HTML:</p>
 <pre><code class="language-html">&lt;h1&gt;Hello World!&lt;/h1&gt;
 &lt;p&gt;This is a &lt;a href=&quot;/link/&quot;&gt;link&lt;/a&gt;.&lt;/p&gt;
+</code></pre>
+<p>A veces en el bloque de código no aparece el texto tal cual queremos que se vea, pues lo interpreta. Para evitar eso podemo incluir el código dentro de un bloque <code>%raw%</code></p>
+<pre><code class="language-html">{ %raw% }
+{ ...código que queremos mostrar literalmente... }
+{ %endraw% }
 </code></pre>
 
             <footer class="minh-100vh">

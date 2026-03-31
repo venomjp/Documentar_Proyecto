@@ -9,6 +9,7 @@ eleventyNavigation:
     order: 1
 tags:
     - markdown
+    - comentarios
 date: 2026-03-27
 ---
 <dl>
@@ -23,6 +24,9 @@ Hay que prestar mucha atención a la sintaxis de Markdown, ya que un pequeño er
 * Las **sangrías incorrectas** pueden afectar la estructura de las listas.
 * El **uso incorrecto de los caracteres especiales** puede generar resultados inesperados.
 * Un salto de línea se puede hacer con **dos espacios al final de la línea** (o un salto de línea adicional), por eso un espacio adicional puede cambiar completamente el formato del texto.
+* **<mark>Comentarios</mark>**
+  * En la cabecera de las plantillas `*.md` (Front Matter) se pueden usar comentarios con `#` al inicio de la línea.
+  * En el contenido de la plantilla *(escrito en Markdown o HTML)* se pueden usar comentarios HTML con `<!-- -->`.
 {% endalertAlt %}
 
 --- 

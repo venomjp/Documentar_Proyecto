@@ -32,7 +32,7 @@ Para insertar una imagen se utiliza la admiración (!) seguida de corchetes [] p
 ---
 # Imagen con enlace
 
-[![Imagen con enlace](/assets/imagenConEnlace.png)](/5_1-home.md "Enlace para ir a Navegación -> HOME")
+[![Imagen con enlace](/assets/imagenConEnlace.png)](/pages/5_1-home.md "Enlace a Navegación: Home")
 
 Para insertar una imagen que también funcione como enlace, se coloca el código de la imagen dentro de los paréntesis de un enlace. 
 

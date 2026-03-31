@@ -92,7 +92,7 @@
         {
             "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_1-markdown/",
             "title": "Markdown",
-            "description": "Dónde usar las etiquetas Markdown. markdown"
+            "description": "Dónde usar las etiquetas Markdown. markdown comentarios"
         },
         {
             "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_1-markdown/4_1_1-modificadoresTexto/",
@@ -117,7 +117,7 @@
         {
             "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_1-markdown/4_1_5-codigo/",
             "title": "Código",
-            "description": "En línea, bloque con resaltado de sintaxis y variables. contenido markdown resaltado de sintaxis"
+            "description": "En línea, bloque con resaltado de sintaxis y variables. contenido markdown resaltado de sintaxis código"
         },
         {
             "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_1-markdown/4_1_6-tablas/",
@@ -181,7 +181,7 @@
         },
         {
             "url": "/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_7-imagen/",
-            "title": "Imagen",
+            "title": "Imágenes",
             "description": "Código para insertar imágenes. contenido widgets imagen"
         }
 ]

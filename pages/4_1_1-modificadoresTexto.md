@@ -29,6 +29,14 @@ Un **doble salto de línea** ...
 ... genera un nuevo párrafo. 
 Mientras que **un solo salto de línea** se interpreta como parte del mismo párrafo.
 
+```markdown
+-> El salto de línea sencillo que lo interpreta como el mismo párrafo.
+Un **doble salto de línea** ...
+
+... genera un nuevo párrafo. 
+Mientras que **un solo salto de línea** se interpreta como parte del mismo párrafo.
+```
+
 # Encabezados
 
 Las etiquetas de encabezado tienen 6 niveles: de **\<h1>** a **\<h6>**.

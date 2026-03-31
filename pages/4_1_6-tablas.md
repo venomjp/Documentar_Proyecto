@@ -41,7 +41,7 @@ Las barras verticales (|) son opcionales, y no necesitas hacer que la línea de 
 
 Markdown | Es menos | bonito
 --- | --- | ---
-*Aún* | `renderiza` | **bien**
+*Aún* | <mark>renderiza</mark> | **bien**
 1 | 2 | 3
 
 ```markdown
@@ -64,6 +64,6 @@ Markdown | Es menos | bonito
 
 Markdown | Es menos | bonito
 --- | --- | ---
-*Aún* | `renderiza` | **bien**
+*Aún* | <mark>renderiza</mark> | **bien**
 1 | 2 | 3
 ```

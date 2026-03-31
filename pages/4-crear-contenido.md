@@ -13,7 +13,7 @@ tags:
 date: 2026-03-27
 ---
 
-LibDoc se desarrolló para facilitar la creación de documentación, por lo que se recomienda usar Markdown ```.md``` y ```html```. 
+**LibDoc** se desarrolló para facilitar la creación de documentación, por lo que se recomienda usar Markdown ```.md``` y ```html``` para escribir las plantillas que se convertirán en páginas web.
 
 Los archivos Markdown se pueden combinar con HTML. 
 
