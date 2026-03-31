@@ -153,7 +153,7 @@
             searchIndexUrl: `/Documentar_Proyecto/core/assets/js/search_index.json`,
             fuzzyIndexUrl: `/Documentar_Proyecto/core/assets/js/fuzzy_index.json`,
             productionUrl: `eleventy-libdoc.netlify.app`,
-            blogPostsCount: `3`
+            blogPostsCount: `4`
         }
     </script>
 </head>
@@ -283,6 +283,7 @@
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_3-definicion/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Definición</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_4-acordeon/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Detalle y Acordeón</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_5-iconos/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Iconos</a></li>
+<li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_8-tarjetaIcono/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Tarjeta con icono</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_6-embebido/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Embebido</a></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/4-crear-contenido/4_3-widgets/4_3_7-imagen/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Imágenes</a></li></ol></li></ol></li>
 <li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/5-navegacion/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Navegación</a><ol class="d-flex fd-column fg-1 order-1 | m-0 pl-5 o-hidden | ls-none"><li class="d-flex fw-wrap ai-center"><a href="/Documentar_Proyecto/pages/5-navegacion/5_1-home/" class="d-flex ai-center fg-1 | pos-relative | w-100 pt-2 pb-2 pr-6 | fs-3 td-none lh-5 tws-balance fvs-wght-500 | c-neutral-900 nav_primary__anchor">Enlace a HOME</a></li>
@@ -494,6 +495,11 @@
                             <a href="#funcionamiento-general" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
                                 Funcionamiento general
                             </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#actualizacion-de-eleventy" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                Actualización de Eleventy
+                            </a>
                         </li></ol>
                     </details>
                 
@@ -508,7 +514,8 @@
                 </aside>
             
             </noscript>
-            
+            <p><picture class="eleventy-image"><source type="image/avif" srcset="/Documentar_Proyecto/img/assets-instalaciones-fYdMoL6ZSq-__512__.avif 512w"><img loading="lazy" decoding="async" src="/Documentar_Proyecto/img/assets-instalaciones-fYdMoL6ZSq-__512__.webp" alt="Instalaciones necesarias" style="width: 256px; height: 256px; display: block; margin: 0 auto;" width="512" height="512"></picture></p>
+
                         <h1 id="instalaciones-previas" pl-9="xs,sm">
                             <a href="#instalaciones-previas" title="Instalaciones previas" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
                                 <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
@@ -612,6 +619,18 @@
 </li>
 </ul>
 <p>Cada vez que se suben los cambios al repositorio de GitHub, gracias a GitHub Actions se genera automáticamente la página web. Los cambios en la página web de GitHub Pages no se generan al instante, según lo extensa y complicada que sea la documentación, tardará un tiempo en actualizarse <em>(generalmente unos pocos minutos)</em>.</p>
+
+                        <h1 id="actualizacion-de-eleventy" pl-9="xs,sm">
+                            <a href="#actualizacion-de-eleventy" title="Actualización de Eleventy" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    Actualización de Eleventy</h1>
+<p>Para actualizar Eleventy a la última versión, se pueden seguir los siguientes pasos:</p>
+<ol>
+<li><code>npm install @11ty/eleventy@latest</code> - actualiza Eleventy a la última versión.</li>
+<li><code>npm audit fix</code> - corrige vulnerabilidades de seguridad.</li>
+<li><code>npx @11ty/eleventy</code> - para iniciar Eleventy.</li>
+</ol>
 
             <footer class="minh-100vh">
                 <div class="pt-11 | blwidth-1 blstyle-dashed bcolor-neutral-500"></div>

@@ -12,6 +12,10 @@ tags:
 date: 2026-03-24
 ---
 
+<img src="/assets/estructuraFicheros.png" 
+  alt="Estructura de ficheros" 
+  style="width: 256px; height: 256px; display: block; margin: 0 auto;">
+
 En esta sección se muestra la estructura de ficheros y archivos más significativos de la plantilla de proyecto, con una breve descripción.
 
 * He modificado la estructura original de LibDoc
@@ -21,7 +25,7 @@ En esta sección se muestra la estructura de ficheros y archivos más significat
 
 * Los proyectos disponen de unas carpetas para organizar los archivos
   * **3dDesign**: para diseños 3D
-  * **fieles**: para archivos del proyecto
+  * **files**: para archivos del proyecto
   * **sourceCode**: para el código fuente del proyecto
 
 ```

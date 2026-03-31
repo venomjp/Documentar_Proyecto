@@ -10,6 +10,10 @@ tags:
     - estructura
 date: 2026-03-24
 ---
+<img src="/assets/estructuraPaginas.png" 
+  alt="Estructura de las páginas de la documentación" 
+  style="width: 256px; height: 256px; display: block; margin: 0 auto;">
+
 
 Esta documentación tiene un formato común en todas las páginas, con distintas secciones y elementos que permiten una navegación fácil y una presentación clara de la información.
 En Eleventy, las plantillas son los archivos ```*.md``` con el contenido que se mostrará en las páginas que se generan. He decidido organizar las plantillas en 3 niveles.

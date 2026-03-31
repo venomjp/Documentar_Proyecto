@@ -6,7 +6,7 @@ permalink: /pages/4-crear-contenido/4_3-widgets/4_3_6-embebido/index.html
 eleventyNavigation:
     key: Embebido
     parent: Widgets
-    order: 6
+    order: 7
 tags:
     - contenido
     - widgets

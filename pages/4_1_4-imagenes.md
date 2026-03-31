@@ -25,7 +25,7 @@ El formato para la imágenes locales o externas es el mismo, pero las imágenes 
 
 ![Imagen](/assets/imagen.png)
 
-Para insertar una imagen se utiliza la admiración (!) seguida de corchetes [] para el texto alternativo y paréntesis () para la URL o el permalink de la página interna.
+Para insertar una imagen se utiliza la admiración `!` seguida de corchetes `[-]` para el texto alternativo y paréntesis `(-)` para la URL o el permalink de la página interna.
 ``` markdown
 ![Texto imagen](/assets/imagen.png)
 ```

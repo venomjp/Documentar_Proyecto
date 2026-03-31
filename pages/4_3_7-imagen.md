@@ -6,7 +6,7 @@ permalink: /pages/4-crear-contenido/4_3-widgets/4_3_7-imagen/index.html
 eleventyNavigation:
     key: Imágenes
     parent: Widgets
-    order: 7
+    order: 8
 tags:
     - contenido
     - widgets
@@ -94,7 +94,7 @@ Las imágenes enmarcadas requieren una estructura específica `figure` como se m
 ```
 # Marco ancho
 
-Si queremos tener una descripción más larga, en varias líneas, en la que podamos escribir en HTML, a la estructura `figure` le agregamos la clase `wide`.
+Genera una imagen más grande que el contenido principal (se nota en pantallas grandes). Permite ademas tener una descripción más larga, en varias líneas, en la que podamos escribir en HTML, a la estructura `figure` le agregamos la clase `wide`.
 
 <figure class="wide">
     <img src="/assets/pierra-menta.jpg"

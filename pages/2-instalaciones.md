@@ -15,6 +15,9 @@ tags:
     - visual studio code
 date: 2026-03-24
 ---
+<img src="/assets/instalaciones.png" 
+  alt="Instalaciones necesarias" 
+  style="width: 256px; height: 256px; display: block; margin: 0 auto;">
 
 # Instalaciones previas
 Partimos de la base de que el ordenador que se utilice deberá tener instalado previamente:
@@ -83,3 +86,10 @@ Una vez que se ha creado el proyecto y realizado los pasos iniciales, el proceso
     4. Realizar un commit y subir los cambios al repositorio de GitHub utilizando GitHub Desktop o la terminal integrada de Visual Studio Code.
 
 Cada vez que se suben los cambios al repositorio de GitHub, gracias a GitHub Actions se genera automáticamente la página web. Los cambios en la página web de GitHub Pages no se generan al instante, según lo extensa y complicada que sea la documentación, tardará un tiempo en actualizarse *(generalmente unos pocos minutos)*.
+
+# Actualización de Eleventy
+Para actualizar Eleventy a la última versión, se pueden seguir los siguientes pasos:
+
+1. `npm install @11ty/eleventy@latest` - actualiza Eleventy a la última versión.
+2. `npm audit fix` - corrige vulnerabilidades de seguridad.
+3. `npx @11ty/eleventy` - para iniciar Eleventy.

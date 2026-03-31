@@ -11,7 +11,11 @@ tags:
 date: 2026-03-25
 ---
 
-Es importante definir la licencia de un proyecto para que los usuarios sepan cómo pueden usar, modificar y distribuir el proyecto. La licencia también protege los derechos del autor y establece las condiciones de uso del proyecto.
+<img src="/assets/licencia.png" 
+  alt="Licencia" 
+  style="width: 256px; height: 256px; display: block; margin: 0 auto;">
+
+Es importante definir la licencia de un proyecto para que los usuarios sepan cómo pueden use, modificar y distribuir el proyecto. La licencia también protege los derechos del autor y establece las condiciones de uso del proyecto.
 
 # Licencia del Proyecto
 

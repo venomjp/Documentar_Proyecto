@@ -16,6 +16,10 @@ tags:
     - bitácora
 date: 2026-03-24
 ---
+<img src="/assets/configuraciones.png" 
+  alt="Configuraciones" 
+  style="width: 256px; height: 256px; display: block; margin: 0 auto;">
+
 # Qué cambiar al iniciar un nuevo proyecto
 
 Una vez que hemos realizado las instalaciones necesarias, nuestro proyecto ya funciona en modo local y su website funciona en GitHub, hemos de realizar algunos cambios en los archivos de configuración para adaptarlos al nuevo proyecto:

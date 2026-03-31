@@ -17,5 +17,6 @@ date: 2026-03-27
 * [Definición](./4_3_3-definicion.md) - Término y definición.
 * [Detalle y Acordeón](./4_3_4-acordeon.md) - Contenido colapsable para organizar información.
 * [Iconos](./4_3_5-iconos.md) - Iconos disponibles.
+* [Tarjeta con icono](./4_3_8-tarjetaIcono.md) - Tarjetas con iconos para destacar información.
 * [Embebido](./4_3_6-embebido.md) - Código para embeber contenido externo.
-* [Imagen](./4_3_7-imagen.md) - Código para insertar imágenes.
+* [Imágenes](./4_3_7-imagen.md) - Código para insertar imágenes.

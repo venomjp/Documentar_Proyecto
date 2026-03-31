@@ -16,7 +16,7 @@ date: 2026-03-30
 
 # Lista de iconos del sistema
 
-Estos son los iconos SVG incluidos, [puedes usar tus propios iconos](#icono-personalizado).
+Estos son los iconos SVG incluidos, pero también puedes usar tus propios iconos.
 
 {% icons %}
 
@@ -35,19 +35,6 @@ Utiliza el siguiente formato:
 
 # Tamaño de icono
 
-* **PERSONALIZADO** 
-
-    Puedes establecer tu propio tamaño a través de la propiedad `font-size` del elemento padre, por ejemplo:
-
-    <div style="font-size: 100px">
-        {% icon 'rocket' %}
-    </div>
-
-    ``` html
-    <div style="font-size: 100px">
-        {% raw %}{% icon 'rocket' %}{% endraw %}
-    </div>
-    ```
 * **HEREDADO** 
 
     El tamaño predeterminado de icono es `1em`
@@ -87,6 +74,19 @@ Utiliza el siguiente formato:
     {% endraw %}
     ```
 
+* **PERSONALIZADO** 
+
+    Puedes establecer tu propio tamaño a través de la propiedad `font-size` del elemento padre, por ejemplo:
+
+    <div style="font-size: 100px">
+        {% icon 'rocket' %}
+    </div>
+
+    ``` html
+    <div style="font-size: 100px">
+        {% raw %}{% icon 'rocket' %}{% endraw %}
+    </div>
+    ```
 # Icono personalizado
 
 Puedes usar tu propio icono. El widget soporta tanto imágenes SVG, PNG y AVIF con transparencia. Puedes acceder a la imagen local o remota a través de una URL.
@@ -135,6 +135,8 @@ Puedes usar tu propio icono. El widget soporta tanto imágenes SVG, PNG y AVIF c
         <td><code>{% raw %}{% icon 'https://cdn.jsdelivr.net/gh/ita-design-system/ita-medias@main/logo-11ty.avif', 10 %}{% endraw %}</code></td>
     </tr>
 </table>
+
+*Como se aprecia en la tabla, las imagenes remotas aunque si existen y están disponibles, se muestran en VS-Code al editar el código, pero no se muestran al generar la página ni en local ni en GitHub Pages. Desconozco el motivo y no lo he podido corregir.*
 
 # Color personalizado
 
