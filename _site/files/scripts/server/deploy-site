@@ -1,0 +1,59 @@
+#!/bin/bash
+# /usr/local/bin/deploy-site   (root:root, 755; lo ejecuta webadmin, nunca root)
+#
+# Publicar:  tar -cf - -C _site . | ssh webadmin@HOST "/usr/local/bin/deploy-site NOMBRE"
+# Eliminar:  ssh webadmin@HOST "/usr/local/bin/deploy-site --remove NOMBRE"
+set -euo pipefail
+umask 022
+
+ROOT=/srv/webs
+SITES="$ROOT/sites"
+STAGING="$ROOT/.staging"          # mismo filesystem que $SITES => mv atómico
+NAME_RE='^[A-Za-z0-9][A-Za-z0-9._-]*$'
+
+die() { echo "ERROR: $*" >&2; exit 1; }
+
+check_name() {
+    [[ "$1" =~ $NAME_RE ]] || die "nombre de sitio no válido: '$1'"
+    [ "$1" != "index.html" ] || die "nombre reservado: '$1'"
+}
+
+# ---------------------------------------------------------------- eliminar
+if [ "${1:-}" = "--remove" ]; then
+    NAME="${2:-}"
+    check_name "$NAME"
+    [ -d "$SITES/$NAME" ] || die "el sitio '$NAME' no existe"
+    rm -rf -- "${SITES:?}/$NAME"
+    /usr/local/bin/webs-index
+    echo "Sitio '$NAME' eliminado."
+    exit 0
+fi
+
+# ---------------------------------------------------------------- publicar
+NAME="${1:-}"
+check_name "$NAME"
+
+mkdir -p "$STAGING" "$SITES"
+TMP=$(mktemp -d "$STAGING/$NAME.XXXXXX")
+trap 'rm -rf -- "$TMP"' EXIT
+
+# El tar llega por stdin. GNU tar descarta rutas absolutas y rechaza "..".
+tar -xf - -C "$TMP" --no-same-owner --no-same-permissions
+
+[ -f "$TMP/index.html" ] || die "el paquete no contiene index.html en la raíz"
+
+# Permisos normalizados: webadmin escribe, el resto (Caddy) solo lee.
+# Con esto no hacen falta ACLs.
+chmod -R u=rwX,go=rX "$TMP"
+
+# Intercambio: la ventana sin sitio son dos rename consecutivos.
+OLD=""
+if [ -e "$SITES/$NAME" ]; then
+    OLD="$STAGING/$NAME.old.$$"
+    mv -T -- "$SITES/$NAME" "$OLD"
+fi
+mv -T -- "$TMP" "$SITES/$NAME"
+[ -z "$OLD" ] || rm -rf -- "$OLD"
+
+/usr/local/bin/webs-index
+echo "Sitio '$NAME' publicado."

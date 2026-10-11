@@ -200,13 +200,18 @@
             "description": "Descripción de las distintas formas de crear y publicar las páginas. modo desarrollo modo web pública en GitHub Pages modo web privada en servidor propio"
         },
         {
-            "url": "/Documentar_Proyecto/posts/servidor-de-paginas-web-estaticas/",
-            "title": "Servidor de páginas web estáticas",
-            "description": "Cómo instalar y configurar un servidor de páginas web estáticas con Caddy. post caddy web server páginas estáticas"
+            "url": "/Documentar_Proyecto/posts/servidor-de-paginas-web-estaticas-rpi3/",
+            "title": "Servidor de páginas web estáticas (RPi3)",
+            "description": "Cómo instalar y configurar un servidor de páginas web estáticas con Caddy en una Raspberry Pi 3. post caddy web server páginas estáticas"
         },
         {
             "url": "/Documentar_Proyecto/posts/texto-ascii-art-mejorado/",
             "title": "Texto ASCII Art mejorado",
             "description": "Como hacer esquemas sin depender de generadores automáticos. post ASCII páginas estáticas"
+        },
+        {
+            "url": "/Documentar_Proyecto/posts/servidor-de-paginas-web-estaticas/",
+            "title": "Servidor de páginas web estáticas",
+            "description": "Cómo instalar y configurar un servidor de páginas web estáticas con Caddy en un LXC. post caddy web server páginas estáticas"
         }
 ]

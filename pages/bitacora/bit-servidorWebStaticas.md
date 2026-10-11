@@ -1,6 +1,6 @@
 ---
-title: Servidor de páginas web estáticas
-description: Cómo instalar y configurar un servidor de páginas web estáticas con Caddy.
+title: Servidor de páginas web estáticas (RPi3)
+description: Cómo instalar y configurar un servidor de páginas web estáticas con Caddy en una Raspberry Pi 3.
 layout: libdoc_page.liquid
 permalink: "{{ libdocConfig.blogSlug }}/{{title | slugify}}/index.html"
 tags:

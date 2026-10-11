@@ -45,13 +45,14 @@ Cada vez que se suben los cambios al repositorio de GitHub, gracias a GitHub Act
 
 En el caso de que no queramos que la documentación sea pública y accesible por cualquier persona, se puede alojar en un servidor propio, de esta forma la documentación será privada y solo se podrá acceder a ella desde el servidor donde esté alojada, en mi caso utilizo Tailscale para acceder a mi servidor desde cualquier lugar y dispositivo.
 
-He intentado generar un procedimiento que permita alojar la documentación en un servidor propio usando Caddy para acceder a las páginas estáticas. En cuanto a la generación de la documentación, el procedimiento es el mismo que para GitHub Pages, pero en este caso se debe subir la carpeta de salida (_site) al servidor propio.
+He generado un procedimiento que permita alojar la documentación en un servidor propio usando Caddy para acceder a las páginas estáticas. En cuanto a la generación de la documentación, el procedimiento es el mismo que para GitHub Pages, pero en este caso se debe subir la carpeta de salida (_site) al servidor propio.
+
 
 * **INSTALACIONES Y CONFIGURACIÓN DEL SERVIDOR**
 
     El procedimiento de instalación está documentado en: 
 
-    [Servidor de páginas estáticas con Caddy](./bitacora/bit-servidorWebStaticas.md)
+    [Servidor de páginas estáticas con Caddy en RPi3](./bitacora/bit-servidorWebStaticas.md)
 
 
 * **CARACTERÍSTICAS DEL SERVIDOR DE PÁGINAS ESTÁTICAS CON CADDY**

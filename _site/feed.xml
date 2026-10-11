@@ -10,6 +10,18 @@
         <name>11ty LibDoc</name>
     </author>
         <entry>
+            <title>Servidor de páginas web estáticas</title>
+            <link href="#/posts/servidor-de-paginas-web-estaticas/" />
+            <updated>2026-10-11T00:00:00Z</updated>
+            <id>#/posts/servidor-de-paginas-web-estaticas/</id>
+            <author>
+                <name>11ty LibDoc</name>
+            </author>
+            <content type="html">
+                &lt;p&gt;&lt;a href=&quot;/#/files/scripts/server/deploy-site&quot; download=&quot;deploy-site&quot;&gt;Descargar deploy-site&lt;/a&gt;&lt;/p&gt;
+</content>
+        </entry>
+        <entry>
             <title>Texto ASCII Art mejorado</title>
             <link href="#/posts/texto-ascii-art-mejorado/" />
             <updated>2026-10-11T00:00:00Z</updated>
@@ -91,10 +103,10 @@ Puedes escribir el código corto directamente, sin embargo, dentro de un bloque 
 </content>
         </entry>
         <entry>
-            <title>Servidor de páginas web estáticas</title>
-            <link href="#/posts/servidor-de-paginas-web-estaticas/" />
+            <title>Servidor de páginas web estáticas (RPi3)</title>
+            <link href="#/posts/servidor-de-paginas-web-estaticas-rpi3/" />
             <updated>2026-08-12T00:00:00Z</updated>
-            <id>#/posts/servidor-de-paginas-web-estaticas/</id>
+            <id>#/posts/servidor-de-paginas-web-estaticas-rpi3/</id>
             <author>
                 <name>11ty LibDoc</name>
             </author>
