@@ -4,7 +4,7 @@
     <subtitle>Guía para documentar un proyecto de forma efectiva y organizada</subtitle>
     <link href="feed.xml" rel="self" />
     <link href="#/feed.xml" />
-    <updated>2026-10-11T00:00:00Z</updated>
+    <updated>2026-10-12T00:00:00Z</updated>
     <id>#/feed.xml</id>
     <author>
         <name>11ty LibDoc</name>
@@ -12,13 +12,331 @@
         <entry>
             <title>Servidor de páginas web estáticas</title>
             <link href="#/posts/servidor-de-paginas-web-estaticas/" />
-            <updated>2026-10-11T00:00:00Z</updated>
+            <updated>2026-10-12T00:00:00Z</updated>
             <id>#/posts/servidor-de-paginas-web-estaticas/</id>
             <author>
                 <name>11ty LibDoc</name>
             </author>
             <content type="html">
-                &lt;p&gt;&lt;a href=&quot;/#/files/scripts/server/deploy-site&quot; download=&quot;deploy-site&quot;&gt;Descargar deploy-site&lt;/a&gt;&lt;/p&gt;
+                &lt;h1&gt;Instalación&lt;/h1&gt;
+&lt;p&gt;Ya tenemos un contenedor LXC con Caddy y un disco &lt;em&gt;&lt;strong&gt;Antea&lt;/strong&gt;&lt;/em&gt; montado en &lt;code&gt;/mnt/antea&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;La idea es tener un script en Windows que haga todo el trabajo de subir un sitio web estático a nuestro servidor de webs estáticas, y que además genere automáticamente el índice de webs. Para ello, vamos a:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Crear un usuario &lt;code&gt;webadmin&lt;/code&gt; para subir los sitios web desde Windows&lt;/li&gt;
+&lt;li&gt;Cargar los scripts &lt;code&gt;deploy-site&lt;/code&gt; y &lt;code&gt;webs-index&lt;/code&gt; al LXC de Caddy que permiten subir y eliminar sitios web y regenerar el índice de webs.&lt;/li&gt;
+&lt;li&gt;Modificar el Caddyfile para que sirva nuestras webs estáticas desde &lt;code&gt;webs.fpgh.link&lt;/code&gt; y que el índice de webs se genere automáticamente.&lt;/li&gt;
+&lt;li&gt;Generar la clave SSH en Windows y copiarla al servidor de webs estáticas para poder subir los sitios web sin contraseña.&lt;/li&gt;
+&lt;li&gt;Crear el script de subida de sitios &lt;code&gt;subir-sitio.ps1&lt;/code&gt; para que funcione con el nuevo servidor de webs estáticas.&lt;/li&gt;
+&lt;li&gt;Actualizar el lanzador &lt;code&gt;subir-sitio.cmd&lt;/code&gt; para que acepte argumentos y pueda eliminar sitios web.&lt;/li&gt;
+&lt;li&gt;Actualizar el PATH de Windows para que incluya la carpeta &lt;code&gt;Scripts&lt;/code&gt; donde está el script &lt;code&gt;subir-sitio.ps1&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;1. Crear el usuario webadmin&lt;/h2&gt;
+&lt;p&gt;Para esta instalación hay que entrar al nodo de Proxmox a través de SSH &lt;code&gt;ssh root@&amp;lt;IPdelNodo&amp;gt;&lt;/code&gt; o por la IP del nodo &lt;code&gt;https://IPdelNodo:8006&lt;/code&gt;, si entras por &lt;code&gt;https://proxmox.fpgh.link&lt;/code&gt;, esa conexión pasa por el propio LXC de Caddy para generar una conexión segura y cuando hay que reiniciar Caddy se pierde la conexión con Proxmox.&lt;/p&gt;
+&lt;p&gt;En el host de &lt;strong&gt;Proxmox&lt;/strong&gt; (el disco Antea ya está montado en &lt;code&gt;/mnt/antea&lt;/code&gt;).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Saca el ID del LXC de Caddy:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pct list
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;Y ejecuta los siguientes comandos con el número de ID sin &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pct set &amp;lt;ID&amp;gt; -mp0 /mnt/antea/webs,mp=/srv/webs
+pct reboot &amp;lt;ID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Después comprueba el mapeo de propietarios, como Caddy lo instalamos en un contenedor con proteción habilitada, no podemos mapear el propietario de los archivos a &lt;code&gt;www-data&lt;/code&gt; (el usuario de Caddy) y por eso debemos deshabilitar la protección del contenedor para poder mapearlo correctamente.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pct set &amp;lt;ID&amp;gt; -protection 0
+pct set &amp;lt;ID&amp;gt; -mp0 /mnt/antea/webs,mp=/srv/webs
+pct set &amp;lt;ID&amp;gt; -onboot 1
+pct reboot &amp;lt;ID&amp;gt;
+pct set &amp;lt;ID&amp;gt; -protection 1
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Cuando arranque, comprueba el mapeo:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pct exec &amp;lt;ID&amp;gt; -- ls -a -ln /srv/webs
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Deberías ver &lt;code&gt;1000 1000&lt;/code&gt; como dueño de &lt;code&gt;sites&lt;/code&gt; y &lt;code&gt;.staging&lt;/code&gt;. Si es así, desde proxmox puedes entrar al LXC con &lt;code&gt;pct enter &amp;lt;ID&amp;gt;&lt;/code&gt; y luego ejecuta:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;apt install -y openssh-server
+adduser webadmin
+id webadmin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Cuando se cree el usuario &lt;code&gt;webadmin&lt;/code&gt; te pedirá crear una contraseña. Y luego comprueba que el usuario se ha creado correctamente con:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;id webadmin
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Devolverá algo como:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;uid=1000(webadmin) gid=1000(webadmin) groups=1000(webadmin),100(users)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;2. Cargar ficheros al servidor&lt;/h2&gt;
+&lt;p&gt;Vamos a subir los ficheros:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;deploy-site&lt;/strong&gt;&lt;/em&gt; - sirve para desplegar un sitio web en el servidor, se prepara en .staging, fuera de las páginas servidas pero en el mismo directorio, así el &lt;code&gt;mv&lt;/code&gt; final es (atómico) rápido y no hay tiempo de inactividad. Regenera el índice de webs al final.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;webs-index&lt;/strong&gt;&lt;/em&gt; - Regenera &lt;code&gt;/srv/webs/sites/index.html&lt;/code&gt;. Lo llama &lt;code&gt;deploy-site&lt;/code&gt;; también se puede lanzar a mano.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Para cargarlos, desde Windows, vamos a la carpeta de descargas y copiamos &lt;code&gt;webs-index&lt;/code&gt; y &lt;code&gt;deploy-site&lt;/code&gt; a Proxmox:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;cd $env:USERPROFILE&#92;Downloads
+scp deploy-site webs-index root@192.168.1.100:/tmp/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Entra al LXC de Caddy y mueve los ficheros a &lt;code&gt;/usr/local/bin&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;ls -l /tmp/deploy-site /tmp/webs-index
+pct push &amp;lt;ID&amp;gt; /tmp/deploy-site /usr/local/bin/deploy-site --perms 755
+pct push &amp;lt;ID&amp;gt; /tmp/webs-index /usr/local/bin/webs-index --perms 755
+pct exec &amp;lt;ID&amp;gt; -- sed -i &#39;s/&#92;r$//&#39; /usr/local/bin/deploy-site /usr/local/bin/webs-index
+pct exec &amp;lt;ID&amp;gt; -- ls -l /usr/local/bin/deploy-site /usr/local/bin/webs-index
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;La primera instrucción comprueba que los ficheros están en &lt;code&gt;/temp&lt;/code&gt; y la segunda los copia a &lt;code&gt;/usr/local/bin&lt;/code&gt; con permisos de ejecución. La tercera elimina los retornos de carro de Windows. La última comprueba que los ficheros están en &lt;code&gt;/usr/local/bin&lt;/code&gt; y son ejecutables.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Prueba local dentro del LXC, sin red de por medio, para validar el despliegue y el generador antes de tocar Caddy.
+Entra al LXC de caddy desde proxmox con &lt;code&gt;pct enter &amp;lt;ID&amp;gt;&lt;/code&gt; y ejecuta:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;su - webadmin
+mkdir -p /tmp/prueba/assets &amp;amp;&amp;amp; echo &#39;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;title&amp;gt;Prueba&amp;lt;/title&amp;gt;&amp;lt;meta name=&amp;quot;description&amp;quot; content=&amp;quot;Sitio de prueba&amp;quot;&amp;gt;&amp;lt;/head&amp;gt;&amp;lt;body&amp;gt;hola&amp;lt;/body&amp;gt;&amp;lt;/html&amp;gt;&#39; &amp;gt; /tmp/prueba/index.html
+tar -cf - -C /tmp/prueba . | /usr/local/bin/deploy-site prueba
+ls -l /srv/webs/sites
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debe imprimir &lt;code&gt;Sitio prueba publicado&lt;/code&gt;. y listar &lt;code&gt;index.html&lt;/code&gt;, &lt;code&gt;_icons&lt;/code&gt; y la carpeta &lt;code&gt;prueba&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Para borrar la prueba vamos a usar el propio script, así también regeneramos el índice:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;/usr/local/bin/deploy-site --remove prueba
+rm -rf /tmp/prueba
+ls -l /srv/webs/sites
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debe imprimir &lt;code&gt;Sitio prueba eliminado.&lt;/code&gt; y dejar solo &lt;code&gt;_icons&lt;/code&gt; e &lt;code&gt;index.html&lt;/code&gt; (con 0 sitios). Este último ejercita el borrado, que aún no habíamos probado.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;3. Modificar el Caddyfile&lt;/h2&gt;
+&lt;p&gt;El bloque de Caddyfile que ya tenenmos no sirve las webs estáticas aún, hay que añadir un bloque handle para &lt;code&gt;webs.fpgh.link&lt;/code&gt;, y tiene que estar antes del &lt;code&gt;handle { abort }&lt;/code&gt;. El certificado wild card ya cubre &lt;code&gt;webs.fpgh.link&lt;/code&gt;, así que no hay que tocar nada de TLS.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Entra en el LXC de Caddy como root&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pct enter &amp;lt;ID&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Edita el Caddyfile para añadir el bloque de &lt;code&gt;webs.fpgh.link&lt;/code&gt;, justo despues del &lt;code&gt;handle @proxmox { ... }&lt;/code&gt; y antes del &lt;code&gt;handle { abort }&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.bak
+nano /etc/caddy/Caddyfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;El archivo completo quedará así:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;##############################
+# Mi Caddyfile JP
+##############################
+# 06/10/26 - Certificados TLS + Acceso a Proxmox
+# 11/10/26 - Acceso a webs estaticas
+
+##############################
+
+*.fpgh.link {
+        # Certificado TLS de Cloudflare
+        tls {
+                dns cloudflare {env.CF_API_TOKEN}
+        }
+        # Acceso a Proxmox (100)
+        @proxmox host proxmox.fpgh.link
+        handle @proxmox {
+                reverse_proxy https://192.168.1.100:8006 {
+                        transport http {
+                                tls_insecure_skip_verify
+                        }
+                }
+        }
+        # Acceso a webs (caddy en 102 y webs en &#39;/mnt/antea&#39;
+        @webs host webs.fpgh.link
+        handle @webs {
+                root * /srv/webs/sites
+                file_server
+        }
+        # Fin de los manejadores
+        handle {
+                abort
+        }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Valida antes de recargar&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;caddy validate --config /etc/caddy/Caddyfile
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debe terminar con &lt;code&gt;Valid configuration&lt;/code&gt;. Si no es así, revisa el Caddyfile y corrige los errores.&lt;/p&gt;
+&lt;p&gt;Es posible que de un fallo de Token, lo almacena en &lt;code&gt;/etc/caddy/env&lt;/code&gt;, valida cargándola solo para ese comando:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo bash -c &#39;set -a; . /etc/caddy/caddy.env; set +a; caddy validate --config /etc/caddy/Caddyfile&#39;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debería acabar con &lt;code&gt;Valid configuration&lt;/code&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Recarga Caddy&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;systemctl reload caddy
+systemctl status caddy --no-pager
+journalctl -u caddy -n 20 --no-pager
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Si en el &lt;code&gt;status&lt;/code&gt; aparece &lt;code&gt;active (running)&lt;/code&gt; y el journal no muestra errores tras el reload, la configuración se aplicó.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Puedes probarlo desde el propio LXC forzando la resolución:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;curl -I --resolve webs.fpgh.link:443:127.0.0.1 https://webs.fpgh.link/
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debe responder &lt;code&gt;HTTP/2 200&lt;/code&gt;. Con la prueba borrada el índice sale vacío, pero tiene que servirse.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Desde Windows, prueba con:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;nslookup webs.fpgh.link
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debe devolver la IP de Caddy &lt;code&gt;192.168.1.102&lt;/code&gt;. Si lo hace, abre en navegador &lt;code&gt;https://webs.fpgh.link/&lt;/code&gt;. Debería mostrarte el índice de webs, aunque esté vacío.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;4. Generar la clave SSH y copiarla al servidor&lt;/h2&gt;
+&lt;p&gt;Para subir el sitio web desde Windows, primero hay que generar la clave SSH en Windows y copiarla clave pública al servidor de webs estáticas. Para ello, abre PowerShell y ejecuta:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;Test-Path $env:USERPROFILE&#92;.ssh&#92;id_ed25519.pub
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Si devuelve &lt;code&gt;False&lt;/code&gt;, genera la clave (te pregunta una passphrase, déjala vacía con Enter):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;ssh-keygen -t ed25519
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Después copia la clave pública al servidor de webs estáticas (el LXC de Caddy):&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;scp $env:USERPROFILE&#92;.ssh&#92;id_ed25519.pub webadmin@webs.fpgh.link:/tmp/k.pub
+ssh webadmin@webs.fpgh.link &amp;quot;mkdir -p ~/.ssh &amp;amp;&amp;amp; chmod 700 ~/.ssh &amp;amp;&amp;amp; cat /tmp/k.pub &amp;gt;&amp;gt; ~/.ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 ~/.ssh/authorized_keys &amp;amp;&amp;amp; rm /tmp/k.pub&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Y comprueba que puedes entrar sin contraseña:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;ssh webadmin@webs.fpgh.link &amp;quot;echo ok&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Debe imprimir &lt;code&gt;ok&lt;/code&gt; sin pedir nada.&lt;/p&gt;
+&lt;h2&gt;5. Crear el script de subida de sitio (subir-sitio.ps1)&lt;/h2&gt;
+&lt;p&gt;El script de Windows se ubica en la carpeta &lt;code&gt;C:&#92;Users&#92;juanp&#92;Scripts&#92;&lt;/code&gt;. Contiene:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;subir-sitio&lt;/strong&gt;&lt;/em&gt;: publica _site como /&lt;code&gt;&amp;lt;nombre-carpeta&amp;gt;&lt;/code&gt;/&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;subir-sitio -Eliminar&lt;/strong&gt;&lt;/em&gt;: elimina el sitio del servidor&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;En PowerShell, el bloque siguiente guarda una copia del script antiguo (se probó anteriormente en una RPi3), instala el nuevo y lo vuelve a guardar con BOM para que Windows PowerShell 5.1 lea bien los acentos. Asume que el fichero descargado está en &lt;code&gt;Downloads&lt;/code&gt; y que &lt;code&gt;Scripts&lt;/code&gt; existe de la versión anterior:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;$dst = &amp;quot;$env:USERPROFILE&#92;Scripts&#92;subir-sitio.ps1&amp;quot;
+if (Test-Path $dst) { Copy-Item $dst &amp;quot;$dst.old&amp;quot; -Force }
+Copy-Item &amp;quot;$env:USERPROFILE&#92;Downloads&#92;subir-sitio.ps1&amp;quot; $dst -Force
+(Get-Content $dst -Raw -Encoding UTF8) | Set-Content $dst -Encoding UTF8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;6. Actualizar el lanzador (subir-sitio.cmd)&lt;/h2&gt;
+&lt;p&gt;Hay que cambiarlo para que acepte argumentos &lt;code&gt;(%*)&lt;/code&gt; y poder usar &lt;code&gt;subir-sitio&lt;/code&gt; y &lt;code&gt;subir-sitio -Eliminar&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;Set-Content -Path &amp;quot;$env:USERPROFILE&#92;Scripts&#92;subir-sitio.cmd&amp;quot; -Encoding ASCII -Value @&#39;
+@echo off
+powershell.exe -ExecutionPolicy Bypass -File &amp;quot;%USERPROFILE%&#92;Scripts&#92;subir-sitio.ps1&amp;quot; %*
+if errorlevel 1 (
+echo.
+echo ERROR: La operacion ha fallado.
+echo.
+pause
+exit /b 1
+)
+echo.
+pause
+&#39;@
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;7. Añadir el script a la variable de entorno PATH&lt;/h2&gt;
+&lt;p&gt;Para poder ejecutar el script &lt;code&gt;subir-sitio&lt;/code&gt; desde cualquier lugar del sistema, hay que añadir la carpeta &lt;code&gt;Scripts&lt;/code&gt; al PATH, se puede hacer en el PATH del sistema o en el del usuario, en este caso lo haremos en el PATH del usuario. Para ello, sigue estos pasos:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;En PowerShell ejecuta:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-powershell&quot;&gt;[Environment]::SetEnvironmentVariable(
+    &amp;quot;Path&amp;quot;,
+    [Environment]::GetEnvironmentVariable(&amp;quot;Path&amp;quot;, &amp;quot;User&amp;quot;) + &amp;quot;;C:&#92;Users&#92;juanp&#92;Scripts&amp;quot;,
+    &amp;quot;User&amp;quot;
+    )
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Cierra la sesión de PowerShell y vuelve a abrirla para que los cambios surtan efecto.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;En la nueva PowerShell: &lt;code&gt;$env:Path -split &amp;quot;;&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Entre las entradas debería aparecer: &lt;code&gt;C:&#92;Users&#92;juanp&#92;Scripts&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;También puedes comprobar directamente: &lt;code&gt;$env:Path -like &amp;quot;*C:&#92;Users&#92;juanp&#92;Scripts*&amp;quot;&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Debe devolver: &lt;code&gt;True&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Uso del script&lt;/p&gt;
+&lt;p&gt;Para usar el script, abre una terminal de Windows (PowerShell o CMD) y navega hasta la carpeta donde tienes tu sitio web estático. Luego ejecuta:&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;subir-sitio&lt;/strong&gt;&lt;/em&gt; para subir el sitio web al servidor y devolverá algo como esto:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;    ============================================
+       SUBIDA DE SITIO WEB ESTÁTICO
+    ============================================
+    Proyecto : Plantilla_Proyecto
+    Origen   : C:&#92;Users&#92;juanp&#92;Proyectos&#92;Plantilla_Proyecto&#92;_site
+    Destino  : https://webs.fpgh.link/Plantilla_Proyecto
+    ¿Continuar con la subida? [S/N]: s
+
+    [1/3] Empaquetando 285 archivos...
+    Paquete de 6,24 MB
+
+    [2/3] Subiendo al servidor...
+    subir-sitio-Plantilla_Proyecto-20261011105949.tar   0%    0     subir-sitio-Plantilla_Proyecto-20261011105949.tar  16% 1056KB 96subir-sitio-Plantilla_Proyecto-20261011105949.tar  30% 1920KB 95subir-sitio-Plantilla_Proyecto-20261011105949.tar  44% 2848KB 95subir-sitio-Plantilla_Proyecto-20261011105949.tar  62% 4000KB 97subir-sitio-Plantilla_Proyecto-20261011105949.tar  80% 5120KB 98subir-sitio-Plantilla_Proyecto-20261011105949.tar  96% 6144KB 98subir-sitio-Plantilla_Proyecto-20261011105949.tar 100% 6395KB   1.0MB/s   00:06
+
+    [3/3] Instalando en el servidor...
+    Sitio &#39;Plantilla_Proyecto&#39; publicado.
+
+    ============================================
+        SITIO PUBLICADO
+    ============================================
+    URL    : https://webs.fpgh.link/Plantilla_Proyecto/
+    Tiempo : 9,5 s
+&lt;/code&gt;&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;subir-sitio -Eliminar&lt;/strong&gt;&lt;/em&gt; para eliminar el sitio web del servidor.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;    PS C:&#92;Users&#92;juanp&#92;Proyectos&#92;Plantilla_Proyecto&amp;gt; subir-sitio -Eliminar
+
+    Se eliminará del servidor: Plantilla_Proyecto
+    ¿Continuar? [S/N]: s
+    Sitio &#39;Plantilla_Proyecto&#39; eliminado.
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;8. Descargar los archivos&lt;/h2&gt;
+&lt;p&gt;Los navegadores al detectar que son archivos de texto les asignan la extensión .txt, hay que quitársela.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;aside class=&quot;widget widget-iconCard&quot;&gt;
+&lt;p class=&quot;d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500&quot;&gt;
+&lt;span class=&quot;icon-arrow-line-down fs-10 | c-primary-500&quot; fs-8=&quot;xs&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;d-flex fd-column gap-1&quot;&gt;
+&lt;strong class=&quot;fvs-wght-700 fs-6&quot;&gt;deploy-site&lt;/strong&gt;
+&lt;span&gt;sirve para desplegar un sitio web en el servidor &lt;br&gt; &lt;a href=&quot;/#/files/scripts/server/deploy-site&quot; download=&quot;deploy-site&quot;&gt;Descargar deploy-site&lt;/a&gt;&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+&lt;/aside&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;aside class=&quot;widget widget-iconCard&quot;&gt;
+&lt;p class=&quot;d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500&quot;&gt;
+&lt;span class=&quot;icon-arrow-line-down fs-10 | c-primary-500&quot; fs-8=&quot;xs&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;d-flex fd-column gap-1&quot;&gt;
+&lt;strong class=&quot;fvs-wght-700 fs-6&quot;&gt;webs-index&lt;/strong&gt;
+&lt;span&gt;regenera el índice de sitios web &lt;br&gt; &lt;a href=&quot;/#/files/scripts/server/webs-index&quot; download=&quot;webs-index&quot;&gt;Descargar webs-index&lt;/a&gt;&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+&lt;/aside&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;aside class=&quot;widget widget-iconCard&quot;&gt;
+&lt;p class=&quot;d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500&quot;&gt;
+&lt;span class=&quot;icon-arrow-line-down fs-10 | c-primary-500&quot; fs-8=&quot;xs&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;d-flex fd-column gap-1&quot;&gt;
+&lt;strong class=&quot;fvs-wght-700 fs-6&quot;&gt;subir-sitio.ps1&lt;/strong&gt;
+&lt;span&gt;script que permite subir el sitio a mi servidor &lt;br&gt; &lt;a href=&quot;/#/files/scripts/windows/subir-sitio.ps1&quot; download=&quot;subir-sitio.ps1&quot;&gt;Descargar subir-sitio.ps1&lt;/a&gt;&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+&lt;/aside&gt;&lt;p&gt;&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;&lt;aside class=&quot;widget widget-iconCard&quot;&gt;
+&lt;p class=&quot;d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500&quot;&gt;
+&lt;span class=&quot;icon-arrow-line-down fs-10 | c-primary-500&quot; fs-8=&quot;xs&quot;&gt;&lt;/span&gt;
+&lt;span class=&quot;d-flex fd-column gap-1&quot;&gt;
+&lt;strong class=&quot;fvs-wght-700 fs-6&quot;&gt;subir-sitio.cmd&lt;/strong&gt;
+&lt;span&gt;lanzador para ejecutar el script de subida de sitio &lt;br&gt; &lt;a href=&quot;/#/files/scripts/windows/subir-sitio.cmd&quot; download=&quot;subir-sitio.cmd&quot;&gt;Descargar subir-sitio.cmd&lt;/a&gt;&lt;/span&gt;
+&lt;/span&gt;
+&lt;/p&gt;
+&lt;/aside&gt;&lt;p&gt;&lt;/p&gt;
 </content>
         </entry>
         <entry>

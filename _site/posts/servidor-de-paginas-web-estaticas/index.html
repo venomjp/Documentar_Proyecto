@@ -430,7 +430,7 @@
                                     
                                     
                                         
-                                        2026-10-11
+                                        2026-10-12
                                     
                                 </time>
                             </p>
@@ -441,6 +441,64 @@
                         
                     </div>
                 
+                
+                    <details id="toc_main" open="">
+                        <summary class="d-flex ai-center | pt-5 pb-5 | fvs-wght-500 fs-3 | bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0 cur-pointer">
+                            <span class="pl-5 | bbwidth-1 bbstyle-dashed bcolor-neutral-500"></span>
+                            <span class="d-flex ai-center gap-1 | lsp-2">
+                                <span class="icon-minus-circle | fs-6 | c-primary-500"></span>
+                                <span class="icon-plus-circle | fs-6 | c-primary-500"></span>
+                                Tabla de contenido
+                            </span>
+                        </summary>
+                        
+                    <ol class="cgap-3em | m-0 pl-0 pb-5 o-auto | lh-1 | ls-none bwidth-1 bstyle-dashed bcolor-neutral-500 btwidth-0 brwidth-0" d-flex="xs,sm" fd-column="xs,sm" fw-wrap="xs,sm" columns-3="md" columns-2="sm" maxh-300px="sm" maxh-200px="xs">
+                        <li class="d-flex">
+                            <a href="#instalacion" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                Instalación
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_1-crear-el-usuario-webadmin" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                1. Crear el usuario webadmin
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_2-cargar-ficheros-al-servidor" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                2. Cargar ficheros al servidor
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_3-modificar-el-caddyfile" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                3. Modificar el Caddyfile
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_4-generar-la-clave-ssh-y-copiarla-al-servidor" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                4. Generar la clave SSH y copiarla al servidor
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_5-crear-el-script-de-subida-de-sitio-subir-sitio-ps1" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                5. Crear el script de subida de sitio (subir-sitio.ps1)
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_6-actualizar-el-lanzador-subir-sitio-cmd" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                6. Actualizar el lanzador (subir-sitio.cmd)
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_7-anadir-el-script-a-la-variable-de-entorno-path" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                7. Añadir el script a la variable de entorno PATH
+                            </a>
+                        </li>
+                        <li class="d-flex">
+                            <a href="#a_8-descargar-los-archivos" class="pl-5 pt-1 pb-1 | fs-4 lsp-3 lh-5 fvs-wght-400 wb-break-word | blwidth-1 blstyle-dashed bcolor-neutral-500">
+                                8. Descargar los archivos
+                            </a>
+                        </li></ol>
+                    </details>
                 
             </header>
             <noscript>
@@ -453,7 +511,370 @@
                 </aside>
             
             </noscript>
-            <p><a href="/Documentar_Proyecto/files/scripts/server/deploy-site" download="deploy-site">Descargar deploy-site</a></p>
+            
+                        <h1 id="instalacion" pl-9="xs,sm">
+                            <a href="#instalacion" title="Instalación" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    Instalación</h1>
+<p>Ya tenemos un contenedor LXC con Caddy y un disco <em><strong>Antea</strong></em> montado en <code>/mnt/antea</code>.</p>
+<p>La idea es tener un script en Windows que haga todo el trabajo de subir un sitio web estático a nuestro servidor de webs estáticas, y que además genere automáticamente el índice de webs. Para ello, vamos a:</p>
+<ul>
+<li>Crear un usuario <code>webadmin</code> para subir los sitios web desde Windows</li>
+<li>Cargar los scripts <code>deploy-site</code> y <code>webs-index</code> al LXC de Caddy que permiten subir y eliminar sitios web y regenerar el índice de webs.</li>
+<li>Modificar el Caddyfile para que sirva nuestras webs estáticas desde <code>webs.fpgh.link</code> y que el índice de webs se genere automáticamente.</li>
+<li>Generar la clave SSH en Windows y copiarla al servidor de webs estáticas para poder subir los sitios web sin contraseña.</li>
+<li>Crear el script de subida de sitios <code>subir-sitio.ps1</code> para que funcione con el nuevo servidor de webs estáticas.</li>
+<li>Actualizar el lanzador <code>subir-sitio.cmd</code> para que acepte argumentos y pueda eliminar sitios web.</li>
+<li>Actualizar el PATH de Windows para que incluya la carpeta <code>Scripts</code> donde está el script <code>subir-sitio.ps1</code>.</li>
+</ul>
+
+                        <h2 id="a_1-crear-el-usuario-webadmin" pl-9="xs,sm">
+                            <a href="#a_1-crear-el-usuario-webadmin" title="1. Crear el usuario webadmin" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    1. Crear el usuario webadmin</h2>
+<p>Para esta instalación hay que entrar al nodo de Proxmox a través de SSH <code>ssh root@&lt;IPdelNodo&gt;</code> o por la IP del nodo <code>https://IPdelNodo:8006</code>, si entras por <code>https://proxmox.fpgh.link</code>, esa conexión pasa por el propio LXC de Caddy para generar una conexión segura y cuando hay que reiniciar Caddy se pierde la conexión con Proxmox.</p>
+<p>En el host de <strong>Proxmox</strong> (el disco Antea ya está montado en <code>/mnt/antea</code>).</p>
+<ul>
+<li>Saca el ID del LXC de Caddy:</li>
+</ul>
+<pre><code class="language-bash">pct list
+</code></pre>
+<ul>
+<li>Y ejecuta los siguientes comandos con el número de ID sin <code>&lt;&gt;</code></li>
+</ul>
+<pre><code class="language-bash">pct set &lt;ID&gt; -mp0 /mnt/antea/webs,mp=/srv/webs
+pct reboot &lt;ID&gt;
+</code></pre>
+<p>Después comprueba el mapeo de propietarios, como Caddy lo instalamos en un contenedor con proteción habilitada, no podemos mapear el propietario de los archivos a <code>www-data</code> (el usuario de Caddy) y por eso debemos deshabilitar la protección del contenedor para poder mapearlo correctamente.</p>
+<pre><code class="language-bash">pct set &lt;ID&gt; -protection 0
+pct set &lt;ID&gt; -mp0 /mnt/antea/webs,mp=/srv/webs
+pct set &lt;ID&gt; -onboot 1
+pct reboot &lt;ID&gt;
+pct set &lt;ID&gt; -protection 1
+</code></pre>
+<p>Cuando arranque, comprueba el mapeo:</p>
+<pre><code class="language-bash">pct exec &lt;ID&gt; -- ls -a -ln /srv/webs
+</code></pre>
+<p>Deberías ver <code>1000 1000</code> como dueño de <code>sites</code> y <code>.staging</code>. Si es así, desde proxmox puedes entrar al LXC con <code>pct enter &lt;ID&gt;</code> y luego ejecuta:</p>
+<pre><code class="language-bash">apt install -y openssh-server
+adduser webadmin
+id webadmin
+</code></pre>
+<p>Cuando se cree el usuario <code>webadmin</code> te pedirá crear una contraseña. Y luego comprueba que el usuario se ha creado correctamente con:</p>
+<pre><code class="language-bash">id webadmin
+</code></pre>
+<p>Devolverá algo como:</p>
+<pre><code>uid=1000(webadmin) gid=1000(webadmin) groups=1000(webadmin),100(users)
+</code></pre>
+
+                        <h2 id="a_2-cargar-ficheros-al-servidor" pl-9="xs,sm">
+                            <a href="#a_2-cargar-ficheros-al-servidor" title="2. Cargar ficheros al servidor" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    2. Cargar ficheros al servidor</h2>
+<p>Vamos a subir los ficheros:</p>
+<ul>
+<li><em><strong>deploy-site</strong></em> - sirve para desplegar un sitio web en el servidor, se prepara en .staging, fuera de las páginas servidas pero en el mismo directorio, así el <code>mv</code> final es (atómico) rápido y no hay tiempo de inactividad. Regenera el índice de webs al final.</li>
+<li><em><strong>webs-index</strong></em> - Regenera <code>/srv/webs/sites/index.html</code>. Lo llama <code>deploy-site</code>; también se puede lanzar a mano.</li>
+</ul>
+<ol>
+<li>
+<p>Para cargarlos, desde Windows, vamos a la carpeta de descargas y copiamos <code>webs-index</code> y <code>deploy-site</code> a Proxmox:</p>
+<pre><code class="language-bash">cd $env:USERPROFILE\Downloads
+scp deploy-site webs-index root@192.168.1.100:/tmp/
+</code></pre>
+</li>
+<li>
+<p>Entra al LXC de Caddy y mueve los ficheros a <code>/usr/local/bin</code>:</p>
+<pre><code class="language-bash">ls -l /tmp/deploy-site /tmp/webs-index
+pct push &lt;ID&gt; /tmp/deploy-site /usr/local/bin/deploy-site --perms 755
+pct push &lt;ID&gt; /tmp/webs-index /usr/local/bin/webs-index --perms 755
+pct exec &lt;ID&gt; -- sed -i 's/\r$//' /usr/local/bin/deploy-site /usr/local/bin/webs-index
+pct exec &lt;ID&gt; -- ls -l /usr/local/bin/deploy-site /usr/local/bin/webs-index
+</code></pre>
+<p>La primera instrucción comprueba que los ficheros están en <code>/temp</code> y la segunda los copia a <code>/usr/local/bin</code> con permisos de ejecución. La tercera elimina los retornos de carro de Windows. La última comprueba que los ficheros están en <code>/usr/local/bin</code> y son ejecutables.</p>
+</li>
+<li>
+<p>Prueba local dentro del LXC, sin red de por medio, para validar el despliegue y el generador antes de tocar Caddy.
+Entra al LXC de caddy desde proxmox con <code>pct enter &lt;ID&gt;</code> y ejecuta:</p>
+<pre><code class="language-bash">su - webadmin
+mkdir -p /tmp/prueba/assets &amp;&amp; echo '&lt;html&gt;&lt;head&gt;&lt;title&gt;Prueba&lt;/title&gt;&lt;meta name=&quot;description&quot; content=&quot;Sitio de prueba&quot;&gt;&lt;/head&gt;&lt;body&gt;hola&lt;/body&gt;&lt;/html&gt;' &gt; /tmp/prueba/index.html
+tar -cf - -C /tmp/prueba . | /usr/local/bin/deploy-site prueba
+ls -l /srv/webs/sites
+</code></pre>
+<p>Debe imprimir <code>Sitio prueba publicado</code>. y listar <code>index.html</code>, <code>_icons</code> y la carpeta <code>prueba</code>.</p>
+<p>Para borrar la prueba vamos a usar el propio script, así también regeneramos el índice:</p>
+<pre><code class="language-bash">/usr/local/bin/deploy-site --remove prueba
+rm -rf /tmp/prueba
+ls -l /srv/webs/sites
+</code></pre>
+<p>Debe imprimir <code>Sitio prueba eliminado.</code> y dejar solo <code>_icons</code> e <code>index.html</code> (con 0 sitios). Este último ejercita el borrado, que aún no habíamos probado.</p>
+</li>
+</ol>
+
+                        <h2 id="a_3-modificar-el-caddyfile" pl-9="xs,sm">
+                            <a href="#a_3-modificar-el-caddyfile" title="3. Modificar el Caddyfile" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    3. Modificar el Caddyfile</h2>
+<p>El bloque de Caddyfile que ya tenenmos no sirve las webs estáticas aún, hay que añadir un bloque handle para <code>webs.fpgh.link</code>, y tiene que estar antes del <code>handle { abort }</code>. El certificado wild card ya cubre <code>webs.fpgh.link</code>, así que no hay que tocar nada de TLS.</p>
+<ol>
+<li>
+<p>Entra en el LXC de Caddy como root</p>
+<pre><code class="language-bash">pct enter &lt;ID&gt;
+</code></pre>
+</li>
+<li>
+<p>Edita el Caddyfile para añadir el bloque de <code>webs.fpgh.link</code>, justo despues del <code>handle @proxmox { ... }</code> y antes del <code>handle { abort }</code>:</p>
+<pre><code class="language-bash">cp /etc/caddy/Caddyfile /etc/caddy/Caddyfile.bak
+nano /etc/caddy/Caddyfile
+</code></pre>
+</li>
+<li>
+<p>El archivo completo quedará así:</p>
+<pre><code class="language-text">##############################
+# Mi Caddyfile JP
+##############################
+# 06/10/26 - Certificados TLS + Acceso a Proxmox
+# 11/10/26 - Acceso a webs estaticas
+
+##############################
+
+*.fpgh.link {
+        # Certificado TLS de Cloudflare
+        tls {
+                dns cloudflare {env.CF_API_TOKEN}
+        }
+        # Acceso a Proxmox (100)
+        @proxmox host proxmox.fpgh.link
+        handle @proxmox {
+                reverse_proxy https://192.168.1.100:8006 {
+                        transport http {
+                                tls_insecure_skip_verify
+                        }
+                }
+        }
+        # Acceso a webs (caddy en 102 y webs en '/mnt/antea'
+        @webs host webs.fpgh.link
+        handle @webs {
+                root * /srv/webs/sites
+                file_server
+        }
+        # Fin de los manejadores
+        handle {
+                abort
+        }
+}
+</code></pre>
+</li>
+<li>
+<p>Valida antes de recargar</p>
+<pre><code class="language-bash">caddy validate --config /etc/caddy/Caddyfile
+</code></pre>
+<p>Debe terminar con <code>Valid configuration</code>. Si no es así, revisa el Caddyfile y corrige los errores.</p>
+<p>Es posible que de un fallo de Token, lo almacena en <code>/etc/caddy/env</code>, valida cargándola solo para ese comando:</p>
+<pre><code class="language-bash">sudo bash -c 'set -a; . /etc/caddy/caddy.env; set +a; caddy validate --config /etc/caddy/Caddyfile'
+</code></pre>
+<p>Debería acabar con <code>Valid configuration</code>.</p>
+</li>
+<li>
+<p>Recarga Caddy</p>
+<pre><code class="language-bash">systemctl reload caddy
+systemctl status caddy --no-pager
+journalctl -u caddy -n 20 --no-pager
+</code></pre>
+<p>Si en el <code>status</code> aparece <code>active (running)</code> y el journal no muestra errores tras el reload, la configuración se aplicó.</p>
+</li>
+<li>
+<p>Puedes probarlo desde el propio LXC forzando la resolución:</p>
+<pre><code class="language-bash">curl -I --resolve webs.fpgh.link:443:127.0.0.1 https://webs.fpgh.link/
+</code></pre>
+<p>Debe responder <code>HTTP/2 200</code>. Con la prueba borrada el índice sale vacío, pero tiene que servirse.</p>
+</li>
+<li>
+<p>Desde Windows, prueba con:</p>
+<pre><code class="language-powershell">nslookup webs.fpgh.link
+</code></pre>
+<p>Debe devolver la IP de Caddy <code>192.168.1.102</code>. Si lo hace, abre en navegador <code>https://webs.fpgh.link/</code>. Debería mostrarte el índice de webs, aunque esté vacío.</p>
+</li>
+</ol>
+
+                        <h2 id="a_4-generar-la-clave-ssh-y-copiarla-al-servidor" pl-9="xs,sm">
+                            <a href="#a_4-generar-la-clave-ssh-y-copiarla-al-servidor" title="4. Generar la clave SSH y copiarla al servidor" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    4. Generar la clave SSH y copiarla al servidor</h2>
+<p>Para subir el sitio web desde Windows, primero hay que generar la clave SSH en Windows y copiarla clave pública al servidor de webs estáticas. Para ello, abre PowerShell y ejecuta:</p>
+<pre><code class="language-powershell">Test-Path $env:USERPROFILE\.ssh\id_ed25519.pub
+</code></pre>
+<p>Si devuelve <code>False</code>, genera la clave (te pregunta una passphrase, déjala vacía con Enter):</p>
+<pre><code class="language-powershell">ssh-keygen -t ed25519
+</code></pre>
+<p>Después copia la clave pública al servidor de webs estáticas (el LXC de Caddy):</p>
+<pre><code class="language-powershell">scp $env:USERPROFILE\.ssh\id_ed25519.pub webadmin@webs.fpgh.link:/tmp/k.pub
+ssh webadmin@webs.fpgh.link &quot;mkdir -p ~/.ssh &amp;&amp; chmod 700 ~/.ssh &amp;&amp; cat /tmp/k.pub &gt;&gt; ~/.ssh/authorized_keys &amp;&amp; chmod 600 ~/.ssh/authorized_keys &amp;&amp; rm /tmp/k.pub&quot;
+</code></pre>
+<p>Y comprueba que puedes entrar sin contraseña:</p>
+<pre><code class="language-powershell">ssh webadmin@webs.fpgh.link &quot;echo ok&quot;
+</code></pre>
+<p>Debe imprimir <code>ok</code> sin pedir nada.</p>
+
+                        <h2 id="a_5-crear-el-script-de-subida-de-sitio-subir-sitio-ps1" pl-9="xs,sm">
+                            <a href="#a_5-crear-el-script-de-subida-de-sitio-subir-sitio-ps1" title="5. Crear el script de subida de sitio (subir-sitio.ps1)" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    5. Crear el script de subida de sitio (subir-sitio.ps1)</h2>
+<p>El script de Windows se ubica en la carpeta <code>C:\Users\juanp\Scripts\</code>. Contiene:</p>
+<ul>
+<li><em><strong>subir-sitio</strong></em>: publica _site como /<code>&lt;nombre-carpeta&gt;</code>/</li>
+<li><em><strong>subir-sitio -Eliminar</strong></em>: elimina el sitio del servidor</li>
+</ul>
+<p>En PowerShell, el bloque siguiente guarda una copia del script antiguo (se probó anteriormente en una RPi3), instala el nuevo y lo vuelve a guardar con BOM para que Windows PowerShell 5.1 lea bien los acentos. Asume que el fichero descargado está en <code>Downloads</code> y que <code>Scripts</code> existe de la versión anterior:</p>
+<pre><code class="language-powershell">$dst = &quot;$env:USERPROFILE\Scripts\subir-sitio.ps1&quot;
+if (Test-Path $dst) { Copy-Item $dst &quot;$dst.old&quot; -Force }
+Copy-Item &quot;$env:USERPROFILE\Downloads\subir-sitio.ps1&quot; $dst -Force
+(Get-Content $dst -Raw -Encoding UTF8) | Set-Content $dst -Encoding UTF8
+</code></pre>
+
+                        <h2 id="a_6-actualizar-el-lanzador-subir-sitio-cmd" pl-9="xs,sm">
+                            <a href="#a_6-actualizar-el-lanzador-subir-sitio-cmd" title="6. Actualizar el lanzador (subir-sitio.cmd)" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    6. Actualizar el lanzador (subir-sitio.cmd)</h2>
+<p>Hay que cambiarlo para que acepte argumentos <code>(%*)</code> y poder usar <code>subir-sitio</code> y <code>subir-sitio -Eliminar</code>.</p>
+<pre><code class="language-powershell">Set-Content -Path &quot;$env:USERPROFILE\Scripts\subir-sitio.cmd&quot; -Encoding ASCII -Value @'
+@echo off
+powershell.exe -ExecutionPolicy Bypass -File &quot;%USERPROFILE%\Scripts\subir-sitio.ps1&quot; %*
+if errorlevel 1 (
+echo.
+echo ERROR: La operacion ha fallado.
+echo.
+pause
+exit /b 1
+)
+echo.
+pause
+'@
+</code></pre>
+
+                        <h2 id="a_7-anadir-el-script-a-la-variable-de-entorno-path" pl-9="xs,sm">
+                            <a href="#a_7-anadir-el-script-a-la-variable-de-entorno-path" title="7. Añadir el script a la variable de entorno PATH" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    7. Añadir el script a la variable de entorno PATH</h2>
+<p>Para poder ejecutar el script <code>subir-sitio</code> desde cualquier lugar del sistema, hay que añadir la carpeta <code>Scripts</code> al PATH, se puede hacer en el PATH del sistema o en el del usuario, en este caso lo haremos en el PATH del usuario. Para ello, sigue estos pasos:</p>
+<ol>
+<li>
+<p>En PowerShell ejecuta:</p>
+<pre><code class="language-powershell">[Environment]::SetEnvironmentVariable(
+    &quot;Path&quot;,
+    [Environment]::GetEnvironmentVariable(&quot;Path&quot;, &quot;User&quot;) + &quot;;C:\Users\juanp\Scripts&quot;,
+    &quot;User&quot;
+    )
+</code></pre>
+</li>
+<li>
+<p>Cierra la sesión de PowerShell y vuelve a abrirla para que los cambios surtan efecto.</p>
+<ul>
+<li>
+<p>En la nueva PowerShell: <code>$env:Path -split &quot;;&quot;</code></p>
+</li>
+<li>
+<p>Entre las entradas debería aparecer: <code>C:\Users\juanp\Scripts</code></p>
+</li>
+<li>
+<p>También puedes comprobar directamente: <code>$env:Path -like &quot;*C:\Users\juanp\Scripts*&quot;</code></p>
+</li>
+<li>
+<p>Debe devolver: <code>True</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Uso del script</p>
+<p>Para usar el script, abre una terminal de Windows (PowerShell o CMD) y navega hasta la carpeta donde tienes tu sitio web estático. Luego ejecuta:</p>
+</li>
+</ol>
+<ul>
+<li><em><strong>subir-sitio</strong></em> para subir el sitio web al servidor y devolverá algo como esto:</li>
+</ul>
+<pre><code class="language-text">    ============================================
+       SUBIDA DE SITIO WEB ESTÁTICO
+    ============================================
+    Proyecto : Plantilla_Proyecto
+    Origen   : C:\Users\juanp\Proyectos\Plantilla_Proyecto\_site
+    Destino  : https://webs.fpgh.link/Plantilla_Proyecto
+    ¿Continuar con la subida? [S/N]: s
+
+    [1/3] Empaquetando 285 archivos...
+    Paquete de 6,24 MB
+
+    [2/3] Subiendo al servidor...
+    subir-sitio-Plantilla_Proyecto-20261011105949.tar   0%    0     subir-sitio-Plantilla_Proyecto-20261011105949.tar  16% 1056KB 96subir-sitio-Plantilla_Proyecto-20261011105949.tar  30% 1920KB 95subir-sitio-Plantilla_Proyecto-20261011105949.tar  44% 2848KB 95subir-sitio-Plantilla_Proyecto-20261011105949.tar  62% 4000KB 97subir-sitio-Plantilla_Proyecto-20261011105949.tar  80% 5120KB 98subir-sitio-Plantilla_Proyecto-20261011105949.tar  96% 6144KB 98subir-sitio-Plantilla_Proyecto-20261011105949.tar 100% 6395KB   1.0MB/s   00:06
+
+    [3/3] Instalando en el servidor...
+    Sitio 'Plantilla_Proyecto' publicado.
+
+    ============================================
+        SITIO PUBLICADO
+    ============================================
+    URL    : https://webs.fpgh.link/Plantilla_Proyecto/
+    Tiempo : 9,5 s
+</code></pre>
+<ul>
+<li><em><strong>subir-sitio -Eliminar</strong></em> para eliminar el sitio web del servidor.</li>
+</ul>
+<pre><code class="language-text">    PS C:\Users\juanp\Proyectos\Plantilla_Proyecto&gt; subir-sitio -Eliminar
+
+    Se eliminará del servidor: Plantilla_Proyecto
+    ¿Continuar? [S/N]: s
+    Sitio 'Plantilla_Proyecto' eliminado.
+</code></pre>
+
+                        <h2 id="a_8-descargar-los-archivos" pl-9="xs,sm">
+                            <a href="#a_8-descargar-los-archivos" title="8. Descargar los archivos" class="pos-absolute top-50 left-0 t-tY-50 | p-4 ml-1 | td-none | brad-4 bc-neutral-100 bwidth-1 bstyle-dashed bcolor-neutral-500 __hover-1 __soft-shadow" ml-3="xs,sm">
+                                <span class="icon-link-simple | pos-absolute top-50 left-50 t-tY-50 t-tX-50 | fs-4"></span>
+                            </a>
+                    8. Descargar los archivos</h2>
+<p>Los navegadores al detectar que son archivos de texto les asignan la extensión .txt, hay que quitársela.</p>
+<aside class="widget widget-iconCard">
+<p class="d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500">
+<span class="icon-arrow-line-down fs-10 | c-primary-500" fs-8="xs"></span>
+<span class="d-flex fd-column gap-1">
+<strong class="fvs-wght-700 fs-6">deploy-site</strong>
+<span>sirve para desplegar un sitio web en el servidor <br> <a href="/Documentar_Proyecto/files/scripts/server/deploy-site" download="deploy-site">Descargar deploy-site</a></span>
+</span>
+</p>
+</aside>
+<aside class="widget widget-iconCard">
+<p class="d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500">
+<span class="icon-arrow-line-down fs-10 | c-primary-500" fs-8="xs"></span>
+<span class="d-flex fd-column gap-1">
+<strong class="fvs-wght-700 fs-6">webs-index</strong>
+<span>regenera el índice de sitios web <br> <a href="/Documentar_Proyecto/files/scripts/server/webs-index" download="webs-index">Descargar webs-index</a></span>
+</span>
+</p>
+</aside>
+<aside class="widget widget-iconCard">
+<p class="d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500">
+<span class="icon-arrow-line-down fs-10 | c-primary-500" fs-8="xs"></span>
+<span class="d-flex fd-column gap-1">
+<strong class="fvs-wght-700 fs-6">subir-sitio.ps1</strong>
+<span>script que permite subir el sitio a mi servidor <br> <a href="/Documentar_Proyecto/files/scripts/windows/subir-sitio.ps1" download="subir-sitio.ps1">Descargar subir-sitio.ps1</a></span>
+</span>
+</p>
+</aside>
+<aside class="widget widget-iconCard">
+<p class="d-flex gap-5 | p-5 m-0 | brad-3 bwidth-1 bstyle-dashed bcolor-neutral-500">
+<span class="icon-arrow-line-down fs-10 | c-primary-500" fs-8="xs"></span>
+<span class="d-flex fd-column gap-1">
+<strong class="fvs-wght-700 fs-6">subir-sitio.cmd</strong>
+<span>lanzador para ejecutar el script de subida de sitio <br> <a href="/Documentar_Proyecto/files/scripts/windows/subir-sitio.cmd" download="subir-sitio.cmd">Descargar subir-sitio.cmd</a></span>
+</span>
+</p>
+</aside>
 
             <footer class="minh-100vh">
                 <div class="pt-11 | blwidth-1 blstyle-dashed bcolor-neutral-500"></div>
