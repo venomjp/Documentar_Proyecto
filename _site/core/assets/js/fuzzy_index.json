@@ -203,5 +203,10 @@
             "url": "/Documentar_Proyecto/posts/servidor-de-paginas-web-estaticas/",
             "title": "Servidor de páginas web estáticas",
             "description": "Cómo instalar y configurar un servidor de páginas web estáticas con Caddy. post caddy web server páginas estáticas"
+        },
+        {
+            "url": "/Documentar_Proyecto/posts/texto-ascii-art-mejorado/",
+            "title": "Texto ASCII Art mejorado",
+            "description": "Como hacer esquemas sin depender de generadores automáticos. post ASCII páginas estáticas"
         }
 ]

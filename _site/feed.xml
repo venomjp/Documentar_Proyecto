@@ -4,11 +4,92 @@
     <subtitle>Guía para documentar un proyecto de forma efectiva y organizada</subtitle>
     <link href="feed.xml" rel="self" />
     <link href="#/feed.xml" />
-    <updated>2026-08-12T00:00:00Z</updated>
+    <updated>2026-10-11T00:00:00Z</updated>
     <id>#/feed.xml</id>
     <author>
         <name>11ty LibDoc</name>
     </author>
+        <entry>
+            <title>Texto ASCII Art mejorado</title>
+            <link href="#/posts/texto-ascii-art-mejorado/" />
+            <updated>2026-10-11T00:00:00Z</updated>
+            <id>#/posts/texto-ascii-art-mejorado/</id>
+            <author>
+                <name>11ty LibDoc</name>
+            </author>
+            <content type="html">
+                &lt;h1&gt;Esquemas ASCII Art mejorado&lt;/h1&gt;
+&lt;p&gt;Para hacer esquemas con Bloque de texto estructurado (estilo ASCII Art mejorado) y escribir tú mismo este tipo de esquemas directamente desde tu teclado sin depender de generadores automáticos, el secreto está en utilizar los caracteres de dibujo de caja (Box-drawing characters).
+Si intentas usar los guiones medios (-) o barras normales (|), el diseño suele verse torcido o informal. En su lugar, los desarrolladores usamos este set de caracteres especiales.
+Aquí tienes la &amp;quot;paleta&amp;quot; de caracteres que necesitas copiar y pegar para armar tus ramas:&lt;/p&gt;
+&lt;h2&gt;📋 Los 4 caracteres esenciales&lt;/h2&gt;
+&lt;p&gt;• │ (Barra vertical continua)&lt;/p&gt;
+&lt;p&gt;• ─ (Línea horizontal recta)&lt;/p&gt;
+&lt;p&gt;• ├─── (Conector en forma de &#39;T&#39; para elementos intermedios)&lt;/p&gt;
+&lt;p&gt;• └─── (Conector en forma de &#39;L&#39; para el último elemento de una lista)&lt;/p&gt;
+&lt;h2&gt;🛠️ Guía paso a paso&lt;/h2&gt;
+&lt;p&gt;Para que no te vuelvas loco con los espacios y las alineaciones, el truco está en escribir de arriba hacia abajo siguiendo esta lógica:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Paso 1: El nodo raíz&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Escribe tu punto de partida.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;🌐 Dominio: fpgh.link
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Paso 2: Crear una bajada secuencial&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Si el siguiente paso es único (secuencial), tiras una línea vertical justo debajo de la primera letra del texto anterior, y en la siguiente línea abres con una esquina en &#39;L&#39; (└───):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;🌐 Dominio: fpgh.link
+   │
+   └───☁️ Cloudflare DNS
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Paso 3: Ramificar varios servicios (Estructura en &#39;T&#39;)&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Cuando llegues a un punto donde se abren varias opciones (como tus servicios internos), los elementos de arriba y del medio llevan el conector en &#39;T&#39; (├───), y solo el último de todos lleva la esquina en &#39;L&#39; (└───) para cerrar la rama:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;🛠️ Servicios internos
+     │
+     ├───📁 Nextcloud   &amp;lt;-- Conector T (hay más abajo)
+     ├───📸 Immich      &amp;lt;-- Conector T (hay más abajo)
+     └───🎵 Navidrome   &amp;lt;-- Conector L (es el último)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;⌨️ Trucos para escribirlo rápido&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Usa siempre un bloque de código: En Markdown, encierra siempre tu esquema entre tres comillas invertidas y la palabra text (text ... ). Esto le dice a GitHub que use una fuente monoespaciada (donde una &amp;quot;W&amp;quot; ocupa exactamente el mismo espacio que una &amp;quot;I&amp;quot; o un espacio en blanco), evitando que el dibujo se desarme.&lt;/li&gt;
+&lt;li&gt;Copia y pega la plantilla: Guarda estos tres bloques en un bloc de notas y úsalos como si fueran tus pinceles: │ , ├─── , └───.&lt;/li&gt;
+&lt;li&gt;El truco del tabulador: Si usas un editor como VS Code o el propio editor de GitHub, selecciona varias líneas a la vez y pulsa Tab para mover bloques enteros de ramas hacia la derecha sin perder la alineación.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;🖌️ Emojis&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;🌐 Redes y Conectividad
+Puedes escribir el código corto directamente, sin embargo, dentro de un bloque &lt;code&gt;text&lt;/code&gt; no se renderizarán los emojis.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;• 🌐 :globe_with_meridians: -&amp;gt; Dominio / Internet / Web pública
+• ☁️ :cloud: -&amp;gt; Cloudflare / Cloud / DNS
+• 🔒 :lock: -&amp;gt; VPN / Tailscale / Seguridad / HTTPS
+• 🔀 :twisted_right_arrows: -&amp;gt; Caddy / Reverse Proxy / Balanceador
+• 🛡️ :shield: -&amp;gt; Firewall / Autenticación
+• 📡 :satellite: -&amp;gt; Puertos / IP Pública / Conexión remota
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;🛠️ Infraestructura y Servidores&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;• 🛠️ :hammer_and_wrench: -&amp;gt; Servicios / Configuración
+• 📦 :package: -&amp;gt; Docker / Contenedores
+• 🐳 :whale: -&amp;gt; Docker (Alternativo visual)
+• 🖥️ :desktop_computer: -&amp;gt; Servidor Físico / Host / PC
+• 🗄️ :file_cabinet: -&amp;gt; Servidor NAS / Almacenamiento local
+• 💾 :floppy_disk: -&amp;gt; Copias de seguridad / Backups
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;📁 Servicios Internos Populares (Self-Hosted)&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-text&quot;&gt;• 📁 :file_folder: -&amp;gt; Nextcloud / Owncloud / Archivos
+• 📸 :camera_with_flash: -&amp;gt; Immich / Photoprism / Fotos
+• 🎵 :musical_note: -&amp;gt; Navidrome / Jellyfin Audio / Música
+• 🎬 :clapper: -&amp;gt; Plex / Jellyfin / Vídeo
+• 🏠 :house: -&amp;gt; Home Assistant / Domótica
+• 📝 :memo: -&amp;gt; Notas / Wiki / Vaultwarden (Contraseñas)
+• 📊 :chart_with_upwards_trend: -&amp;gt; Grafana / Monitorización / Netdata
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+        </entry>
         <entry>
             <title>Servidor de páginas web estáticas</title>
             <link href="#/posts/servidor-de-paginas-web-estaticas/" />
