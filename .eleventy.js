@@ -53,7 +53,9 @@ export default function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("sandboxes");
     eleventyConfig.addPassthroughCopy("assets");
     eleventyConfig.addPassthroughCopy("core/assets");
-    eleventyConfig.addPassthroughCopy("files/scripts");
+    eleventyConfig.addPassthroughCopy("files");
+    eleventyConfig.addPassthroughCopy("sourceCode");
+    eleventyConfig.addPassthroughCopy("3dDesign");
     // END FILE COPY
     
     return {
