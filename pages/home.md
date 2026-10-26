@@ -1,6 +1,6 @@
 ---
 title: Documentar un Proyecto
-description: Página HOME del proyecto
+description: Guía para documentar un proyecto de forma efectiva y organizada
 layout: libdoc_page.liquid
 permalink: /index.html
 tags:
